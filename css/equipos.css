@@ -33,20 +33,30 @@ header img#perfil{
     height: 100px;
     margin: 45px;
 }
-header nav#navHeadr{
-    letter-spacing: 2px;
+header #navHeadr{
     text-align: center;
     display: flex;
+    flex-flow: row nowrap;
     justify-content:space-evenly;
     align-items: center;
     min-width: 50%;
 }
-header nav#navHeadr ul li{ 
+header #navHeadr ul{ 
+    letter-spacing: 2px;
+    display: flex;
+    flex-flow: row nowrap;
     list-style: none;
+    justify-content:space-evenly;
+    align-items: center;
+    gap: 8%;
+    font-size: 1.2rem;
 } 
-header nav#navHeadr ul li a{
+header #navHeadr ul li a{
     text-decoration: none;
     color: white;
+}
+header #navHeadr ul li:hover{
+    transform: scale(1.2);
 }
 
 
