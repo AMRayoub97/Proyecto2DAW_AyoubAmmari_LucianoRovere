@@ -1,51 +1,91 @@
 @charset "utf-8";
-:root{
-    --color-head: rgb(197, 2, 2);
-}
-
 /* RESET */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    color: white;
 }
+
+:root{
+    --color-head: rgb(197, 2, 2);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
 /**/
 body {
     width: 100%;
     background-color: whitesmoke;   
 }
 header{
-    display:grid;
+    display:flex;
     text-align: center;    
     background-color: rgb(197, 2, 2);    
-    border: 10px solid greenyellow;  
-
+    flex-flow: row nowrap;
+    justify-content: space-between;
 }
-header img{
+header img#logo{
     width: 150px;
-    margin: 15px;
+    margin: 40px;
+    background-color: aliceblue;
+    border-radius: 100%;
 }
-nav{
-    text-align: center;
+header img#perfil{
+    width: 100px;
+    height: 100px;
+    margin: 45px;
+}
+header nav#navHeadr{
     letter-spacing: 2px;
-    word-spacing: 50px;
-    margin-left: 20px;
-    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    min-width: 50%;
 }
-nav a{
+header nav#navHeadr ul li{ 
+    list-style: none;
+} 
+header nav#navHeadr ul li a{
     text-decoration: none;
     color: white;
 }
 
 
-header{
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: rgb(197, 2, 2);
+
+/* Footer  */
+footer{
+    background-color: var(--color-head);
+    max-height: 10rem;
+    padding: 2rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1;
+    grid-template-areas: "redd sec ...";
 }
 
+footer .redes{
+    grid-area: redd;
+}
+footer .redes ul{
+    list-style: none;
+}
+footer .redes ul img{
+    max-width: 2rem;
+    max-height: 2rem;
+    margin-right: 0.5rem;
+}
+footer section{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-area: sec;
+}
+footer section ul{
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
 
-footer{
-    background-color: rgb(197, 2, 2)d;
 }
