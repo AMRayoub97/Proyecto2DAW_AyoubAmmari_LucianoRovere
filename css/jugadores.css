@@ -5,7 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 :root{
@@ -173,7 +173,6 @@ main .tarjeta .btnsJugador{
 main .tarjeta .btnsJugador a{
     font-size: 2rem;
 }
-
 /* Footer  */
 footer{
     background-color: var(--color-head);
@@ -184,6 +183,7 @@ footer{
     grid-template-rows: 1;
     grid-template-areas: "redd sec ...";
     min-width: 720px;
+
 }
 
 footer .redes{
