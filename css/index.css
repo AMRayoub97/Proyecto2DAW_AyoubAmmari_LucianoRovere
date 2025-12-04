@@ -53,6 +53,21 @@ header nav#navHeadr ul li a{
     color: white;
 }
 
+/* MAIN */
+
+main{
+    border: 2px solid red;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2%;
+}
+
+main section#principal div#banner{
+    border: 2px solid red;
+    width: 900px;
+}
+
 
 
 /* Footer  */
