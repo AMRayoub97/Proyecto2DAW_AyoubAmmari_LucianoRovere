@@ -68,14 +68,14 @@ header #navHeadr ul li:hover{
 /* MAIN */
 
 main{
-    width: 100%;
-    display: block;
-}
-main section#principal {
     width: 80%;
+     display: block;
+     margin: 0 auto;
+    margin-top: 1rem;
 }
+
 main section#principal div#banner{
-    width: 90%;
+    width: 100%;
     height: 400px;
     background: linear-gradient(
     rgba(0,0,0,0.7), 
@@ -87,7 +87,6 @@ main section#principal div#banner{
     justify-content: center;
     align-items: center;
     margin-bottom:2%;
-    margin-left: 17%;
 }
 
 
