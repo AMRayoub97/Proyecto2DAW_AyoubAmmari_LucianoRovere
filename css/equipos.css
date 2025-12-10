@@ -21,17 +21,20 @@ header{
     background-color: rgb(197, 2, 2);    
     flex-flow: row nowrap;
     justify-content: space-between;
+    max-height: 100px;
+    padding: 1rem 3rem;
 }
 header img#logo{
-    width: 150px;
-    margin: 40px;
+    width: 70px;
+    max-height: 70px;
+    margin: 3px;
     background-color: aliceblue;
     border-radius: 100%;
 }
 header img#perfil{
-    width: 100px;
-    height: 100px;
-    margin: 45px;
+    width: 70px;
+    max-height: 70px;
+    margin: 3px;
 }
 header #navHeadr{
     text-align: center;
@@ -92,6 +95,7 @@ main nav ul li{
 main nav ul li a{
     color: black;
     font-weight: bold;
+    font-size: 1.2rem;
 }
 main nav input{
     height: 100%;

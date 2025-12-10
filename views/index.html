@@ -19,18 +19,121 @@
                 <li><a href="./jugadores.html">Jugadores</a>   </li>
             </ul>     
         </nav>
+        
         <img id="perfil" src="../imgs/perfil_default.webp" alt="Default profile picture">
     </header>
     <main>
+        <nav>
+            <ul>
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Favoritos</a></li>
+                <li><a href="#">Tienda</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Noticias</a></li>
+                <li><a href="#">Estadisticas</a></li>
+            </ul>
+            <input type="submit" value="→" id="ocultarNavBtn">
+        </nav>
         <section id="principal">
             <div id="banner">
-                <h1>Bienvenido al Club Bellreguard<br> LA VICTORIA ES NUESTRA</h1>
+                <h1>Bienvenido al Club Bellreguard<br>LA VICTORIA ES NUESTRA</h1>
+                <div class="scroll-wrapper">
+                    <div class="scroll">
+                        <div class="slide">
+                            <img src="../imgs/banner2.jpg" alt="imgScroll1">
+                            <div class="slide-text">Pasión y Fuerza en Cada Partido</div>
+                        </div>
+                        <div class="slide">
+                            <img src="../imgs/scroll1.jpg" alt="imgScroll2">
+                            <div class="slide-text">Entrena, Lucha, Gana</div>
+                        </div>
+                        <div class="slide">
+                            <img src="../imgs/scroll2.jpg" alt="imgScroll3">
+                            <div class="slide-text">Juntos Somos Invencibles</div>
+                        </div>
+                        <div class="slide">
+                            <img src="../imgs/scroll3.jpg" alt="imgScroll4">
+                            <div class="slide-text">Espíritu de Equipo</div>
+                        </div>
+                        <div class="slide">
+                            <img src="../imgs/scroll4.jfif" alt="imgScroll5">
+                            <div class="slide-text">Únete a Nuestra Familia</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div>
-                <h1>DESTACADOS HOY</h1>
+            <div class="destac">
+                <h1 class="titulo">🔥 DESTACADOS HOY</h1>
+                <hr>
+                <section id="destacados">
+                    <article class="des">
+                        <a href="#">
+                            <strong>Real</strong>
+                            <img src="../imgs/logo.png" alt="destacados1">
+                        </a>
+                        <div class="resultadoDesatacados">
+                            <h3>2 - 0</h3>
+                            <a href="#">Highlights</a>
+                        </div>
+                        <a href="#">
+                            <strong>Barca</strong>
+                            <img src="../imgs/logo.png" alt="destacados1">
+                        </a>
+                    </article>
+
+                    <article class="des">
+                        <a href="#">
+                            <strong>OCK</strong>
+                            <img src="../imgs/logo.png" alt="destacados1">
+                        </a>
+                        <div class="resultadoDesatacados">
+                            <h3>11/12/2025</h3>
+                            <h3>17:00</h3>
+                            <a href="#">Highlights</a>
+                        </div>
+                        <a href="#">
+                            <strong>RAJA</strong>
+                            <img src="../imgs/logo.png" alt="destacados1">
+                        </a>
+                    </article>
+
+                    <article class="des">
+                        <a href="#">
+                            <strong>MAR</strong>
+                            <img src="../imgs/logo.png" alt="destacados1">
+                        </a>
+                        <div class="resultadoDesatacados">
+                            <h3>0 - 0</h3>
+                            <a href="#">Highlights</a>
+                        </div>
+                        <a href="#">
+                            <strong>ESP</strong>
+                            <img src="../imgs/logo.png" alt="destacados1">
+                        </a>
+                    </article>
+
+                </section>
+            </div>
+                            
+            <h1 class="titulo">ÚLTIMAS NOTICIAS</h1>
+
+            <div id="noticias">
+                <div>
+                    <h2 class="titulo">Título</h2>
+                    <strong class="titulo">2025-01-12</strong>
+                </div>
+                <div>
+                    <h2 class="titulo">Título</h2>
+                    <strong class="titulo">2025-01-12</strong>
+                </div>
+                <div>
+                    <h2 class="titulo">Título</h2>
+                    <strong class="titulo">2025-01-12</strong>
+                </div>
             </div>
         </section>
+
     </main>
     <footer>
         <nav class="redes">
