@@ -86,6 +86,9 @@ main nav{
     align-items: start;
     background-color: lightgray;
 }
+main nav .navIzquierda{
+    display: flex;
+}
 main nav ul{
     list-style: none;
 }
