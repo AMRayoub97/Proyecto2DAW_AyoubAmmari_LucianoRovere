@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-    @vite(['resources/sass/index.scss', 'resources/js/app.js'])
+    @vite(['resources/js/app.js'])
 
     <main>
         <nav>
