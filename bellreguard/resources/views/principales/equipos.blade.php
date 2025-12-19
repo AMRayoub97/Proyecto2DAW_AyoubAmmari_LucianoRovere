@@ -6,18 +6,6 @@
 
     @vite(['resources/sass/principales/equipos.scss','resources/js/principales/equipos.js'])
     <!-- Main-->
-    <main>
-        <nav>
-            <ul>
-                <li><a href="#">Perfil</a></li>
-                <li><a href="#">Favoritos</a></li>
-                <li><a href="#">Tienda</a></li>
-                <li><a href="#">Eventos</a></li>
-                <li><a href="#">Noticias</a></li>
-                <li><a href="#">Estadisticas</a></li>
-            </ul>
-            <input type="submit" value="→" id="ocultarNavBtn">
-        </nav>
         <section>
             <div class="cab">
                 <h2>Equipos</h2>
@@ -99,6 +87,5 @@
                 </div>
             </div>
         </section>
-    </main>
 @endsection
 

@@ -10,9 +10,11 @@
 
 <!-- Menú -->
 @include('partials.nav')
+@include('partials.navLeft')
 
-
-@yield('contenido')
+<main>
+    @yield('contenido')
+</main>
 
 @include('partials.footer')
 </body>

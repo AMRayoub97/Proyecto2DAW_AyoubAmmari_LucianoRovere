@@ -1,56 +1,20 @@
 
-/**Main **/
-main{
-    display: flex;
-    width: 100%;
-    flex-flow: row nowrap;
-    gap: 5%;
-}
-
-/*  Main NAV  */
-main nav{
-    margin: 0;
-    width: 15%;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: start;
-    background-color: lightgray;
-}
-main nav .navIzquierda{
-    display: flex;
-}
-main nav ul{
-    list-style: none;
-}
-main nav ul li{
-    margin: 2rem;
-}
-main nav ul li a{
-    color: black;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-main nav input{
-    height: 100%;
-    width: 1.5rem;
-}
 
 /* Tarjetas */
-main section{
+ section{
     width: 80%;
     display: flex;
     flex-flow: column nowrap;
 }
 
-main .cab{
+ .cab{
     width: 80%;
     margin: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-main .cab h2{
+ .cab h2{
     color: black;
 }
 hr{
@@ -60,13 +24,13 @@ hr{
     border: none;
     width: 95%;
 }
-main .cab input{
+ .cab input{
     padding: 0.5rem 1rem;
     background-color: black;
     border-radius: 20px;
     color: white;
 }
-main .tarjetas {
+ .tarjetas {
     width: 98%;
     margin-top: 1rem;
     display: grid;
@@ -74,14 +38,14 @@ main .tarjetas {
     overflow: auto;
 }
 
-main .tarjeta {
+ .tarjeta {
     min-width: 30%;
     border: solid 1px black;
     min-height: 300px;
     margin: 0.5rem;
     border-radius: 10px;
 }
-main .tarjeta .contenido{
+ .tarjeta .contenido{
     margin: 0 auto;
     background-image: url("/images/pistap.jpg");
     background-size: cover;
@@ -96,35 +60,35 @@ main .tarjeta .contenido{
     margin-top: 0.5rem;
     border-radius: 10px;
 }
-main .tarjeta .contenido table{
+ .tarjeta .contenido table{
     background-color: white;
 }
-main .tarjeta .contenido strong{
+ .tarjeta .contenido strong{
     padding: 0.5rem;
     background-color: yellow;
     border-radius: 12px;
 }
-main .tarjeta .contenido h3 , main .tarjeta .contenido table th{
+ .tarjeta .contenido h3 ,  .tarjeta .contenido table th{
     color: black;
     margin: 0.5rem;
     padding: 0.2rem;
     border-bottom: 1px solid black;
 }
 
-main .btnsJugador input[type="submit"]{
+ .btnsJugador input[type="submit"]{
     padding: 0.5rem;
     background-color: black;
     color: white;
     border-radius: 10px;
     margin-top: 0.5rem;
 }
-main .tarjeta .btnsJugador{
+ .tarjeta .btnsJugador{
     margin: 0 auto;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-evenly;
     width: 50%;
 }
-main .tarjeta .btnsJugador a{
+ .tarjeta .btnsJugador a{
     font-size: 2rem;
 }
