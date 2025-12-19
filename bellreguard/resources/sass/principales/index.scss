@@ -103,33 +103,71 @@ section#principal {
 .destac {
   width: 100%;
   text-align: center;
+  color: black;
+  font-weight: bold;
 }
 
 .destac hr {
   margin: 0.5rem auto;
-  border: 0.6px solid rgb(98, 94, 94);
+  border: 0.6px solid rgb(0, 0, 0);
 }
 
 #destacados {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-#destacados .des {
+#destacados article {
+    margin: 0 auto;
   border: 1px solid black;
   border-radius: 10px;
   padding: 0.5rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: row nowrap;
+  min-height: 10rem;
 }
 
-#destacados .des img {
+#destacados article .equipoDestacado{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#destacados article a{
+    text-decoration: none;
+}
+
+#destacados article strong{
+    color: black;
+}
+
+#destacados article img {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 50%;
+}
+#destacados article .resultadoDesatacados{
+    display: flex;
+    flex-flow: column nowrap;
+    color: black;
+    margin: 0.5rem;
+}
+#destacados article .resultadoDesatacados a{
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-head);
+    color: black;
+    transition: 1s ease;
+}
+
+#destacados article .resultadoDesatacados a:hover{
+    background-color: black;
+    color: var(--color-head);
 }
 
 #noticias {

@@ -40,27 +40,63 @@
                 <h1 class="titulo">🔥 DESTACADOS HOY</h1>
                 <hr>
                 <section id="destacados">
-                    <article class="des">
-                        <a href="#"><strong>Real</strong><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                    <article>
+                        <div class="equipoDestacado">
+                            <strong>VLC</strong>
+                             <a href="#">
+                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
+                        </div>
+
                         <div class="resultadoDesatacados">
                             <h3>2 - 0</h3>
                             <a href="#">Highlights</a>
                         </div>
+
+                        <div class="equipoDestacado">
+                        <strong>BAR </strong>
+                            <a href="#">
+                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
+                        </div>
+
                     </article>
-                    <article class="des">
-                        <a href="#"><strong>OCK</strong><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                    <article>
+                        <div class="equipoDestacado">
+                            <strong>OCK</strong>
+                            <a href="#">
+                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
+                        </div>
+
                         <div class="resultadoDesatacados">
                             <h3>11/12/2025</h3>
                             <h3>17:00</h3>
                             <a href="#">Highlights</a>
                         </div>
+
+                        <div class="equipoDestacado">
+                        <strong>VLC</strong>
+                            <a href="#">
+                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
+                        </div>
+
                     </article>
-                    <article class="des">
-                        <a href="#"><strong>MAR</strong><img src="{{ asset('images/logo.png') }}" alt=""></a>
+                    <article>
+                        <div class="equipoDestacado">
+                            <strong>MAR</strong>
+                            <a href="#">
+                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
+                        </div>
+
                         <div class="resultadoDesatacados">
                             <h3>0 - 0</h3>
                             <a href="#">Highlights</a>
                         </div>
+
+                        <div class="equipoDestacado">
+                        <strong>ESP </strong>
+                            <a href="#">
+                        <img src="{{ asset('images/logo.png') }}" alt=""></a>
+                        </div>
+
                     </article>
                 </section>
             </div>
