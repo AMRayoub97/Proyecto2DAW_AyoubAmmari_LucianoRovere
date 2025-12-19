@@ -13,7 +13,8 @@ export default defineConfig({
                 'resources/js/principales/jugadores.js',
                 'resources/sass/principales/equipos.scss',
                 'resources/js/principales/equipos.js',
-            ],refresh: true,
+            ],
+            refresh: true,
         }),
     ],
 });
