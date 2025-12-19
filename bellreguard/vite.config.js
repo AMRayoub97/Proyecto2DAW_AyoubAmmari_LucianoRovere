@@ -9,6 +9,8 @@ export default defineConfig({
                 'resources/js/app.js',
                 'resources/sass/principales/index.scss',
                 'resources/js/principales/index.js',
+                'resources/sass/principales/jugadores.scss',
+                'resources/js/principales/jugadores.js',
             ],refresh: true,
         }),
     ],
