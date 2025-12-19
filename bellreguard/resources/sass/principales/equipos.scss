@@ -1,0 +1,129 @@
+/**Main **/
+main{
+    display: flex;
+    width: 100%;
+    flex-flow: row nowrap;
+    gap: 5%;
+}
+
+/*  Main NAV  */
+main nav{
+    margin: 0;
+    width: 15%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: start;
+    background-color: lightgray;
+}
+main nav ul{
+    list-style: none;
+}
+main nav ul li{
+    margin: 2rem;
+}
+main nav ul li a{
+    color: black;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+main nav input{
+    height: 100%;
+    width: 1.5rem;
+}
+
+/* Tarjetas */
+main section{
+    width: 80%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+main .cab{
+    width: 80%;
+    margin: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .cab h2{
+    color: black;
+}
+hr{
+    margin: 0 auto;
+    background-color: red;
+    height: 0.1rem;
+    border: none;
+    width: 95%;
+}
+main .cab input{
+    padding: 0.5rem 1rem;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+}
+main .tarjetas {
+    width: 98%;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: auto;
+}
+
+main .tarjeta {
+    margin: 0 auto;
+    min-width: 30%;
+    border: solid 1px black;
+    min-height: 350px;
+    margin: 0.5rem;
+    border-radius: 10px;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+main .tarjeta .cont{
+    width: 95%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+main .tarjeta .cont strong{
+    position: relative;
+    top: -40%;
+    background-color: orange;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+main .tarjeta .cont img{
+    margin: 0 auto;
+    width: 90%;
+    max-height: 70%;
+    border-radius: 40px;
+}
+main .tarjeta h3{
+    color: black;
+    margin-bottom: 0.5rem;
+}
+
+main .btnsJugador input[type="submit"]{
+    padding: 0.7rem 1.2rem;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+}
+main .tarjeta .btnsJugador{
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    width: 50%;
+    margin-bottom: 1.5rem;
+}
+main .tarjeta .btnsJugador a{
+    font-size: 2rem;
+}
