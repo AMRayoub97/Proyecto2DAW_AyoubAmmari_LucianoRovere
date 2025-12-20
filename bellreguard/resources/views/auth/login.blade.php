@@ -40,7 +40,7 @@
         <div class="login-right" style="background-image: url('{{ asset("/images/scroll2.jpg") }}');">
             <div class="register-overlay">
                 <h1 class="register-title">Únete a la comunidad</h1>
-                <a href="#" class="btn-pill-black">REGÍSTRATE</a>
+                <a href="{{ route('registrar') }}" class="btn-pill-black">REGÍSTRATE</a>
             </div>
         </div>
     </div>

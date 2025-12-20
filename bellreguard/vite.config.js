@@ -14,6 +14,7 @@ export default defineConfig({
                 'resources/sass/principales/equipos.scss',
                 'resources/js/principales/equipos.js',
                 'resources/sass/auth/login.scss',
+                'resources/sass/auth/registrar.scss',
             ],
             refresh: true,
         }),

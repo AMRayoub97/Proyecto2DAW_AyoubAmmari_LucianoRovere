@@ -26,4 +26,8 @@ class LoginController extends Controller
         Auth::logout();
         return redirect()->route('index');
     }
+
+    public function registrarForm(){
+        return view('auth.registrar');
+    }
 }

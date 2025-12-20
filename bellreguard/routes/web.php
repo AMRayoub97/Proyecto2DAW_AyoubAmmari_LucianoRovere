@@ -8,6 +8,9 @@ Route::get('login',[LoginController::class, 'loginForm'])->name('login');
 Route::post('login', [LoginController::class , 'login']);
 Route::get('logout', [LoginController::class , 'logout'])->name('logout');
 
+/*-----------------Regisrar-----------------*/
+Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registrar');
+
 /* -----------------------Index----------------------- */
 Route::get('/', function () {
     return view('index');
