@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+/*-----------------Log In------------------*/
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
 /* -----------------------Index----------------------- */
 Route::get('/', function () {
     return view('index');
