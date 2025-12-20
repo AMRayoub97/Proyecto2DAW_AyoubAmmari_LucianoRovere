@@ -6,8 +6,14 @@
 
     @vite(['resources/sass/auth/login.scss'])
 
+
     <div class="login-wrapper">
         <div class="login-left">
+             @error('errorAcceso')
+                <div class="alert alert-danger" role="alert">
+                    {{ $message }}
+                </div>
+            @enderror
             <div class="form-container">
                 <div class="logo-box">
                     <img src="{{ asset('images/logo_sin_bg.png') }}" alt="Logo" class="img-logo">
@@ -15,18 +21,18 @@
 
                 <h2 class="login-title">ACCEDE A TU CUENTA</h2>
 
-                <form action="#" method="POST">
+                <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <label for="email">correo</label>
-                    <input type="email" name="correo" placeholder="CORREO" class="custom-input" required>
+                    <label for="login">correo</label>
+                    <input type="text" name="login" placeholder="bellreguard@correo.com" class="custom-input" required value=" {{ old('login') }}">
                     <label for="password">password</label>
-                    <input type="password" name="password" placeholder="CONTRASEÑA" class="custom-input" required>
+                    <input type="password" name="password" placeholder="****" class="custom-input" required value=" {{ old('password') }}">
 
                     <div class="check-box-area">
                         <input type="checkbox" name="recordar" id="remember"><label for="recordar">Recuerda me</label>
                     </div>
 
-                    <button type="submit" class="btn-submit-red"></button>
+                    <button type="submit" class="btn-submit-red">Log-In</button>
                 </form>
             </div>
         </div>

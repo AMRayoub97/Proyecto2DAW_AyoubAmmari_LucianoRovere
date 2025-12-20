@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-/*-----------------Log In------------------*/
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+/*-----------------Log In & Logout------------------*/
+Route::get('login',[LoginController::class, 'loginForm'])->name('login');
+Route::post('login', [LoginController::class , 'login']);
+Route::get('logout', [LoginController::class , 'logout'])->name('logout');
 
 /* -----------------------Index----------------------- */
 Route::get('/', function () {
