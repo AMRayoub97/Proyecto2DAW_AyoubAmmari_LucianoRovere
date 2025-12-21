@@ -133,12 +133,52 @@
         color: var(--color-head);
     }
 
-    /* Adaptación para móviles */
-    @media (max-width: 768px) {
-        .login-wrapper {
-            flex-direction: column;
-        }
-        .login-right {
-            padding: 60px 20px;
-        }
+    @media (max-width: 992px) {
+    .login-wrapper {
+        flex-direction: column;
+        min-height: auto;
     }
+
+    .login-left {
+        position: static;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .form-container {
+        max-width: 100%;
+    }
+
+    .login-right {
+        width: 100%;
+        min-height: 400px;
+        order: -1;
+    }
+
+    .register-title {
+        font-size: 2.2rem;
+    }
+
+    .img-logo {
+        width: 120px;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-right {
+        min-height: 300px;
+    }
+
+    .register-title {
+        font-size: 1.8rem;
+    }
+
+    .btn-pill-black {
+        padding: 10px 30px;
+        font-size: 0.9rem;
+    }
+}
