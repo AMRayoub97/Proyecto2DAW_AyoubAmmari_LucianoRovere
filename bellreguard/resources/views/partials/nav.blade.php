@@ -9,5 +9,16 @@
             <li><a href="{{ route('jugadores') }}">Jugadores</a></li>
         </ul>
     </nav>
-    <img id="perfil" src="{{ asset('images/perfil_default.webp') }}" alt="Default profile picture">
+    <div class="perfilOp">
+        <img id="fotoPerfil" src="{{ asset('images/perfil_default.webp') }}" alt="Default profile picture">
+        <ul id="perfilLista">
+            <li><a href="">Perfil</a></li>
+            @guest
+                <li><a href="{{ route('login') }}">Iniciar session</a></li>
+            @endguest
+            @auth
+                <li><a href="{{ route('logout') }}">cerrar session</a></li>
+            @endauth
+        </ul>
+    </div>
 </header>

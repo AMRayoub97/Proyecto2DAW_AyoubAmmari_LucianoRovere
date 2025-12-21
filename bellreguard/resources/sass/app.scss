@@ -62,10 +62,11 @@ header img#logo{
     background-color: aliceblue;
     border-radius: 100%;
 }
-header img#perfil{
+header img#fotoPerfil{
     width: 70px;
     max-height: 70px;
     margin: 3px;
+    cursor: pointer;
 }
 header #navHeadr{
     text-align: center;
@@ -88,10 +89,53 @@ header #navHeadr ul{
 header #navHeadr ul li a{
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 header #navHeadr ul li:hover{
     transform: scale(1.2);
 }
+header .perfilOp {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+header .perfilOp ul#perfilLista {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 150px;
+    background-color: #333;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    padding: 0.5rem 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+}
+
+header .perfilOp ul#perfilLista li {
+    width: 100%;
+}
+
+header .perfilOp ul#perfilLista li a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header .perfilOp ul#perfilLista li a:hover {
+    background-color: var(--color-head);
+}
+
+/*Nav Izquierda*/
 #navLeft {
   grid-area: naL;
   display: flex;
@@ -136,7 +180,7 @@ header #navHeadr ul li:hover{
 }
 
 #navIzquierda ul li a:hover {
-  background-color: rgb(140, 136, 136);
+  background-color: var(--color-head);
   color: white;
   transform: scale(1.05);
 }

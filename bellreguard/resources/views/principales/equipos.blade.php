@@ -10,7 +10,9 @@
             <div class="cab">
                 <h2>Equipos</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
-                <input type="button" value="AÑADIR" disabled>
+                @auth
+                    <input type="button" value="AÑADIR" disabled>
+                @endauth
             </div>
             <hr>
             <div class="tarjetas">
