@@ -16,6 +16,7 @@ class LoginController extends Controller
         $credenciales = $request->only('correo', 'password');
 
         if(Auth::attempt($credenciales)){
+            $request->session()->regenerate();
             return redirect()->intended(route('index'));
         }else{
             return back()->withErrors(([
