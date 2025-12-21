@@ -22,9 +22,10 @@ class Usuario extends Authenticatable
     protected $table = 'usuarios';
 
     protected $fillable = [
-        'name',
-        'email',
+        'correo',
         'password',
+        'nombre',
+        'apellidos',
     ];
 
     /**
@@ -48,5 +49,11 @@ class Usuario extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+
+    public function getAuthIdentifierName()
+    {
+        return 'correo';
     }
 }

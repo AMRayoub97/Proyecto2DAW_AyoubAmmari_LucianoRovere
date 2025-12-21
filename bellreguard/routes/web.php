@@ -10,6 +10,7 @@ Route::get('logout', [LoginController::class , 'logout'])->name('logout');
 
 /*-----------------Regisrar-----------------*/
 Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registrar');
+Route::post('registrar', [LoginController::class , 'registrar']);
 
 /* -----------------------Index----------------------- */
 Route::get('/', function () {

@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('login')->unique();
+            $table->string('correo')->unique();
+            $table->string('nombre');
+            $table->string('apellidos');
             $table->string('password');
+            $table->date('fecha_nacimiento')->nullable();
             $table->timestamps();
         });
     }
@@ -26,4 +29,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('usuarios');
     }
+
 };

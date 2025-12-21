@@ -23,13 +23,15 @@
 
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
-                    <label for="login">correo</label>
-                    <input type="text" name="login" placeholder="bellreguard@correo.com" class="custom-input" required value=" {{ old('login') }}">
+                    <label for="correo">correo</label>
+                    <input type="text" name="correo" placeholder="bellreguard@correo.com" class="custom-input" required value="{{ old('correo') }}">
+
                     <label for="password">password</label>
-                    <input type="password" name="password" placeholder="****" class="custom-input" required value=" {{ old('password') }}">
+                    <input type="password" name="password" placeholder="****" class="custom-input" required>
 
                     <div class="check-box-area">
-                        <input type="checkbox" name="recordar" id="remember"><label for="recordar">Recuerda me</label>
+                        <input type="checkbox" name="recordar" id="remember">
+                        <label for="remember">Recuerda me</label>
                     </div>
 
                     <button type="submit" class="btn-submit-red">Log-In</button>

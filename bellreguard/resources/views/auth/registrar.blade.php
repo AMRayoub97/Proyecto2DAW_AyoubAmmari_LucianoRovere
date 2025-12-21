@@ -12,9 +12,9 @@
 
                 <form action="{{ route('registrar') }}" method="POST" class="form-register">
                     @csrf
-                    <input type="text" name="name" placeholder="NOMBRE" class="input-pill" required>
+                    <input type="text" name="nombre" placeholder="NOMBRE" class="input-pill" required>
                     <input type="text" name="apellidos" placeholder="APELLIDOS" class="input-pill" required>
-                    <input type="email" name="email" placeholder="CORREO" class="input-pill" required>
+                    <input type="email" name="correo" placeholder="CORREO" class="input-pill" required>
                     <input type="password" name="password" placeholder="CONTRASEÑA" class="input-pill" required>
                     <input type="text" name="fecha_nacimiento" placeholder="fecha nacimiento" class="input-pill" onfocus="(this.type='date')">
 
@@ -28,7 +28,10 @@
         <div class="register-right">
             <div class="logo-box">
                 <img src="{{ asset('images/logo_sin_bg.png') }}" alt="Logo Bàsquet Bellreguard" class="img-logo-big">
+                <a href="{{ route('login') }}">Log-In</a>
+
             </div>
+
         </div>
     </div>
 @endsection
