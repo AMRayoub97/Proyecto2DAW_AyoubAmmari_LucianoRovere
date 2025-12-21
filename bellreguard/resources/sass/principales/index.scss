@@ -45,7 +45,7 @@ section#principal {
   background-color: rgba(0,0,0,0.5);
   border-radius: 8px;
   width: 90%;
-  color: red;
+  color: white;
 }
 
 .scroll-wrapper {
@@ -190,4 +190,104 @@ section#principal {
   text-align: center;
   color: white;
   background-color: rgba(0,0,0,0.7);
+}
+
+@media (max-width: 992px) {
+    section#principal {
+        width: 100%;
+    }
+
+    #banner {
+        height: 350px;
+    }
+
+    #banner h1 {
+        font-size: 1.2rem;
+    }
+
+    #destacados, #noticias {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        /* Evita saltos de scroll vertical al deslizar horizontalmente */
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        gap: 0;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+        /* Escondemos la barra para que no moleste visualmente */
+        scrollbar-width: none;
+    }
+
+    #destacados article, #noticias div {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        margin: 0;
+    }
+
+    #destacados article {
+        width: 95%;
+        margin: 0 auto;
+        min-height: 12rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #noticias div {
+        height: 250px;
+    }
+
+    /* Simulación de flechas visuales */
+    .destac::before, .destac::after,
+    #noticias::before, #noticias::after {
+        content: "‹";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        color: var(--color-head);
+        z-index: 10;
+        background: rgba(255,255,255,0.9);
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .destac, #noticias { position: relative; }
+
+    .destac::before, #noticias::before { left: 5px; }
+    .destac::after, #noticias::after {
+        right: 5px;
+        content: "›";
+    }
+
+    #destacados::-webkit-scrollbar,
+    #noticias::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    #destacados::-webkit-scrollbar-thumb,
+    #noticias::-webkit-scrollbar-thumb {
+        background: var(--color-head);
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    #destacados article img {
+        width: 70px;
+        height: 70px;
+    }
+
+    #destacados article .resultadoDesatacados h3 {
+        font-size: 1rem;
+    }
 }
