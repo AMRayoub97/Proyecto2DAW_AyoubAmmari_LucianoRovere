@@ -258,3 +258,129 @@ footer section ul{
 footer section ul li a{
     color: white;
 }
+
+@media (max-width: 992px) {
+    body {
+        grid-template-columns: 1fr !important;
+        grid-template-areas:
+            "hea"
+            "naL"
+            "mai"
+            "foo";
+        grid-template-rows: auto auto 1fr auto;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    header {
+        grid-area: hea;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 60px 1fr 60px;
+        align-items: center;
+        gap: 10px;
+        padding: 0.5rem 1rem;
+        max-height: none;
+        height: auto;
+    }
+
+    header img#logo, header img#fotoPerfil {
+        width: 50px;
+        height: 50px;
+    }
+
+    header #navHeadr {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    header #navHeadr ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        width: 100%;
+        padding: 0;
+        list-style: none;
+    }
+
+    header #navHeadr ul li {
+        text-align: center;
+    }
+
+    header #navHeadr ul li a {
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+
+    #navLeft {
+        grid-area: naL;
+        width: 100% !important;
+        min-width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 1rem !important;
+    }
+
+    #navIzquierda {
+        width: 100%;
+        padding: 1rem;
+        background-color: rgb(172, 168, 168);
+    }
+
+    #navIzquierda ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #navLeft #ocultarNavBtn {
+        width: 100% !important;
+        height: 1.5rem;
+        background-color: #333;
+        color: white;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main {
+        grid-area: mai;
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 1.5rem;
+        display: block;
+    }
+
+    footer {
+        grid-area: foo;
+        min-width: 0 !important;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "redd"
+            "sec";
+        max-height: none;
+        padding: 2rem 1rem;
+    }
+}
+
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 480px) {
+    header #navHeadr ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    #navIzquierda ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

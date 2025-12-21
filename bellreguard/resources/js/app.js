@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ocultarNav.addEventListener("click", () => {
             navIzquierda.classList.toggle('oculto');
-            ocultarNav.value = navIzquierda.classList.contains('oculto') ? "←" : "→";
+            ocultarNav.value = navIzquierda.classList.contains('oculto') ? "→" : "←";
         });
     }
 
