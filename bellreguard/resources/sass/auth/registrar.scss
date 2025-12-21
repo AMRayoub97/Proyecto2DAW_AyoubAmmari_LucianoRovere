@@ -107,18 +107,110 @@ main {
     height: auto;
 }
 
-/* RESPONSIVO PARA MÓVILES */
+.logo-box a {
+    display: inline-block;
+    padding: 12px 40px;
+    background: linear-gradient(135deg, #333 0%, #000 100%);
+    color: #fff !important;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo-box a:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
 @media (max-width: 992px) {
     .register-wrapper {
         flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        position: relative;
+    }
+
+    .register-left, .register-right {
+        position: static;
+        width: 100%;
+        height: auto;
+        flex: none;
+    }
+
+    .register-left {
+        order: 1;
+        padding: 40px 20px;
     }
 
     .register-right {
-        order: -1;
-        padding: 50px 0;
+        order: 2;
+        padding: 40px 20px;
+        background-color: #ffffff;
+    }
+
+    .form-container {
+        max-width: 100%;
     }
 
     .title-main {
         font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+
+    .input-pill {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .btn-register-pill {
+        width: 100%;
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+
+    .logo-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .img-logo-big {
+        width: 140px;
+    }
+
+    .logo-box a {
+        display: inline-block;
+        padding: 12px 40px;
+        background: linear-gradient(135deg, #333 0%, #000 100%);
+        color: #fff !important;
+        border-radius: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo-box a:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+}
+
+@media (max-width: 480px) {
+    .title-main {
+        font-size: 2rem;
+    }
+
+    .register-left {
+        padding: 30px 15px;
     }
 }
