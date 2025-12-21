@@ -12,11 +12,12 @@
     <div class="perfilOp">
         <img id="fotoPerfil" src="{{ asset('images/perfil_default.webp') }}" alt="Default profile picture">
         <ul id="perfilLista">
-            <li><a href="">Perfil</a></li>
             @guest
                 <li><a href="{{ route('login') }}">Iniciar session</a></li>
+                <li><a href="{{ route('registrar') }}">Registrar</a></li>
             @endguest
             @auth
+                <li><a href="">Perfil</a></li>
                 <li><a href="{{ route('logout') }}">cerrar session</a></li>
             @endauth
         </ul>
