@@ -257,6 +257,7 @@ footer section ul{
 
 footer section ul li a{
     color: white;
+    text-decoration: none;
 }
 
 @media (max-width: 992px) {
@@ -354,11 +355,11 @@ footer section ul li a{
         grid-area: mai;
         margin-left: 0 !important;
         width: 100% !important;
-        padding: 1.5rem;    
+        padding: 1.5rem;
         display: block;
     }
 
-    footer {
+   footer {
         grid-area: foo;
         min-width: 0 !important;
         width: 100%;
@@ -368,6 +369,35 @@ footer section ul li a{
             "sec";
         max-height: none;
         padding: 2rem 1rem;
+        gap: 1.5rem;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+
+    footer .redes ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer .redes ul li {
+        justify-content: center;
+    }
+
+    footer section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    footer section ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    footer section ul li a {
+        font-size: 0.9rem;
     }
 }
 
@@ -383,4 +413,13 @@ footer section ul li a{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+    footer section ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer section ul li a {
+        border: none;
+    }
+
 }
