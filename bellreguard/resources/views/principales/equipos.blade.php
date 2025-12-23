@@ -16,7 +16,7 @@
             </div>
             <hr>
             <div class="tarjetas">
-                <div class="tarjeta">
+                <!--<div class="tarjeta">
                     <div class="cont">
                         <img src="{{ asset('/images/pistap.jpg') }}">
                         <strong>0.0</strong>
@@ -26,67 +26,7 @@
                         <input type="submit" value="Ver Perfil">
                         <a href="#">⭐</a>
                     </div>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="cont">
-                        <img src="{{ asset('/images/pistap.jpg') }}">
-                        <strong>0.0</strong>
-                    </div>
-                    <h3>Nombre Equipos</h3>
-                    <div class="btnsJugador">
-                        <input type="submit" value="Ver Perfil">
-                        <a href="#">⭐</a>
-                    </div>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="cont">
-                        <img src="{{ asset('/images/pistap.jpg') }}">
-                        <strong>0.0</strong>
-                    </div>
-                    <h3>Nombre Equipos</h3>
-                    <div class="btnsJugador">
-                        <input type="submit" value="Ver Perfil">
-                        <a href="#">⭐</a>
-                    </div>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="cont">
-                        <img src="{{ asset('/images/pistap.jpg') }}">
-                        <strong>0.0</strong>
-                    </div>
-                    <h3>Nombre Equipos</h3>
-                    <div class="btnsJugador">
-                        <input type="submit" value="Ver Perfil">
-                        <a href="#">⭐</a>
-                    </div>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="cont">
-                        <img src="{{ asset('/images/pistap.jpg') }}">
-                        <strong>0.0</strong>
-                    </div>
-                    <h3>Nombre Equipos</h3>
-                    <div class="btnsJugador">
-                        <input type="submit" value="Ver Perfil">
-                        <a href="#">⭐</a>
-                    </div>
-                </div>
-
-                <div class="tarjeta">
-                    <div class="cont">
-                        <img src="{{ asset('/images/pistap.jpg') }}">
-                        <strong>0.0</strong>
-                    </div>
-                    <h3>Nombre Equipos</h3>
-                    <div class="btnsJugador">
-                        <input type="submit" value="Ver Perfil">
-                        <a href="#">⭐</a>
-                    </div>
-                </div>
+                </div>-->
             </div>
         </section>
 @endsection
