@@ -28,7 +28,7 @@ async function mostrarEquipos() {
       const logo = equipo.logo || '/images/pistap.jpg';
       const score = Math.floor(Math.random() * 11); // ejemplo score aleatorio 0-10
 
-      const nombre = equipo.name.trim(); // quita espacios al inicio y final
+      const nombre = equipo.name.trim();
       const nombreLimpio = nombre.endsWith('W') ? nombre.slice(0, -1) : nombre;
       contenedor.innerHTML += `
         <div class="tarjeta">
