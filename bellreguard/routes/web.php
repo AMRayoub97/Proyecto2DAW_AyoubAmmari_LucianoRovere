@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,7 @@ Route::get('/jugadores', function () {
 Route::get('/equipos', function () {
     return view('principales.equipos');
 })->name('equipos');
+
+
+/*---------------Lista Jugadores API ------------------*//*
+Route::get('/api/jugadores', [ApiController::class, 'jugadores']);*/

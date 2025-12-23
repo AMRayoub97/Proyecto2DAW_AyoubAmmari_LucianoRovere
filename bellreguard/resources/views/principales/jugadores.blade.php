@@ -15,7 +15,7 @@
             </div>
             <hr>
             <div class="tarjetas">
-                @for($i = 0 ; $i < 8 ; $i++)
+                <!--@for($i = 0 ; $i < 8 ; $i++)
                 <div class="tarjeta">
                     <div class="contenido" style="background-image: url('{{ asset('images/pistap.jpg') }}')">
                         <table>
@@ -51,7 +51,7 @@
                         <a href="#">⭐</a>
                     </div>
                 </div>
-                @endfor
+                @endfor -->
             </div>
         </section>
 
