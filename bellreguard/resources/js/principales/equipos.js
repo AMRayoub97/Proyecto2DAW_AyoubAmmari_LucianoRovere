@@ -28,13 +28,15 @@ async function mostrarEquipos() {
       const logo = equipo.logo || '/images/pistap.jpg';
       const score = Math.floor(Math.random() * 11); // ejemplo score aleatorio 0-10
 
+      const nombre = equipo.name.trim(); // quita espacios al inicio y final
+      const nombreLimpio = nombre.endsWith('W') ? nombre.slice(0, -1) : nombre;
       contenedor.innerHTML += `
         <div class="tarjeta">
           <div class="cont">
             <img src="${logo}" alt="${equipo.name}">
             <strong>${score}.0</strong>
           </div>
-          <h3>${equipo.name}</h3>
+          <h3>${nombreLimpio}</h3>
           <div class="btnsJugador">
             <input type="submit" value="Ver Perfil">
             <a href="#">⭐</a>

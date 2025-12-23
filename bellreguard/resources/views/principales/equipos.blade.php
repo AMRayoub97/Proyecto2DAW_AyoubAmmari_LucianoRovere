@@ -26,7 +26,7 @@
                         <input type="submit" value="Ver Perfil">
                         <a href="#">⭐</a>
                     </div>
-                </div>-->
+                </div>-->   
             </div>
         </section>
 @endsection
