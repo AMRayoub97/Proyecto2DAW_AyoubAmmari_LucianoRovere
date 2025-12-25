@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('password');
+            $table->string('nacionalidad')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('genero')->nullable();
             $table->date('fecha_nacimiento')->nullable();
             $table->timestamps();
         });

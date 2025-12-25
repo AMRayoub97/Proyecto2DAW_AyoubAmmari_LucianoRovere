@@ -28,6 +28,11 @@ Route::get('/equipos', function () {
     return view('principales.equipos');
 })->name('equipos');
 
+/*---------Perfile ----------------*/
+Route::get('/perfil/{id}', function($id) {
+    return view('principales.perfil')->with(['id' => $id]);
+})->where('id', "[0-9]+")
+->name('perfil');
 
 /*---------------Lista Jugadores API ------------------*//*
 Route::get('/api/jugadores', [ApiController::class, 'jugadores']);*/

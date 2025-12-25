@@ -1,0 +1,65 @@
+/*--------------Contenido --------------------*/
+.contenido{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10%;
+}
+a, label{
+    color: black;
+    text-decoration: none;
+}
+/*-----------Info izquierda------------------*/
+#info{
+    min-width: 45%;
+    background-color: #7a0000;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px black;
+}
+.infoUsuario{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+.infoUsuario a{
+    color: red;
+    background: linear-gradient(135deg, #333 0%, #000 100%);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+}
+.infoUsuario a:hover{
+    color: black;
+    background: #a70707;
+}
+.infoUsuario label{
+    font-weight: bold;
+}
+
+/*------------Info Derecha------------------*/
+#infoDerecha{
+    min-width: 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+#infoDerecha img{
+    max-height: 30%;
+    max-width: 30%;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+#infoDerecha a{
+    background: linear-gradient(135deg, #333 0%, #000 100%);
+    padding: 0.5rem 1rem;
+    border-radius: 20px ;
+    color: white;
+}
