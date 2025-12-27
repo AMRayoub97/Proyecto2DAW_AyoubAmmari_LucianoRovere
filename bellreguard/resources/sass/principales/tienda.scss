@@ -1,0 +1,87 @@
+section{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    justify-content: center;
+    margin-bottom: 5rem;
+    margin-left: 2rem;
+}
+*{
+    color: black;
+}
+/*----------------cab----------------------*/
+ .cab{
+    margin: 0 auto;
+    width: 80%;
+    margin: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .cab h2{
+    font-weight: bold;
+    color: black;
+}
+hr{
+    margin: 0 auto;
+    background-color: #7a0000;
+    height: 0.1rem;
+    border: none;
+    width: 95%;
+}
+ .cab input{
+    padding: 0.5rem 1rem;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+}
+
+/*----------------- productos (tarjetas)-----------------*/
+.tarjetas{
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    gap: 5%;
+}
+
+/*------------------article*-------------------*/
+article{
+    margin: 0 auto;
+    padding: 1.5rem;
+    border: 1px solid gray;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    border-radius: 10px;
+    justify-content: center;
+}
+
+article img{
+    margin: 0 auto;
+    width: 90%;
+    margin-bottom: 0.5rem;
+}
+
+article .info{
+    margin: 0.5rem ;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+article .detalle{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.2rem;
+}
+article a{
+    margin: 0 auto;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(135deg, #333 0%, #000 100%);
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+}

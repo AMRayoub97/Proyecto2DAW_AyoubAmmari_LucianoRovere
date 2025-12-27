@@ -17,6 +17,8 @@ export default defineConfig({
                 'resources/sass/auth/registrar.scss',
                 'resources/sass/principales/perfile.scss',
                 'resources/js/principales/perfile.js',
+                'resources/sass/principales/tienda.scss',
+                'resources/js/principales/tienda.js',
             ],
             refresh: true,
         }),

@@ -9,27 +9,27 @@
     <div class="contenido">
         <section id="info">
             <div class="infoUsuario">
-                <label for="nombre">Nombre:</label><strong>{{auth()->user()->nombre }}</strong>
+                <label for="nombre">Nombre:</label><strong>{{auth()->user()->nombre ?? 'guest' }}</strong>
                 <a href="#" >cambiar </a>
             </div>
             <div class="infoUsuario">
-                <label for="apellido">Apellido:</label><strong>{{ auth()->user()->apellidos }}</strong>
+                <label for="apellido">Apellido:</label><strong>{{ auth()->user()->apellidos ?? 'guest' }}</strong>
                 <a href="#" >cambiar </a>
             </div>
             <div class="infoUsuario">
-                <label for="correo">Correo:</label><strong>{{ auth()->user()->correo }}</strong>
+                <label for="correo">Correo:</label><strong>{{ auth()->user()->correo ?? '****@bllreguard.es' }}</strong>
                 <a href="#" >cambiar </a>
             </div>
             <div class="infoUsuario">
-                <label for="contrasena">Contrasena:</label><strong>{{ auth()->user()->correo }}</strong>
+                <label for="contrasena">Contrasena:</label><strong>***********</strong>
                 <a href="#" >cambiar </a>
             </div>
             <div class="infoUsuario">
-                <label for="nacionalidad">Nacionalidad:</label><strong>***********</strong>
+                <label for="nacionalidad">Nacionalidad:</label><strong>{{ auth()->user()->nacionalidad ?? '-' }}</strong>
                 <a href="#" >cambiar </a>
             </div>
             <div class="infoUsuario">
-                <label for="fecha_nacimiento">Fecha nacimiento:</label><strong>{{ auth()->user()->fecha_nacimiento }}</strong>
+                <label for="fecha_nacimiento">Fecha nacimiento:</label><strong>{{ auth()->user()->fecha_nacimiento ?? '00-00-2000' }}</strong>
                 <a href="#" >cambiar </a>
             </div>
             <div class="infoUsuario">

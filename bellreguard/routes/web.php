@@ -34,5 +34,10 @@ Route::get('/perfil/{id}', function($id) {
 })->where('id', "[0-9]+")
 ->name('perfil');
 
+/*-----------------Tienda------------*/
+Route::get('/tienda', function(){
+    return view('principales.tienda');
+})->name('tienda');
+
 /*---------------Lista Jugadores API ------------------*//*
 Route::get('/api/jugadores', [ApiController::class, 'jugadores']);*/
