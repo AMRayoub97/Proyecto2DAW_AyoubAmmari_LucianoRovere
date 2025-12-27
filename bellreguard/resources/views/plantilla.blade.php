@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Bellreguard Club | @yield('titulo')</title>
+  <link rel="icon" href="{{ asset('images/logo_sin_bg.png') }}" type="image/png">
   @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>

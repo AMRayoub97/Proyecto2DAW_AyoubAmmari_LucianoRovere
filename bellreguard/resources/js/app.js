@@ -1,4 +1,5 @@
 import './bootstrap';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     const ocultarNav = document.getElementById("ocultarNavBtn");

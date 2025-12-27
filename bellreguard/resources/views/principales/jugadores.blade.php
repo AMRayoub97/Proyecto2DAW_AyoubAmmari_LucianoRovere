@@ -15,35 +15,35 @@
             </div>
             <hr>
             <div class="tarjetas">
-                <!--@for($i = 0 ; $i < 8 ; $i++)
-                <div class="tarjeta">
-                    <div class="contenido" style="background-image: url('{{ asset('images/pistap.jpg') }}')">
+                @foreach($jugadores as $jugador)
+                    <div class="tarjeta">
+                    <div class="contenido" style="background-image: url('{{ asset('images/' . $jugador->foto) }}')">
                         <table>
                             <tr>
-                                <th colspan="2">Nombre</th>
+                                <th colspan="2">{{ $jugador->nombre }}</th>
                             </tr>
                             <tr>
                                 <th>Altura</th>
-                                <th>0.0</th>
+                                <th>{{ $jugador->altura }}</th>
                             </tr>
                             <tr>
                                 <th>Peso</th>
-                                <th>0 Kg</th>
+                                <th>{{ $jugador->peso }}</th>
                             </tr>
                             <tr>
                                 <th>Edad</th>
-                                <th>0 años</th>
+                                <th>{{ $jugador->edad }} años</th>
                             </tr>
                             <tr>
                                 <th>Experiencia</th>
-                                <th>0 años</th>
+                                <th>{{ $jugador->experiencia }} años</th>
                             </tr>
                             <tr>
-                                <th>Pais</th>
-                                <th>ESP</th>
+                                <th>Nacionalidad</th>
+                                <th>{{ $jugador->nacionalidad }}</th>
                             </tr>
                         </table>
-                        <strong>0.0</strong>
+                        <strong>{{ $jugador->puntuacion }}</strong>
                     </div>
 
                     <div class="btnsJugador">
@@ -51,7 +51,13 @@
                         <a href="#">⭐</a>
                     </div>
                 </div>
-                @endfor -->
+                @endforeach
+
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $jugadores->links('pagination::bootstrap-5') }}
+                </div>
+
+
             </div>
         </section>
 

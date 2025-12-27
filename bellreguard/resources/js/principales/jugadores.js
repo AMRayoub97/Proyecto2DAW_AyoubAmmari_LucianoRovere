@@ -1,4 +1,4 @@
-async function mostrarJugadores() {
+/*async function mostrarJugadores() {
   try {
     const res = await fetch(
       "https://v1.basketball.api-sports.io/players?season=2022&team=155",
@@ -34,7 +34,7 @@ async function mostrarJugadores() {
         const firstName = nombres[0].toLowerCase();
         const lastName = nombres.slice(1).join(" ").toLowerCase();
         foto = `https://nba-players.herokuapp.com/players/${lastName}/${firstName}`;
-      }*/
+      }*//*
 
         const foto = '/images/pistap.jpg';
       tarjetas.innerHTML += `<div class="tarjeta">
@@ -78,4 +78,4 @@ async function mostrarJugadores() {
   }
 }
 
-mostrarJugadores();
+mostrarJugadores();*/

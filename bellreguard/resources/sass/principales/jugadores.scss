@@ -60,12 +60,13 @@ hr{
     border-radius: 10px;
 }
  .tarjeta .contenido table{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8);
 }
  .tarjeta .contenido strong{
     padding: 0.5rem;
     background-color: yellow;
     border-radius: 12px;
+    color: #000;
 }
  .tarjeta .contenido h3 ,  .tarjeta .contenido table th{
     color: black;
@@ -91,6 +92,17 @@ hr{
  .tarjeta .btnsJugador a{
     font-size: 2rem;
 }
+
+.pagination {
+    height: 3rem;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
 
 @media (max-width: 992px) {
     section {

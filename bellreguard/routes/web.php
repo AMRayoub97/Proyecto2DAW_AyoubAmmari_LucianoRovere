@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,7 @@ Route::get('/', function () {
 })->name('index');
 
 /*------------------Jugadores-----------------------*/
-Route::get('/jugadores', function () {
-    return view('principales.jugadores');
-})->name('jugadores');
+Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores');
 
 /*-----------------Equipos------------------*/
 Route::get('/equipos', function () {
@@ -39,5 +38,3 @@ Route::get('/tienda', function(){
     return view('principales.tienda');
 })->name('tienda');
 
-/*---------------Lista Jugadores API ------------------*//*
-Route::get('/api/jugadores', [ApiController::class, 'jugadores']);*/
