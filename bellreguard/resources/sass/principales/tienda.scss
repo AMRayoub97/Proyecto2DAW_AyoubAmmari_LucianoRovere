@@ -43,7 +43,7 @@ hr{
     margin: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 30%);
-    gap: 5%;
+    gap: 1%;
 }
 
 /*------------------article*-------------------*/
@@ -56,12 +56,15 @@ article{
     flex-flow: column nowrap;
     border-radius: 10px;
     justify-content: center;
+    max-height: 35rem;
 }
 
 article img{
     margin: 0 auto;
     width: 90%;
+    max-height: 90%;
     margin-bottom: 0.5rem;
+    overflow: hidden;
 }
 
 article .info{
