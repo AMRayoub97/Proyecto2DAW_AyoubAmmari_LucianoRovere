@@ -30,11 +30,11 @@
             <div>
                 <p class="small text-muted">
                     {!! __('Mostrar') !!}
-                    <span class="fw-semibold">{{ $paginator->firstItem() }}</span>
+                    <span class="fw-semibold" style="color: black">{{ $paginator->firstItem() }}</span>
                     {!! __('a') !!}
-                    <span class="fw-semibold">{{ $paginator->lastItem() }}</span>
+                    <span class="fw-semibold" style="color: black">{{ $paginator->lastItem() }}</span>
                     {!! __('de') !!}
-                    <span class="fw-semibold">{{ $paginator->total() }}</span>
+                    <span class="fw-semibold" style="color: black">{{ $paginator->total() }}</span>
                     {!! __('resultados') !!}
                 </p>
             </div>
