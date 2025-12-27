@@ -24,11 +24,11 @@
                             </tr>
                             <tr>
                                 <th>Altura</th>
-                                <th>{{ $jugador->altura }}</th>
+                                <th>{{ $jugador->altura }} m</th>
                             </tr>
                             <tr>
                                 <th>Peso</th>
-                                <th>{{ $jugador->peso }}</th>
+                                <th>{{ $jugador->peso }} kg</th>
                             </tr>
                             <tr>
                                 <th>Edad</th>
