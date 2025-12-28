@@ -53,7 +53,7 @@
                 </div>
                 @endforeach
 
-                <div class="d-flex justify-content-center mt-4">
+                <div class="d-flex justify-content-center mt-4" id="paginas">
                     {{ $jugadores->links('pagination::bootstrap-5') }}
                 </div>
 

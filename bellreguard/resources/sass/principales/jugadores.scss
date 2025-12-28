@@ -126,13 +126,31 @@ hr{
         min-width: 0;
         width: 100%;
         margin: 1rem 0;
+        height: 70rem;
+    }
+    .tarjeta .contenido table{
+        height: 45%;
+        width: 45%;
+        font-size: x-large;
     }
 
-    .tarjeta .btnsJugador {
-        width: 80%;
+    .tarjeta .btnsJugador *{
+        height: 4rem;
+        width: 8rem;
+        font-size: x-large
     }
 
-    .tarjeta .contenido table {
-        font-size: 0.9rem;
+    .tarjetas #paginas li span, .tarjetas #paginas li a{
+        height: 6rem;
+        width: 6rem;
+        font-size: xx-large;
+    }
+
+    .tarjetas #paginas {
+        font-size: xx-large;
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
     }
 }

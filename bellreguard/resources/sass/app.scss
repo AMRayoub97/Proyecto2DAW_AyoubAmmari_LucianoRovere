@@ -278,19 +278,20 @@ footer section ul li a{
 
     header {
         grid-area: hea;
+        margin: 0 auto;
         width: 100%;
         display: grid;
-        grid-template-columns: 60px 1fr 60px;
+        grid-template-columns: 25% 50% 25%;
         align-items: center;
         gap: 10px;
         padding: 0.5rem 1rem;
         max-height: none;
-        height: auto;
+        height: 15rem;
     }
 
     header img#logo, header img#fotoPerfil {
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 150px;
     }
 
     header #navHeadr {
@@ -301,11 +302,11 @@ footer section ul li a{
 
     header #navHeadr ul {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
         padding: 0;
         list-style: none;
+        margin: 0 5rem;
     }
 
     header #navHeadr ul li {
@@ -313,7 +314,7 @@ footer section ul li a{
     }
 
     header #navHeadr ul li a {
-        font-size: 0.85rem;
+        font-size: 2rem;
         white-space: nowrap;
     }
 
@@ -358,6 +359,7 @@ footer section ul li a{
         width: 100% !important;
         padding: 1.5rem;
         display: block;
+        height: 80%;
     }
 
    footer {
