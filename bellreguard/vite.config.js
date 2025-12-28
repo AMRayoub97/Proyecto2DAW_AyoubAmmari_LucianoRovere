@@ -19,6 +19,8 @@ export default defineConfig({
                 'resources/js/principales/perfile.js',
                 'resources/sass/principales/tienda.scss',
                 'resources/js/principales/tienda.js',
+                'resources/sass/principales/producto.scss',
+                'resources/js/principales/producto.js',
             ],
             refresh: true,
         }),
