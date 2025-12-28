@@ -51,7 +51,7 @@
 
         <section class="anadirComentario">
             <h3>Deja tu comentario</h3>
-            <form action="#" method="POST" class="form-comentario">
+            <form action="#" class="form-comentario">
                 <div class="grupo-input">
                     <label for="puntuacion">Tu puntuación:</label>
                     <select name="puntuacion" id="puntuacion">
