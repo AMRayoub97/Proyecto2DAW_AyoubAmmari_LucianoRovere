@@ -38,3 +38,7 @@ Route::get('/tienda', function(){
     return view('principales.tienda');
 })->name('tienda');
 
+Route::get('/tienda/{id}', function ($id) {
+    return view('principales.producto', compact('id'));
+})->name('producto');
+

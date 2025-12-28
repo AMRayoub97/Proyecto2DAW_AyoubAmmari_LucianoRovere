@@ -39,8 +39,11 @@ main{
     margin: 0 auto;
     grid-area: mai;
     display: flex;
-    width: 100%;
+    width: 85%;
     margin-left: 5rem;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Header */

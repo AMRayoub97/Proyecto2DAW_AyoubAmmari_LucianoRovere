@@ -16,7 +16,7 @@ async function getProductos(){
                     <small>Cantidad: <strong> ${producto.rating.count}</strong></small>
                 </div>
             </div>
-            <a href="">Buy</a>
+            <a href="/tienda/${producto.id}">Buy</a>
         </article>
         `
     });

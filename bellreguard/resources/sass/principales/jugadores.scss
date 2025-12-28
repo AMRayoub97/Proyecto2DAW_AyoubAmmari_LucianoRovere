@@ -2,7 +2,7 @@
 
 /* Tarjetas */
  section{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -91,6 +91,7 @@ hr{
 }
  .tarjeta .btnsJugador a{
     font-size: 2rem;
+    text-decoration: none;
 }
 
 .pagination {
