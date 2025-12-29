@@ -330,6 +330,7 @@ footer section ul li a{
     #navIzquierda {
         width: 100%;
         padding: 1rem;
+        min-height: 6rem;
         background-color: rgb(172, 168, 168);
     }
 
@@ -340,9 +341,13 @@ footer section ul li a{
         gap: 10px;
     }
 
+    #navIzquierda ul li a{
+        font-size: 1.8rem;
+    }
+
     #navLeft #ocultarNavBtn {
         width: 100% !important;
-        height: 1.5rem;
+        height: 6rem !important;
         background-color: #333;
         color: white;
         border: none;
@@ -387,6 +392,14 @@ footer section ul li a{
     footer .redes ul li {
         justify-content: center;
     }
+    footer .redes ul li img{
+        width: 15rem !important;
+        height: 15rem !important;
+    }
+    footer .redes ul li a{
+        font-size: 3rem;
+        margin-left: 2rem;
+    }
 
     footer section {
         width: 100%;
@@ -400,7 +413,7 @@ footer section ul li a{
     }
 
     footer section ul li a {
-        font-size: 0.9rem;
+        font-size: 2rem;
     }
 }
 

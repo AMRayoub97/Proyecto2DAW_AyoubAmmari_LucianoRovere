@@ -5,6 +5,7 @@ section#principal {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  padding: 1rem 1rem 3rem 1rem;
 }
 
 /* Banner */
@@ -15,6 +16,8 @@ section#principal {
   overflow: hidden;
   text-align: center;
   font-family: 'Poppins', sans-serif;
+  border: 2px solid gray;
+  box-shadow: 5px 5px 5px rgb(36, 16, 16);
 }
 
 #banner h1 {
@@ -104,13 +107,14 @@ section#principal {
 }
 
 #destacados article {
-    margin: 0 auto;
+  margin: 0 auto;
   border: 1px solid black;
   border-radius: 10px;
   padding: 0.5rem;
   display: flex;
   flex-flow: row nowrap;
   min-height: 10rem;
+  box-shadow: 5px 5px 5px rgb(43, 15, 15);
 }
 
 #destacados article .equipoDestacado{
@@ -267,6 +271,9 @@ section#principal {
 
 /*--------movil--------------*/
 @media (max-width: 992px) {
+    *{
+        font-size: 1.5rem;
+    }
     section#principal {
         width: 100%;
     }
@@ -276,46 +283,57 @@ section#principal {
     }
 
     #banner h1 {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
+    }
+
+    .banner .scroll-wrapper .slide-text{
+        font-size: 2rem !important;
     }
 
     #destacados, #noticias {
         display: flex;
         flex-direction: row;
         overflow-x: auto;
-        /* Evita saltos de scroll vertical al deslizar horizontalmente */
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
-        gap: 0;
+        gap: 5%;
         padding-bottom: 1rem;
         -webkit-overflow-scrolling: touch;
-        /* Escondemos la barra para que no moleste visualmente */
         scrollbar-width: none;
     }
 
-    #destacados article, #noticias div {
-        flex: 0 0 100%;
+    #destacados article {
+        flex: 0 0 60%;
+        margin-right: 5rem;
         scroll-snap-align: center;
         margin: 0;
-    }
-
-    #destacados article {
-        width: 95%;
+        box-shadow: none;
+        width: 100%;
         margin: 0 auto;
         min-height: 12rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 1rem;
+        gap: 1.5rem;
+        background-color: rgb(248, 248, 248);
+        border-radius: 10px;
     }
 
-    #noticias div {
-        height: 250px;
+    /*-----notcias-eventos----------*/
+    .notcias-eventos{
+        display: flex;
+        flex-flow: column nowrap;
+
+    }
+
+    #noticias article {
+        min-height: auto !important;
+        width: 100%;
+        padding: 1rem 2rem;
     }
 
     /* Simulación de flechas visuales */
-    .destac::before, .destac::after,
-    #noticias::before, #noticias::after {
+    .destac::before, .destac::after{
         content: "‹";
         position: absolute;
         top: 50%;
@@ -337,19 +355,17 @@ section#principal {
 
     .destac, #noticias { position: relative; }
 
-    .destac::before, #noticias::before { left: 5px; }
-    .destac::after, #noticias::after {
+    .destac::before { left: 5px; }
+    .destac::after{
         right: 5px;
         content: "›";
     }
 
-    #destacados::-webkit-scrollbar,
-    #noticias::-webkit-scrollbar {
+    #destacados::-webkit-scrollbar {
         height: 5px;
     }
 
-    #destacados::-webkit-scrollbar-thumb,
-    #noticias::-webkit-scrollbar-thumb {
+    #destacados::-webkit-scrollbar-thumb{
         background: var(--color-head);
         border-radius: 10px;
     }
