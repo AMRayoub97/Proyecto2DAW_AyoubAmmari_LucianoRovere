@@ -154,28 +154,118 @@ section#principal {
     color: var(--color-head);
 }
 
-#noticias {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+/*----------notcias-eventos-----------*/
+.notcias-eventos{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 5%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.notcias-eventos hr{
+    border: 2px solid black;
+    height: 100%;
+}
+.notcias-eventos *{
+    color: black;
+}
+/*---------noticias------*/
+.notcias-eventos #noticias{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+    text-align: center;
+    color: black;
+    min-width: 45%;
 }
 
-#noticias div {
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-  position: relative;
+.notcias-eventos #noticias article{
+    min-height: 5rem;
+    min-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: rgb(238, 238, 238);
+}
+.notcias-eventos #noticias article a{
+    text-decoration: none;
+}
+.notcias-eventos #noticias article hr{
+    border: 1px solid gray;
+}
+.notcias-eventos #noticias article .infoNoticia{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.notcias-eventos #noticias article .infoNoticia small{
+    color: rgb(59, 59, 59);
+}
+.notcias-eventos #noticias article .infoNoticia img{
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+}
+.notcias-eventos #noticias article .infoNoticia > *:not(img) {
+    position: relative;
+    top: 20px;
+    margin-left: 10px;
 }
 
-#noticias div .titulo {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  color: white;
-  background-color: rgba(0,0,0,0.7);
+/*----------eventos------------*/
+.notcias-eventos .eventos{
+    min-width: 45%;
+    text-align: center;
+    gap: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.notcias-eventos .eventos .calendario iframe{
+    min-width: 100%;
+    min-height: 30rem;
 }
 
+.notcias-eventos .eventos article{
+    min-height: 5rem;
+    min-width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: rgb(238, 238, 238);
+}
+.notcias-eventos .eventos article a{
+    text-decoration: none;
+}
+.notcias-eventos .eventos article hr{
+    border: 1px solid gray;
+}
+.notcias-eventos .eventos article .infoEvento{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.notcias-eventos .eventos article .infoEvento small{
+    color: rgb(59, 59, 59);
+}
+.notcias-eventos .eventos article .infoEvento img{
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+}
+.notcias-eventos .eventos article .infoEvento > *:not(img) {
+    position: relative;
+    top: 20px;
+    margin-left: 10px;
+}
+
+/*--------movil--------------*/
 @media (max-width: 992px) {
     section#principal {
         width: 100%;
