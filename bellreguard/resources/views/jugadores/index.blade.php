@@ -10,14 +10,21 @@
                 <h2>JUGADORES</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
-                    <input type="button" value="AÑADIR" disabled>
+                    <a href="{{ route('jugadores.create') }}">AÑADIR</a>
                 @endauth
             </div>
             <hr>
+            <!-- mensajes -->
+             @if(session()->has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
             <div class="tarjetas">
+
                 @foreach($jugadores as $jugador)
                     <div class="tarjeta">
-                    <div class="contenido" style="background-image: url('{{ asset('images/' . $jugador->foto) }}')">
+                    <div class="contenido" style="background-image: url('{{ asset('images/jugadores/' . $jugador->foto) }}')">
                         <table>
                             <tr>
                                 <th colspan="2">{{ $jugador->nombre }}</th>

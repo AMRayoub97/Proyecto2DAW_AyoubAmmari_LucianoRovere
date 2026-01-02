@@ -21,6 +21,8 @@ export default defineConfig({
                 'resources/js/principales/tienda.js',
                 'resources/sass/principales/producto.scss',
                 'resources/js/principales/producto.js',
+                'resources/sass/jugadores/create.scss',
+                'resources/js/jugadores/create.js',
             ],
             refresh: true,
         }),

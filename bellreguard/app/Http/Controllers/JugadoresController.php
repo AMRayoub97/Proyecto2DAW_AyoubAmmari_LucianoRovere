@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Jugador;
 use Illuminate\Http\Request;
+use App\Http\Requests\JugadorRequest;
 
 class JugadoresController extends Controller
 {
@@ -14,7 +15,7 @@ class JugadoresController extends Controller
     {
         $jugadores = Jugador::orderBy('puntuacion' , 'DESC')->paginate(6);
 
-        return view('principales.jugadores', compact('jugadores'));
+        return view('jugadores.index', compact('jugadores'));
     }
 
     /**
@@ -22,15 +23,28 @@ class JugadoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('jugadores.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(JugadorRequest $request)
     {
-        //
+
+        $data = $request->validated();
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+            $file->move(public_path('images/jugadores'), $filename);
+            $data['foto'] = $filename;
+        }
+
+        Jugador::create($data);
+
+        return redirect()->route('jugadores.index')
+                         ->with('success', 'Jugador añadido correctamente');
     }
 
     /**

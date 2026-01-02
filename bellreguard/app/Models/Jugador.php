@@ -15,5 +15,8 @@ class Jugador extends Model
         'altura',
         'peso',
         'experiencia',
+        'foto',
+        'edad',
+        'puntuacion',
     ];
 }

@@ -20,8 +20,10 @@ Route::get('/', function () {
 })->name('index');
 
 /*------------------Jugadores-----------------------*/
-Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores');
-
+Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
+Route::middleware(['auth'])->group(function () {
+    Route::resource('jugadores', JugadoresController::class)->except(['index']);
+});
 /*-----------------Equipos------------------*/
 Route::get('/equipos', function () {
     return view('principales.equipos');
