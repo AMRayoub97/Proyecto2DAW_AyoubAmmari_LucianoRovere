@@ -16,7 +16,7 @@ class JugadoresSeeder extends Seeder
         DB::table('jugadores')->insert([
             [
                 'nombre' => 'Santi Aldama',
-                'foto' => 'jugadores/santi_aldama.jpeg',
+                'foto' => 'santi_aldama.jpeg',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 24,
@@ -29,7 +29,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Darío Brizuela',
-                'foto' => 'jugadores/Darío_Brizuela.jpeg',
+                'foto' => 'Darío_Brizuela.jpeg',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 30,
@@ -42,7 +42,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Juancho Hernangómez',
-                'foto' => 'jugadores/Juancho_Hernangómez.png',
+                'foto' => 'Juancho_Hernangómez.png',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 29,
@@ -55,7 +55,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Willy Hernangómez',
-                'foto' => 'jugadores/Willy_Hernangómez.jpg',
+                'foto' => 'Willy_Hernangómez.jpg',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 30,
@@ -68,7 +68,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Xabi López-Arostegui',
-                'foto' => 'jugadores/Xabi_Lopez-Arostegui.webp',
+                'foto' => 'Xabi_Lopez-Arostegui.webp',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 27,
@@ -81,7 +81,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Joel Parra',
-                'foto' => 'jugadores/Joel_Parra.jpg',
+                'foto' => 'Joel_Parra.jpg',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 25,
@@ -94,7 +94,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Jaime Pradilla',
-                'foto' => 'jugadores/Jaime_Pradilla.webp',
+                'foto' => 'Jaime_Pradilla.webp',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 24,
@@ -107,7 +107,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Josep Puerto',
-                'foto' => 'jugadores/Josep_Puerto.png',
+                'foto' => 'Josep_Puerto.png',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 26,
@@ -120,7 +120,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Santi Yusta',
-                'foto' => 'jugadores/Santi_Yusta.jpg',
+                'foto' => 'Santi_Yusta.jpg',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 27,
@@ -133,7 +133,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Yankuba Sima',
-                'foto' => 'jugadores/Yankuba_Sima.jpg',
+                'foto' => 'Yankuba_Sima.jpg',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 28,
@@ -146,7 +146,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Sergio De Larrea',
-                'foto' => 'jugadores/Sergio_de_Larrea.webp',
+                'foto' => 'Sergio_de_Larrea.webp',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 19,
@@ -159,7 +159,7 @@ class JugadoresSeeder extends Seeder
             ],
             [
                 'nombre' => 'Mario Saint-Supéry',
-                'foto' => 'jugadores/Mario_Saint-Supery.png',
+                'foto' => 'Mario_Saint-Supery.png',
                 'nacionalidad' => 'ESP',
                 'genero' => 'M',
                 'edad' => 18,
