@@ -13,6 +13,8 @@ class JugadoresSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('jugadores')->truncate();// limpia la tabla
+
         DB::table('jugadores')->insert([
             [
                 'nombre' => 'Santi Aldama',
