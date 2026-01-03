@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 /*-----------------Log In & Logout------------------*/
@@ -21,19 +22,22 @@ Route::get('/', function () {
 
 /*------------------Jugadores-----------------------*/
 Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
+
+/*-----------Auth------------*/
 Route::middleware(['auth'])->group(function () {
+    /*------------------Jugadores-----------------------*/
     Route::resource('jugadores', JugadoresController::class)->except(['index']);
+
+    /*-----------------Equipos------------------*/
+    Route::get('perfile/{id}',[UsuarioController::class, 'show'])->where('id', "[0-9]+")
+                                                                ->name('perfile');
 });
+
 /*-----------------Equipos------------------*/
 Route::get('/equipos', function () {
     return view('principales.equipos');
 })->name('equipos');
 
-/*---------Perfile ----------------*/
-Route::get('/perfil/{id}', function($id) {
-    return view('principales.perfil')->with(['id' => $id]);
-})->where('id', "[0-9]+")
-->name('perfil');
 
 /*-----------------Tienda------------*/
 Route::get('/tienda', function(){

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsuarioController extends Controller
 {
@@ -36,7 +37,14 @@ class UsuarioController extends Controller
      */
     public function show(string $id)
     {
-        //
+        if(Auth::id() != $id){
+            abort('404');
+        }
+
+
+        $usuario = Auth::user();
+
+        return view('principales.perfile', compact('usuario'));
     }
 
     /**
