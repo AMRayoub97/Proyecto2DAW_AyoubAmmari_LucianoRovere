@@ -37,14 +37,9 @@ class UsuarioController extends Controller
      */
     public function show(string $id)
     {
-        if(Auth::id() != $id){
-            abort('404');
-        }
-
-
         $usuario = Auth::user();
 
-        return view('principales.perfile', compact('usuario'));
+        return view('principales.perfil', compact('usuario'));
     }
 
     /**

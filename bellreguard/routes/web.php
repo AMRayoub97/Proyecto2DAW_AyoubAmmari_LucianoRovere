@@ -29,8 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('jugadores', JugadoresController::class)->except(['index']);
 
     /*-----------------Equipos------------------*/
-    Route::get('perfile/{id}',[UsuarioController::class, 'show'])->where('id', "[0-9]+")
-                                                                ->name('perfil');
+    Route::get('perfile/{id}',[UsuarioController::class, 'show'])->name('perfil');
 });
 
 /*-----------------Equipos------------------*/
