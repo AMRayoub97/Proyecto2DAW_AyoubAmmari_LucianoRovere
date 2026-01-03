@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function () {
 
     /*-----------------Equipos------------------*/
     Route::get('perfile/{id}',[UsuarioController::class, 'show'])->where('id', "[0-9]+")
-                                                                ->name('perfile');
+                                                                ->name('perfil');
 });
 
 /*-----------------Equipos------------------*/
