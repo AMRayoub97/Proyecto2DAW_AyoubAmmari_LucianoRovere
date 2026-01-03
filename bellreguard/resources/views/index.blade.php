@@ -40,7 +40,7 @@
                 <h1>🔥 DESTACADOS HOY</h1>
                 <hr>
                 <section id="destacados">
-                    <article>
+                    <!--<article>
                         <div class="equipoDestacado">
                             <strong>VLC</strong>
                              <a href="#">
@@ -97,7 +97,7 @@
                         <img src="{{ asset('images/logo.png') }}" alt=""></a>
                         </div>
 
-                    </article>
+                    </article> -->
                 </section>
             </div>
 
