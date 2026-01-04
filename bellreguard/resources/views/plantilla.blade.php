@@ -19,7 +19,7 @@
 <div id="cookie-banner" class="cookie-banner">
   <p>
     Utilizamos cookies propias y de terceros para mejorar tu experiencia.
-    <a href="#">Más información</a>
+    <a href="{{ route('cookies') }}">Más información</a>
   </p>
   <div class="cookie-buttons">
     <button id="accept-cookies">Aceptar</button>

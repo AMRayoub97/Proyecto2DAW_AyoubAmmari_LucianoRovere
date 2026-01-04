@@ -47,3 +47,7 @@ Route::get('/tienda/{id}', function ($id) {
     return view('principales.producto', compact('id'));
 })->name('producto');
 
+/*--------------COOKIES----------*/
+Route::get('cookies', function(){
+    return view('partials.cookies');
+})->name('cookies');

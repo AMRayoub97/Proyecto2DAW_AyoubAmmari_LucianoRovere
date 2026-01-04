@@ -1,0 +1,30 @@
+*{
+    color: black;
+}
+.cookies-page {
+    max-width: 900px;
+    padding: 2rem;
+    color: white;
+}
+
+.cookies-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-head);
+}
+
+.cookies-page h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    color: #9e2c2c;
+}
+
+.cookies-page p,
+.cookies-page li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.cookies-page ul {
+    margin-left: 1.5rem;
+}
