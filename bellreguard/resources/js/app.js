@@ -34,3 +34,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const rejectBtn = document.getElementById('reject-cookies');
+
+    if (!localStorage.getItem('cookiesAccepted')) {
+        cookieBanner.style.display = 'flex';
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieBanner.style.display = 'none';
+    });
+
+    rejectBtn.addEventListener('click', () => {
+        localStorage.setItem('cookiesAccepted', 'false');
+        cookieBanner.style.display = 'none';
+    });
+});
