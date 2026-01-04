@@ -41,16 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const rejectBtn = document.getElementById('reject-cookies');
 
     if (!localStorage.getItem('cookiesAccepted')) {
-        cookieBanner.style.display = 'flex';
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 200);
     }
 
-    acceptBtn.addEventListener('click', () => {
-        localStorage.setItem('cookiesAccepted', 'true');
-        cookieBanner.style.display = 'none';
-    });
+    function closeBanner(value) {
+        localStorage.setItem('cookiesAccepted', value);
+        cookieBanner.classList.remove('show');
+        cookieBanner.classList.add('hide');
+    }
 
-    rejectBtn.addEventListener('click', () => {
-        localStorage.setItem('cookiesAccepted', 'false');
-        cookieBanner.style.display = 'none';
-    });
+    acceptBtn.addEventListener('click', () => closeBanner('true'));
+    rejectBtn.addEventListener('click', () => closeBanner('false'));
 });

@@ -270,13 +270,30 @@ footer section ul li a{
     background-color: #222;
     color: white;
     padding: 1rem 2rem;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 9999;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.4);
     gap: 1rem;
-}   
+
+    /* Animación */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.cookie-banner.show {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cookie-banner.hide {
+    transform: translateY(100%);
+    opacity: 0;
+}
 
 .cookie-banner p {
     margin: 0;
