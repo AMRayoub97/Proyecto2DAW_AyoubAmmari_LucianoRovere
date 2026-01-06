@@ -105,11 +105,13 @@
             <hr>
             <div class="notcias-eventos">
                 <div id="noticias">
-                    <h1>ÚLTIMAS NOTICIAS</h1>
+                    <a href="{{ route('noticias') }}">
+                        <h1>ÚLTIMAS NOTICIAS</h1>
+                    </a>
                     <article>
                         <div class="infoNoticia">
                             <div class="infoUsuarioNoticia">
-                                <a href="#">
+                                <a href="{{ route('jugadores.index') }}">
                                     <img src="{{ asset('images/perfil_default.webp') }}" alt="fotoUsuaroNoticia" target="_blank">
                                     <strong>Joan Barber Molió</strong>
                                 </a>
@@ -117,7 +119,7 @@
                             <small>2025-01-12</small>
                         </div>
                         <hr>
-                        <a href="#">
+                        <a href="{{ route('noticias') }}">
                             <p>El jugador del equipo nacional de baloncesto firmó un contrato histórico que lo convierte en uno de los deportistas mejor pagados del país.</p>
                         </a>
                     </article>
@@ -132,7 +134,7 @@
                             <small>2025-01-12</small>
                         </div>
                         <hr>
-                        <a href="#">
+                        <a href="{{ route('noticias') }}">
                             <p>El torneo juvenil de baloncesto concluyó este fin de semana, destacando el talento emergente de jóvenes promesas que podrían llegar a la liga profesional.</p>
                         </a>
                     </article>

@@ -51,3 +51,12 @@ Route::get('/tienda/{id}', function ($id) {
 Route::get('cookies', function(){
     return view('partials.cookies');
 })->name('cookies');
+
+/*---------NOTICIAS-------*/
+Route::get('noticias',function(){
+    return view('noticias.index');
+})->name('noticias');
+
+Route::get('noticias/{tst}',function(){
+    return view('noticias.show');
+})->name('noticia');

@@ -1,0 +1,258 @@
+*{
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+#news-page {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HERO */
+.news-hero {
+    position: relative;
+    height: 420px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,.85), rgba(0,0,0,.2));
+        color: white;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    p{
+        color: white;
+    }
+
+    .btn-read {
+        width: fit-content;
+        padding: .6rem 1.2rem;
+        background: var(--color-head);
+        border-radius: 8px;
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
+
+/* TAG */
+.tag {
+    background: rgba(255,255,255,.15);
+    padding: .3rem .7rem;
+    border-radius: 6px;
+    font-size: .8rem;
+    width: fit-content;
+}
+
+/* DESTACADAS */
+.news-featured {
+    h2 { margin-bottom: 1rem; }
+
+    .featured-scroll {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 1rem;
+    }
+}
+
+.news-card {
+    min-width: 280px;
+    background: #f3f3f3;
+    border-radius: 16px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    transition: transform .3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+    }
+
+    .card-body {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+}
+
+/* LISTADO */
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.news-row {
+    display: flex;
+    gap: 1rem;
+    background: #f1f1f1;
+    border-radius: 14px;
+    padding: .8rem;
+    transition: background .3s;
+
+    &:hover {
+        background: #e6e6e6;
+    }
+
+    img {
+        width: 120px;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: .9rem;
+        color: #444;
+    }
+
+    small {
+        font-size: .75rem;
+        color: #666;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    #news-page {
+        padding: 1rem;
+        gap: 2rem;
+    }
+
+    /* HERO */
+    .news-hero {
+        height: 260px;
+        border-radius: 16px;
+
+        .overlay {
+            padding: 1.2rem;
+            gap: .6rem;
+        }
+
+        h1 {
+            font-size: 1.35rem;
+            line-height: 1.25;
+        }
+
+        p {
+            font-size: .9rem;
+        }
+
+        .btn-read {
+            padding: .5rem 1rem;
+            font-size: .85rem;
+        }
+    }
+
+    /* TAG */
+    .tag {
+        font-size: .7rem;
+        padding: .25rem .6rem;
+    }
+
+    /* DESTACADAS */
+    .news-featured {
+
+        h2 {
+            font-size: 1.2rem;
+        }
+
+        .featured-scroll {
+            gap: 1rem;
+            padding-bottom: .5rem;
+            scroll-padding-left: 1rem;
+        }
+    }
+
+    .news-card {
+        min-width: 75%;
+        border-radius: 14px;
+
+        img {
+            height: 150px;
+        }
+
+        .card-body {
+            padding: .8rem;
+
+            h3 {
+                font-size: 1rem;
+                line-height: 1.2;
+            }
+
+            small {
+                font-size: .75rem;
+            }
+        }
+    }
+
+    /* LISTADO */
+    .news-list {
+
+        h2 {
+            font-size: 1.2rem;
+        }
+    }
+
+    .news-row {
+        padding: .9rem;
+        border-radius: 12px;
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        p {
+            font-size: .85rem;
+        }
+
+        small {
+            font-size: .7rem;
+        }
+
+        img {
+            width: 100%;
+            height: 170px;
+            border-radius: 10px;
+        }
+    }
+}
+
