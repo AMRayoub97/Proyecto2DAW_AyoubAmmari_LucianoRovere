@@ -8,6 +8,8 @@
 
 <section id="news-detail">
 
+    {{ $tst = 1 }}
+
     {{-- HERO NOTICIA --}}
     <header class="news-header">
         <img src="{{ asset('images/noticias/n1.jpg') }}" alt="Imagen noticia">
@@ -61,19 +63,23 @@
 
         <div class="related-grid">
             <article class="news-card">
+                <a href="{{ route('noticia', $tst) }}">
                 <img src="{{ asset('images/noticias/n2.jpg') }}">
                 <div class="card-body">
                     <span class="tag">CANTERA</span>
                     <h3>Gran actuación del junior este fin de semana</h3>
                 </div>
+                </a>
             </article>
 
             <article class="news-card">
+                <a href="{{ route('noticia', $tst) }}">
                 <img src="{{ asset('images/noticias/n2.jpg') }}">
                 <div class="card-body">
                     <span class="tag">AFICIÓN</span>
                     <h3>La grada vuelve a responder</h3>
                 </div>
+                </a>
             </article>
         </div>
     </section>
