@@ -26,6 +26,7 @@ export default defineConfig({
                 'resources/js/jugadores/create.js',
                 'resources/sass/principales/cookies.scss',
                 'resources/sass/noticias/index.scss',
+                'resources/sass/noticias/show.scss',
             ],
             refresh: true,
         }),
