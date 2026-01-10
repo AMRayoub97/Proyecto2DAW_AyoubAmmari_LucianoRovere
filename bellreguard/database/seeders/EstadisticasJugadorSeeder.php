@@ -12,6 +12,8 @@ class EstadisticasJugadorSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         // Limpiar tabla
         DB::table('estadisticas_jugador')->truncate();
 
@@ -252,5 +254,7 @@ class EstadisticasJugadorSeeder extends Seeder
                 'fg_porcentaje' => 54.0,
             ],
         ]);
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

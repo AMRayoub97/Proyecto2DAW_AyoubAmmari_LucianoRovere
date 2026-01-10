@@ -13,6 +13,8 @@ class JugadoresSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         DB::table('jugadores')->truncate();// limpia la tabla
 
         DB::table('jugadores')->insert([
@@ -173,6 +175,8 @@ class JugadoresSeeder extends Seeder
                 'updated_at' => now(),
             ],
         ]);
+        
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 
 }
