@@ -1,4 +1,4 @@
-async function mostrarEquipos() {
+/*async function mostrarEquipos() {
   try {
     const res = await fetch(
       "https://v1.basketball.api-sports.io/teams?league=5&season=2023",
@@ -50,4 +50,4 @@ async function mostrarEquipos() {
   }
 }
 
-mostrarEquipos();
+mostrarEquipos();*/

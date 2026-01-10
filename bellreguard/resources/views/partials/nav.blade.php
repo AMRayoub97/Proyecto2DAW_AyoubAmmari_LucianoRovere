@@ -5,7 +5,7 @@
             <li><a href="{{ url('/') }}">Inicio</a></li>
             <li><a href="#">Liga</a></li>
             <li><a href="#">Partidos</a></li>
-            <li><a href="{{ route('equipos') }}">Equipos</a></li>
+            <li><a href="{{ route('equipos.index') }}">Equipos</a></li>
             <li><a href="{{ route('jugadores.index') }}">Jugadores</a></li>
         </ul>
     </nav>

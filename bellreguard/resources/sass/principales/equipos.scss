@@ -94,7 +94,19 @@ hr{
 }
  .tarjeta .btnsJugador a{
     font-size: 2rem;
+    text-decoration: none;
 }
+
+.pagination {
+    height: 3rem;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
 
 @media (max-width: 992px) {
     section {

@@ -1,9 +1,16 @@
 <?php
 
+use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
+
+
+/* -----------------------Index----------------------- */
+Route::get('/', function () {
+    return view('index');
+})->name('index');
 
 /*-----------------Log In & Logout------------------*/
 Route::get('login',[LoginController::class, 'loginForm'])->name('login');
@@ -14,10 +21,10 @@ Route::get('logout', [LoginController::class , 'logout'])->name('logout');
 Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registrar');
 Route::post('registrar', [LoginController::class , 'registrar']);
 
-/* -----------------------Index----------------------- */
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+
+
+/*-----------------Equipos------------------*/
+Route::get('/equipos', [EquipoController::class, 'index'])->name('equipos.index');
 
 /*------------------Jugadores-----------------------*/
 Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
@@ -32,10 +39,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('perfile/{id}',[UsuarioController::class, 'show'])->name('perfil');
 });
 
-/*-----------------Equipos------------------*/
-Route::get('/equipos', function () {
-    return view('principales.equipos');
-})->name('equipos');
+
 
 
 /*-----------------Tienda------------*/
