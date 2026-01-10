@@ -54,7 +54,7 @@
                     </div>
 
                     <div class="btnsJugador">
-                        <input type="submit" value="Ver Perfil">
+                        <a href="{{ route('jugadores.show', $jugador->id) }}" >Ver Perfil</a>
                         <a href="#">⭐</a>
                     </div>
                 </div>

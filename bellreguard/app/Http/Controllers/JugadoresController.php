@@ -52,7 +52,9 @@ class JugadoresController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $jugador = Jugador::findOrFail($id);
+
+        return view('jugadores.show')->with('jugador', $jugador);
     }
 
     /**

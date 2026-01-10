@@ -19,4 +19,8 @@ class Jugador extends Model
         'edad',
         'puntuacion',
     ];
+
+    public function estadisticas(){
+        return $this->hasOne(EstadisticaJugador::class , 'jugador_id');
+    }
 }

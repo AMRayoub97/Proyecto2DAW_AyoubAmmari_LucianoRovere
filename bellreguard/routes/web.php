@@ -22,11 +22,12 @@ Route::get('/', function () {
 
 /*------------------Jugadores-----------------------*/
 Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
+Route::get('/jugadores/{id}', [JugadoresController::class, 'show'])->name('jugadores.show');
 
 /*-----------Auth------------*/
 Route::middleware(['auth'])->group(function () {
     /*------------------Jugadores-----------------------*/
-    Route::resource('jugadores', JugadoresController::class)->except(['index']);
+    Route::resource('jugadores', JugadoresController::class)->except(['index','show']);
 
     /*-----------------Equipos------------------*/
     Route::get('perfile/{id}',[UsuarioController::class, 'show'])->name('perfil');
