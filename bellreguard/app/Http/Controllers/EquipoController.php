@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipo;
 use Illuminate\Http\Request;
 
-class EstadisticaJugador extends Controller
+class EquipoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $equipos = Equipo::paginate(6);
+
+        return view('principales.equipos', compact('equipos'));
     }
 
     /**
