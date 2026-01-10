@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\ApiController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuarioController;
