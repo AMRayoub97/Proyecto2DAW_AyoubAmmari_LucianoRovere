@@ -13,6 +13,10 @@
                     <img src="{{ asset('images/flechaAtras.webp') }}" alt="flecha" >
                 </a>
             </div>
+             <div class="forward-btn">
+                <a href="{{ route('jugadores.index') }}">Editar</a>
+            </div>
+
             <div class="player-image">
                 <img src="{{ asset('images/jugadores/' . $jugador->foto) }}" alt="fotoJugador">
             </div>

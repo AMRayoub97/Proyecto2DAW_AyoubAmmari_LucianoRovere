@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\EventoController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsuarioController;
@@ -65,3 +66,7 @@ Route::get('noticias',function(){
 Route::get('noticias/{tst}',function(){
     return view('noticias.show');
 })->name('noticia');
+
+
+/*-----------EVENTOS------------*/
+Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index');

@@ -30,7 +30,8 @@ export default defineConfig({
                 'resources/sass/jugadores/show.scss',
                 'resources/js/jugadores/show.js',
                 'resources/sass/equipos/show.scss',
-                'resources/sass/equipos/create.scss'
+                'resources/sass/equipos/create.scss',
+                'resources/sass/eventos/index.scss',
             ],
             refresh: true,
         }),
