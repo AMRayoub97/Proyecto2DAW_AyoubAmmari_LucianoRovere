@@ -3,7 +3,6 @@
         <ul>
             @auth
                 <li><a href="{{ route('perfil', auth()->user()->id) }}">Perfil</a></li>
-                <li><a href="#">Favoritos</a></li>
             @endauth
             <li><a href="{{ route('tienda') }}">Tienda</a></li>
             <li><a href="{{ route('eventos.index') }}">Eventos</a></li>
