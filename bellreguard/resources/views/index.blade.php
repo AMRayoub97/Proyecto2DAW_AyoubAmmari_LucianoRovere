@@ -162,36 +162,42 @@
                     <div class="calendario">
                         <iframe src="https://calendar.google.com/calendar/embed?src=84c77a57829987452c49d60bb03eaab97665b000d99116c01f48819584c0168b%40group.calendar.google.com&ctz=Europe%2FMadrid" style="border: 0" frameborder="0" scrolling="no"></iframe>
                     </div>
-                    <article>
-                        <div class="infoEvento">
-                            <div class="infoUsuarioEvento">
-                                <a href="#"  target="_blank">
-                                    <img src="{{ asset('images/perfil_default.webp') }}" alt="fotoUsuaroNoticia">
-                                    <strong>Ayoub</strong>
-                                </a>
+
+                    @foreach($eventos as $evento)
+                    <div class="event-detailed-card {{ $evento->estado }}">
+                        <div class="card-side-info">
+                            <div class="date-badge">
+                                <span class="day">{{ \Carbon\Carbon::parse($evento->fecha)->format('d') }}</span>
+                                <span class="month">{{ strtoupper(\Carbon\Carbon::parse($evento->fecha)->shortMonthName) }}</span>
                             </div>
-                            <small>2025-01-12</small>
+                            <div class="hour">{{ \Carbon\Carbon::parse($evento->fecha)->format('H:i') }}</div>
                         </div>
-                        <hr>
-                        <a href="#">
-                            <p>La final del torneo de baloncesto fue emocionante, con ambos equipos mostrando gran habilidad y estrategia, culminando en un marcador ajustado que mantuvo a los aficionados al borde de sus asientos.</p>
-                        </a>
-                    </article>
-                    <article>
-                        <div class="infoEvento">
-                            <div class="infoUsuarioEvento">
-                                <a href="#" target="_blank">
-                                    <img src="{{ asset('images/perfil_default.webp') }}" alt="fotoUsuaroNoticia">
-                                    <strong>Luciano</strong>
-                                </a>
+
+                        <div class="card-main-content">
+                            <div class="top-bar">
+                                <span class="type-label">{{ $evento->tipo }}</span>
+                                <span class="venue">{{ $evento->lugar }}</span>
                             </div>
-                            <small>2025-01-12</small>
+
+                            <div class="event-body">
+                                <h2 class="event-title">{{ $evento->titulo }}</h2>
+                                <div class="status-indicator">
+                                    <span class="dot"></span> <strong>{{ ucfirst($evento->estado) }}</strong>
+                                </div>
+                            </div>
                         </div>
-                        <hr>
-                        <a href="#">
-                         <p>El equipo local logró una impresionante victoria en el campeonato de baloncesto, destacando la actuación de su base estrella con triples decisivos en los últimos minutos.</p>
-                        </a>
-                    </article>
+
+                        <div class="card-actions">
+                            @if($evento->estado == 'finalizado')
+                                <button type="button" class="btn-secondary">finalizado</button>
+                            @elseif($evento->estado == 'en_vivo')
+                                <button type="button" class="btn-primary live">Seguir en Vivo</button>
+                            @else
+                                <button type="button" class="btn-primary">Recordatorio</button>
+                            @endif
+                        </div>
+                    </div>
+                    @endforeach
                 </aside>
             </div>
 

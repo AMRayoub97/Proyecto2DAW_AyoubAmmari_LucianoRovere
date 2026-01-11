@@ -276,40 +276,99 @@ section#principal {
     min-height: 30rem;
 }
 
-.notcias-eventos .eventos article{
-    min-height: 5rem;
-    min-width: 100%;
+.event-detailed-card {
+    min-width: 45%;
+    background: white;
     display: flex;
-    flex-flow: column nowrap;
-    border: 1px solid black;
-    padding: 1rem;
-    border-radius: 15px;
-    background-color: rgb(238, 238, 238);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid #ccc;
+
+    &.en_vivo {
+        border-left-color: #28a745;
+        .dot { background: #28a745; animation: pulse 1.5s infinite; }
+    }
+    &.finalizado { border-left-color: #7a0000; opacity: 0.9; }
+    &.proximamente { border-left-color: #FDB927; }
+
+    .card-side-info {
+        background: #f8f9fa;
+        padding: 20px;
+        min-width: 110px;
+        text-align: center;
+        border-right: 1px solid #eee;
+        .day { display: block; font-size: 1.8rem; font-weight: bold; color: #333; }
+        .month { color: #7a0000; font-weight: bold; }
+    }
+
+    .card-main-content {
+        flex-grow: 1;
+        padding: 20px;
+        .top-bar {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: #888;
+            margin-bottom: 8px;
+        }
+        .event-title { margin: 0; color: #333; font-size: 1.3rem; }
+        .status-indicator {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
 }
-.notcias-eventos .eventos article a{
-    text-decoration: none;
-}
-.notcias-eventos .eventos article hr{
-    border: 1px solid gray;
-}
-.notcias-eventos .eventos article .infoEvento{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-}
-.notcias-eventos .eventos article .infoEvento small{
-    color: rgb(59, 59, 59);
-}
-.notcias-eventos .eventos article .infoEvento img{
-    max-width: 50px;
-    max-height: 50px;
+
+.dot {
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
+    background: #525252;
+    display: inline-block;
+    font-weight: bold;
 }
-.notcias-eventos .eventos article .infoEvento > *:not(img) {
-    position: relative;
-    top: 20px;
-    margin-left: 10px;
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    background: #fafafa;
+    justify-content: center;
+
+    .btn-primary, .btn-secondary {
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+        display: inline-block;
+    }
+
+    .btn-primary {
+        background: #7a0000;
+        color: white;
+        &:hover { background: #5a0000; }
+
+        &.live {
+            background: #28a745;
+            &:hover { background: #218838; }
+        }
+    }
+
+    .btn-secondary {
+        border: 1px solid #ddd;
+        color: #666;
+        background: white;
+        &:hover { background: #f0f0f0; }
+    }
 }
 
 /*--------movil--------------*/

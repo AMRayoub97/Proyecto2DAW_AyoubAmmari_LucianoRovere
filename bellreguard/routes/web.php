@@ -4,14 +4,13 @@ use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
 
 /* -----------------------Index----------------------- */
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', [PaginasController::class, 'index'])->name('index');
 
 /*-----------------Log In & Logout------------------*/
 Route::get('login',[LoginController::class, 'loginForm'])->name('login');
