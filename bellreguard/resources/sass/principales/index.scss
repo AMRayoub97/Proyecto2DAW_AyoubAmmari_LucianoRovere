@@ -311,6 +311,9 @@ section#principal {
             text-transform: uppercase;
             color: #888;
             margin-bottom: 8px;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
         }
         .event-title { margin: 0; color: #333; font-size: 1.3rem; }
         .status-indicator {

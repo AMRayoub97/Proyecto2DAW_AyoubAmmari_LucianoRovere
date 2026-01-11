@@ -175,8 +175,8 @@
 
                         <div class="card-main-content">
                             <div class="top-bar">
-                                <span class="type-label">{{ $evento->tipo }}</span>
-                                <span class="venue">{{ $evento->lugar }}</span>
+                                <span class="type-label"><strong>Tipo:</strong> {{ $evento->tipo }}</span> |
+                                <span class="venue"><strong>Lugar:</strong> {{ $evento->lugar }}</span>
                             </div>
 
                             <div class="event-body">
