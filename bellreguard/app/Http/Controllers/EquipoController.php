@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EquipoRequest;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
 
@@ -22,15 +23,28 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipos.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EquipoRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+            $file->move(public_path('images/equipos'), $filename);
+            $data['foto'] = $filename;
+        }else {
+            $data['foto'] = 'logo.png';
+        }
+
+        Equipo::create($data);
+
+        return redirect()->route('equipos.index')->with('success', 'Equipo creado correctamente.');
     }
 
     /**

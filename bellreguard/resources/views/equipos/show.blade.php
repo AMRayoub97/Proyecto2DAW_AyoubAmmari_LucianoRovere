@@ -16,7 +16,7 @@
         <div class="team-main-info">
             <img src="{{ asset('images/equipos/' . $equipo->foto) }}" alt="{{ $equipo->nombre }}" class="team-big-logo">
             <h1>{{ $equipo->nombre }}</h1>
-            <p class="city">{{ $equipo->categoria ?? 'Amateur' }}</p>
+            <p class="city">{{ $equipo->categoria ?? 'Amateur' }} | {{ $equipo->entrenador }}</p>
         </div>
 
         <div class="team-record">

@@ -16,6 +16,7 @@ class Equipo extends Model
         'categoria',
         'genero',
         'entrenador',
+        'foto',
     ];
 
     public function jugadores(){

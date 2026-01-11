@@ -22,11 +22,6 @@ Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registr
 Route::post('registrar', [LoginController::class , 'registrar']);
 
 
-
-/*-----------------Equipos------------------*/
-Route::get('/equipos', [EquipoController::class, 'index'])->name('equipos.index');
-Route::get('/equipos/{id}', [EquipoController::class, 'show'])->name('equipos.show');
-
 /*------------------Jugadores-----------------------*/
 Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
 Route::get('/jugadores/{id}', [JugadoresController::class, 'show'])->name('jugadores.show');
@@ -36,11 +31,16 @@ Route::middleware(['auth'])->group(function () {
     /*------------------Jugadores-----------------------*/
     Route::resource('jugadores', JugadoresController::class)->except(['index','show']);
 
-    /*-----------------Equipos------------------*/
+    Route::resource('equipos', EquipoController::class)->except(['index','show']);
+
+    /*-----------------Perfil------------------*/
     Route::get('perfile/{id}',[UsuarioController::class, 'show'])->name('perfil');
 });
 
 
+/*-----------------Equipos------------------*/
+Route::get('equipos', [EquipoController::class, 'index'])->name('equipos.index');
+Route::get('equipos/{id}', [EquipoController::class, 'show'])->name('equipos.show');
 
 
 /*-----------------Tienda------------*/

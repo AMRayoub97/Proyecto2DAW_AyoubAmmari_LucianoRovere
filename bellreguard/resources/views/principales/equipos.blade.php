@@ -5,16 +5,23 @@
 @section('contenido')
 
     @vite(['resources/sass/principales/equipos.scss','resources/js/principales/equipos.js'])
+
     <!-- Main-->
         <section>
             <div class="cab">
-                <h2>Equipos</h2>
+                <h2>JUGADORES</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
-                    <input type="button" value="AÑADIR" disabled>
+                    <a href="{{ route('equipos.create') }}">AÑADIR</a>
                 @endauth
             </div>
             <hr>
+            <!-- mensajes -->
+             @if(session()->has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
             <div class="tarjetas">
                 @foreach($equipos as $equipo)
