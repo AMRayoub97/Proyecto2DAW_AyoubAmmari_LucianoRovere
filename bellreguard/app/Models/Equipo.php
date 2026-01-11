@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Equipo extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'equipos';
 
     protected $fillable = [
@@ -17,4 +17,13 @@ class Equipo extends Model
         'genero',
         'entrenador',
     ];
+
+    public function jugadores(){
+        return $this->hasMany(Jugador::class, 'equipo_id');
+    }
+
+    public function estadisticaEquipo(){
+        return $this->hasOne(EstadisticaEquipo::class, 'equipo_id');
+    }
+
 }

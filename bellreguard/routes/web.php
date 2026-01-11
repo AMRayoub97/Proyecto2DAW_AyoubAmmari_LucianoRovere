@@ -25,6 +25,7 @@ Route::post('registrar', [LoginController::class , 'registrar']);
 
 /*-----------------Equipos------------------*/
 Route::get('/equipos', [EquipoController::class, 'index'])->name('equipos.index');
+Route::get('/equipos/{id}', [EquipoController::class, 'show'])->name('equipos.show');
 
 /*------------------Jugadores-----------------------*/
 Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');

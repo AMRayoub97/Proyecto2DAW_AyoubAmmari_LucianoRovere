@@ -30,6 +30,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 8.5,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 1,
             ],
             [
                 'nombre' => 'Darío Brizuela',
@@ -43,6 +44,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 8.0,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 2,
             ],
             [
                 'nombre' => 'Juancho Hernangómez',
@@ -56,6 +58,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 7.9,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 3,
             ],
             [
                 'nombre' => 'Willy Hernangómez',
@@ -69,6 +72,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 8.2,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 4,
             ],
             [
                 'nombre' => 'Xabi López-Arostegui',
@@ -82,6 +86,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 7.6,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 5,
             ],
             [
                 'nombre' => 'Joel Parra',
@@ -95,6 +100,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 7.4,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 6,
             ],
             [
                 'nombre' => 'Jaime Pradilla',
@@ -108,6 +114,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 7.3,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 7,
             ],
             [
                 'nombre' => 'Josep Puerto',
@@ -121,6 +128,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 7.1,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 8,
             ],
             [
                 'nombre' => 'Santi Yusta',
@@ -134,6 +142,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 7.2,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 9,
             ],
             [
                 'nombre' => 'Yankuba Sima',
@@ -147,6 +156,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 7.8,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 10,
             ],
             [
                 'nombre' => 'Sergio De Larrea',
@@ -160,6 +170,7 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 6.8,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 2,
             ],
             [
                 'nombre' => 'Mario Saint-Supéry',
@@ -173,9 +184,10 @@ class JugadoresSeeder extends Seeder
                 'puntuacion' => 6.7,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'equipo_id' => 3,
             ],
         ]);
-        
+
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 

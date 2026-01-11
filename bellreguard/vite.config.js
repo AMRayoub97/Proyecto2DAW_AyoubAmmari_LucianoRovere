@@ -29,6 +29,7 @@ export default defineConfig({
                 'resources/sass/noticias/show.scss',
                 'resources/sass/jugadores/show.scss',
                 'resources/js/jugadores/show.js',
+                'resources/sass/equipos/show.scss',
             ],
             refresh: true,
         }),

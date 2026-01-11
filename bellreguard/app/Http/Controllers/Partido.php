@@ -2,19 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipo;
 use Illuminate\Http\Request;
 
-class EquipoController extends Controller
+class Partido extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $equipos = Equipo::paginate(6);
-
-        return view('principales.equipos', compact('equipos'));
+        //
     }
 
     /**
@@ -38,9 +35,7 @@ class EquipoController extends Controller
      */
     public function show(string $id)
     {
-        $equipo = Equipo::findOrFail($id);
-
-        return view('equipos.show')->with('equipo', $equipo);
+        //
     }
 
     /**

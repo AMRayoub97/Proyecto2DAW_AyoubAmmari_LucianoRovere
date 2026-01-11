@@ -25,7 +25,7 @@
                             </div>
                             <h3>{{ $equipo->nombre }}</h3>
                             <div class="btnsJugador">
-                                <input type="submit" value="Ver Perfil">
+                                <a href="{{ route('equipos.show', $equipo->id) }}"> Ver Perfil</a>
                                 <a href="#">⭐</a>
                             </div>
                         </div>

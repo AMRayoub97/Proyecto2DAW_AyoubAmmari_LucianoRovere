@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Models\Usuario;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -23,7 +24,19 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);*/
 
-        $this->call(UsuariosSeeder::class);
+        
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        $this->call([
+            UsuariosSeeder::class,
+            EquiposSeeder::class,
+            JugadoresSeeder::class,
+            PartidosSeeder::class,
+            EstadisticasEquipoSeeder::class,
+            EstadisticasJugadorSeeder::class,
+        ]);
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }
 

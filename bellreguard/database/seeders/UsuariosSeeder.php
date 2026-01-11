@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Usuario;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UsuariosSeeder extends Seeder
 {
@@ -14,6 +15,8 @@ class UsuariosSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('usuarios')->truncate();// limpia la tabla
+
         $usuario = new Usuario();
         $usuario->nombre = 'admin';
         $usuario->apellidos = 'admin';

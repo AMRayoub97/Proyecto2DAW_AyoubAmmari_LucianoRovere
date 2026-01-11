@@ -18,9 +18,14 @@ class Jugador extends Model
         'foto',
         'edad',
         'puntuacion',
+        'equipo_id',
     ];
 
     public function estadisticas(){
         return $this->hasOne(EstadisticaJugador::class , 'jugador_id');
+    }
+
+    public function equipo(){
+        return $this->belongsTo(Equipo::class, 'equipo_id');
     }
 }
