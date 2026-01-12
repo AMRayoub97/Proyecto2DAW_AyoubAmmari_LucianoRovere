@@ -12,7 +12,9 @@
                 <h2>EQUIPOS</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
+                 @if(auth()->user()?->role == 'admin')
                     <a href="{{ route('equipos.create') }}">AÑADIR</a>
+                 @endif
                 @endauth
             </div>
             <hr>
@@ -29,6 +31,7 @@
                     <div class="cont">
                         <div class="lista">
                             @auth
+                             @if(auth()->user()?->role == 'admin')
                             <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
                             <ul class="listaUl">
                                 <li><a href="{{ route('equipos.edit', $equipo->id) }}">Editar</a></li>
@@ -40,6 +43,7 @@
                                     <li><button name="borrar" >Borrar</button></li>
                                 </form>
                             </ul>
+                            @endif
                             @endauth
 
                         </div>

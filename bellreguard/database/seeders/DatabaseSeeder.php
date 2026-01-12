@@ -24,7 +24,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);*/
 
-        
+
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         $this->call([
@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
             PartidosSeeder::class,
             EstadisticasEquipoSeeder::class,
             EstadisticasJugadorSeeder::class,
+            EventosSeeder::class,
         ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

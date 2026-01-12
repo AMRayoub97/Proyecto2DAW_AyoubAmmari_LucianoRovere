@@ -9,21 +9,20 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void{
-        Schema::table('jugadores', function (Blueprint $table) {
-            $table->foreignId('equipo_id')->constrained('equipos')->onDelete('cascade');
+    public function up(): void
+    {
+        Schema::table('usuarios', function (Blueprint $table) {
+            $table->enum('role', ['admin', 'entrenador', 'otro'])->default('otro');
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::table('jugadores', function (Blueprint $table) {
-            $table->dropForeign(['equipo_id']);
+        Schema::table('usuarios', function (Blueprint $table) {
+            $table->dropColumn('role');
         });
     }
-
 };

@@ -10,7 +10,9 @@
                 <h2>JUGADORES</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
+                 @if(auth()->user()?->role == 'admin')
                     <a href="{{ route('jugadores.create') }}">AÑADIR</a>
+                 @endif
                 @endauth
             </div>
             <hr>
@@ -26,18 +28,21 @@
                     <div class="tarjeta">
                         <div class="lista">
                             @auth
-                            <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
-                            <ul class="listaUl">
-                                <li><a href="{{ route('jugadores.edit', $jugador->id) }}">Editar</a></li>
-                                <hr>
-                                <form action="{{ route('jugadores.destroy', $jugador->id) }}" method="POST">
-                                    @method('DELETE')
-                                    @csrf
+                                @if(auth()->user()?->role == 'admin')
+                                <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
+                                <ul class="listaUl">
+                                    <li><a href="{{ route('jugadores.edit', $jugador->id) }}">Editar</a></li>
+                                    <hr>
+                                    <form action="{{ route('jugadores.destroy', $jugador->id) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
 
-                                    <li><button name="borrar" >Borrar</button></li>
-                                </form>
-                            </ul>
+                                        <li><button name="borrar" >Borrar</button></li>
+                                    </form>
+                                </ul>
+                                @endif
                             @endauth
+
 
                         </div>
                     <div class="contenido" style="background-image: url('{{ asset('images/jugadores/' . $jugador->foto) }}')">

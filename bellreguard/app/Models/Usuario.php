@@ -56,4 +56,5 @@ class Usuario extends Authenticatable
     {
         return 'correo';
     }
+
 }
