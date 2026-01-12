@@ -27,6 +27,7 @@ export default defineConfig({
                 'resources/sass/principales/cookies.scss',
                 'resources/sass/noticias/index.scss',
                 'resources/sass/noticias/show.scss',
+                'resources/sass/partidos/index.scss',
             ],
             refresh: true,
         }),

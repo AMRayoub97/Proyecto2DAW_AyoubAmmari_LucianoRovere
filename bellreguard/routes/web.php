@@ -60,3 +60,8 @@ Route::get('noticias',function(){
 Route::get('noticias/{tst}',function(){
     return view('noticias.show');
 })->name('noticia');
+
+/*-----------PARTIDOS------------*/
+Route::get('partidos',function(){
+    return view('partidos.index');
+})->name('partidos');
