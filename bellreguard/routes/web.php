@@ -65,7 +65,11 @@ Route::get('noticias',function(){
 Route::get('noticias/{tst}',function(){
     return view('noticias.show');
 })->name('noticia');
-
-
 /*-----------EVENTOS------------*/
 Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index');
+
+/*-----------PARTIDOS------------*/
+Route::get('partidos', function () {
+    return view('partidos.index');
+})->name('partidos');
+

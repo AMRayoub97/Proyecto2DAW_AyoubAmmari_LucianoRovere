@@ -27,11 +27,13 @@ export default defineConfig({
                 'resources/sass/principales/cookies.scss',
                 'resources/sass/noticias/index.scss',
                 'resources/sass/noticias/show.scss',
+
                 'resources/sass/jugadores/show.scss',
                 'resources/js/jugadores/show.js',
                 'resources/sass/equipos/show.scss',
                 'resources/sass/equipos/create.scss',
                 'resources/sass/eventos/index.scss',
+                'resources/sass/partidos/index.scss',
             ],
             refresh: true,
         }),
