@@ -25,18 +25,33 @@
 
             <div class="tarjetas">
                 @foreach($equipos as $equipo)
-                        <div class="tarjeta">
-                            <div class="cont">
-                                <img src="{{ asset('/images/equipos/'. $equipo->foto) }}">
-                                <strong>0.0</strong>
-                            </div>
-                            <h3>{{ $equipo->nombre }}</h3>
-                            <div class="btnsJugador">
-                                <a href="{{ route('equipos.show', $equipo->id) }}"> Ver Perfil</a>
-                                <a href="#">⭐</a>
-                            </div>
+                <div class="tarjeta">
+                    <div class="cont">
+                        <div class="lista">
+                            @auth
+                            <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
+                            <ul class="listaUl">
+                                <li><a href="#">Editar</a></li>
+                                <hr>
+                                <li><a href="#">Borrar</a></li>
+                            </ul>
+                            @endauth
+
                         </div>
+
+                        <img src="{{ asset('/images/equipos/'. $equipo->foto) }}" id="fotoEquipo">
+                        <strong>0.0</strong>
+                    </div>
+
+                    <h3>{{ $equipo->nombre }}</h3>
+
+                    <div class="btnsJugador">
+                        <a href="{{ route('equipos.show', $equipo->id) }}">Ver Perfil</a>
+                        <a href="#">⭐</a>
+                    </div>
+                </div>
                 @endforeach
+
             </div>
             <div class="d-flex justify-content-center mt-4" id="paginas">
                 {{ $equipos->links('pagination::bootstrap-5') }}

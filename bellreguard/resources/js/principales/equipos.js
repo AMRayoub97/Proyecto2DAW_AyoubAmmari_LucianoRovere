@@ -1,3 +1,22 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const botonesEditar = document.querySelectorAll('.listaEditar');
+
+    botonesEditar.forEach(boton => {
+        boton.addEventListener('click', () => {
+
+            const tarjeta = boton.closest('.tarjeta');
+            const listaUl = tarjeta.querySelector('.listaUl');
+
+            if (getComputedStyle(listaUl).display === 'none') {
+                listaUl.style.display = 'flex';
+            } else {
+                listaUl.style.display = 'none';
+            }
+        });
+    });
+});
+
+
 /*async function mostrarEquipos() {
   try {
     const res = await fetch(

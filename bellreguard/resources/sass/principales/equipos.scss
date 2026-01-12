@@ -54,6 +54,40 @@ hr{
     justify-content: center;
     align-items: center;
 }
+
+.tarjeta .lista{
+    position: relative;
+    top: -40%;
+}
+
+.tarjeta .cont .lista img{
+    max-width: 2rem ;
+    max-height: 2rem;
+    color: #000;
+    cursor: pointer;
+    border-radius: none !important;
+}
+
+.tarjeta .cont .lista ul{
+    display: none ;
+    margin: 0 auto;
+    list-style: none;
+    background-color: lightgray;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+}
+.tarjeta .cont .lista ul li {
+    margin: 0 auto;
+}
+.tarjeta .cont .lista ul li a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    padding-right: 0.5rem;
+}
+
  .tarjeta .cont{
     width: 95%;
     display: flex;
@@ -68,7 +102,7 @@ hr{
     padding: 0.5rem;
     border-radius: 10px;
 }
- .tarjeta .cont img{
+ .tarjeta .cont img#fotoEquipo{
     margin: 0 auto;
     width: 80%;
     max-height: 70%;
@@ -78,6 +112,8 @@ hr{
     color: black;
     margin-bottom: 0.5rem;
 }
+
+
 
  .btnsJugador > a:first-child{
     padding: 0.7rem 1.2rem;

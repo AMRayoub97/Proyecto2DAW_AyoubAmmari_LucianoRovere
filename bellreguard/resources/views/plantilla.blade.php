@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bellreguard Club | @yield('titulo')</title>
   <link rel="icon" href="{{ asset('images/logo_sin_bg.png') }}" type="image/png">
   @vite(['resources/sass/app.scss', 'resources/js/app.js'])
