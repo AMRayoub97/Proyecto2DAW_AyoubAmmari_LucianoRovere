@@ -31,9 +31,9 @@
                             @auth
                             <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
                             <ul class="listaUl">
-                                <li><a href="#">Editar</a></li>
+                                <li><a href="{{ route('equipos.edit', $equipo->id) }}">Editar</a></li>
                                 <hr>
-                                <li><a href="#">Borrar</a></li>
+                                <li><a href="{{ route('equipos.destroy', $equipo->id) }}">Borrar</a></li>
                             </ul>
                             @endauth
 

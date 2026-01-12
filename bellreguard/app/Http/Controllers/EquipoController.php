@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EquipoEditRequest;
 use App\Http\Requests\EquipoRequest;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
@@ -62,15 +63,32 @@ class EquipoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $equipo = Equipo::findOrFail($id);
+
+        return view('equipos.edit', compact('equipo'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(EquipoEditRequest $request, string $id)
     {
-        //
+        $equipo = Equipo::findOrFail($id);
+
+        $data = $request->validated();
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+            $file->move(public_path('images/equipos'), $filename);
+            $data['foto'] = $filename;
+        }
+
+        $equipo->update($data);
+
+        return redirect()->route('equipos.index')->with('success', 'El equipo ' . $equipo->nombre . ' ha sido editado correctamente');
+
+
     }
 
     /**
@@ -78,6 +96,9 @@ class EquipoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Equipo::findOrFail($id)->delete();
+        return redirect()->route('equipos.index')
+                        ->with('success', 'Se ha eliminado el equipo correctamente');
+
     }
 }
