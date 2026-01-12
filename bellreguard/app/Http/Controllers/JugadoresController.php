@@ -62,15 +62,30 @@ class JugadoresController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $jugador = Jugador::findOrFail($id);
+
+        return view('jugadores.edit', compact('jugador'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(JugadorRequest $request, string $id)
     {
-        //
+        $jugador = Jugador::findOrFail($id);
+
+        $data = $request->validated();
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+            $file->move(public_path('images/jugadores'), $filename);
+            $data['foto'] = $filename;
+        }
+
+        $jugador->update($data);
+
+        return redirect()->route('jugadores.index')->with('success', 'El jugador ' . $jugador->nombre . ' ha sido editado correctamente');
     }
 
     /**
@@ -78,6 +93,9 @@ class JugadoresController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Jugador::findOrFail($id)->delete();
+        
+        return redirect()->route('jugadores.index')
+                        ->with('success', 'Se ha eliminado el jugador correctamente');
     }
 }

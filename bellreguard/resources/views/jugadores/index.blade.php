@@ -24,6 +24,17 @@
 
                 @foreach($jugadores as $jugador)
                     <div class="tarjeta">
+                        <div class="lista">
+                            @auth
+                            <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
+                            <ul class="listaUl">
+                                <li><a href="{{ route('jugadores.edit', $jugador->id) }}">Editar</a></li>
+                                <hr>
+                                <li><a href="{{ route('jugadores.destroy', $jugador->id) }}">Borrar</a></li>
+                            </ul>
+                            @endauth
+
+                        </div>
                     <div class="contenido" style="background-image: url('{{ asset('images/jugadores/' . $jugador->foto) }}')">
                         <table>
                             <tr>
