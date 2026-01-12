@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PaginasController::class, 'index'])->name('index');
 
 /*-----------------Log In & Logout------------------*/
-Route::get('login',[LoginController::class, 'loginForm'])->name('login');
+Route::get('login',[LoginController::class, 'loginForm'])->name('login')->middleware('guest');
 Route::post('login', [LoginController::class , 'login']);
-Route::get('logout', [LoginController::class , 'logout'])->name('logout');
+Route::get('logout', [LoginController::class , 'logout'])->name('logout')->middleware('auth');
 
 /*-----------------Regisrar-----------------*/
 Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registrar');

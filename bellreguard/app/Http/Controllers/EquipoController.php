@@ -6,6 +6,7 @@ use App\Http\Requests\EquipoEditRequest;
 use App\Http\Requests\EquipoRequest;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EquipoController extends Controller
 {
@@ -24,7 +25,11 @@ class EquipoController extends Controller
      */
     public function create()
     {
-        return view('equipos.create');
+        if(Auth::user()->role == 'admin'){
+            return view('equipos.create');
+        }else{
+            return redirect()->route('equipos.index');
+        }
     }
 
     /**
@@ -32,20 +37,25 @@ class EquipoController extends Controller
      */
     public function store(EquipoRequest $request)
     {
-        $data = $request->validated();
+        if(Auth::user()->role == 'admin'){
+            $data = $request->validated();
 
-        if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
-            $file->move(public_path('images/equipos'), $filename);
-            $data['foto'] = $filename;
-        }else {
-            $data['foto'] = 'logo.png';
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = time() . '_' . $file->getClientOriginalName();
+                $file->move(public_path('images/equipos'), $filename);
+                $data['foto'] = $filename;
+            }else {
+                $data['foto'] = 'logo.png';
+            }
+
+            Equipo::create($data);
+
+            return redirect()->route('equipos.index')->with('success', 'Equipo creado correctamente.');
+        }else{
+            return redirect()->route('equipos.index');
         }
 
-        Equipo::create($data);
-
-        return redirect()->route('equipos.index')->with('success', 'Equipo creado correctamente.');
     }
 
     /**
@@ -63,9 +73,13 @@ class EquipoController extends Controller
      */
     public function edit(string $id)
     {
-        $equipo = Equipo::findOrFail($id);
+        if(Auth::user()->role == 'admin'){
+            $equipo = Equipo::findOrFail($id);
 
-        return view('equipos.edit', compact('equipo'));
+            return view('equipos.edit', compact('equipo'));
+        }else{
+            return redirect()->route('equipos.index');
+        }
     }
 
     /**
@@ -73,22 +87,25 @@ class EquipoController extends Controller
      */
     public function update(EquipoEditRequest $request, string $id)
     {
-        $equipo = Equipo::findOrFail($id);
+        if(Auth::user()->role == 'admin'){
+            $equipo = Equipo::findOrFail($id);
 
-        $data = $request->validated();
+            $data = $request->validated();
 
-        if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
-            $file->move(public_path('images/equipos'), $filename);
-            $data['foto'] = $filename;
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+                $file->move(public_path('images/equipos'), $filename);
+                $data['foto'] = $filename;
+            }
+
+            $equipo->update($data);
+
+            return redirect()->route('equipos.index')->with('success', 'El equipo ' . $equipo->nombre . ' ha sido editado correctamente');
+
+        }else{
+            return redirect()->route('equipos.index');
         }
-
-        $equipo->update($data);
-
-        return redirect()->route('equipos.index')->with('success', 'El equipo ' . $equipo->nombre . ' ha sido editado correctamente');
-
-
     }
 
     /**
@@ -96,9 +113,12 @@ class EquipoController extends Controller
      */
     public function destroy(string $id)
     {
-        Equipo::findOrFail($id)->delete();
-        return redirect()->route('equipos.index')
-                        ->with('success', 'Se ha eliminado el equipo correctamente');
-
+        if(Auth::user()->role == 'admin'){
+            Equipo::findOrFail($id)->delete();
+            return redirect()->route('equipos.index')
+                            ->with('success', 'Se ha eliminado el equipo correctamente');
+            }else{
+            return redirect()->route('equipos.index');
+        }
     }
 }
