@@ -30,7 +30,12 @@
                             <ul class="listaUl">
                                 <li><a href="{{ route('jugadores.edit', $jugador->id) }}">Editar</a></li>
                                 <hr>
-                                <li><a href="{{ route('jugadores.destroy', $jugador->id) }}">Borrar</a></li>
+                                <form action="{{ route('jugadores.destroy', $jugador->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+
+                                    <li><button name="borrar" >Borrar</button></li>
+                                </form>
                             </ul>
                             @endauth
 

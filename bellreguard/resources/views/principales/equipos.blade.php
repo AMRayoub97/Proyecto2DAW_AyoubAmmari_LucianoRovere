@@ -9,7 +9,7 @@
     <!-- Main-->
         <section>
             <div class="cab">
-                <h2>JUGADORES</h2>
+                <h2>EQUIPOS</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
                     <a href="{{ route('equipos.create') }}">AÑADIR</a>
@@ -33,7 +33,12 @@
                             <ul class="listaUl">
                                 <li><a href="{{ route('equipos.edit', $equipo->id) }}">Editar</a></li>
                                 <hr>
-                                <li><a href="{{ route('equipos.destroy', $equipo->id) }}">Borrar</a></li>
+                                <form action="{{ route('equipos.destroy', $equipo->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+
+                                    <li><button name="borrar" >Borrar</button></li>
+                                </form>
                             </ul>
                             @endauth
 
