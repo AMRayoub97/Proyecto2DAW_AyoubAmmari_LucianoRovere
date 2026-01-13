@@ -40,7 +40,11 @@
             </div>
         </section>
         <aside id="infoDerecha">
-            <img src="{{ asset('/images/perfil_default.webp') }}" alt="fotoPerfil">
+           @if(empty(auth()->user()->foto))
+                <img id="fotoPerfil" src="{{asset('/images/perfil_default.webp') }}" alt="Default profile picture">
+            @else
+                <img id="fotoPerfil" src="{{ asset('/images/usuarios/'. auth()->user()->foto) }}" alt="Default profile picture">
+            @endif
             <a href="{{ route('perfil.edit', auth()->user()->id) }}" id="cambiarFoto">Editar Perfil</a>
             <a href="{{ route('logout') }}">Cerrar session</a>
         </aside>

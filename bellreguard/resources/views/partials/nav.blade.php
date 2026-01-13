@@ -9,7 +9,12 @@
         </ul>
     </nav>
     <div class="perfilOp">
-        <img id="fotoPerfil" src="{{ asset('images/perfil_default.webp') }}" alt="Default profile picture">
+        @if(empty(auth()->user()->foto))
+                <img id="fotoPerfil" src="{{asset('/images/perfil_default.webp') }}" alt="Default profile picture">
+            @else
+                <img id="fotoPerfil" src="{{ asset('/images/usuarios/'. auth()->user()->foto) }}" alt="Default profile picture">
+            @endif
+
         <ul id="perfilLista">
             @guest
                 <li><a href="{{ route('login') }}">Iniciar session</a></li>

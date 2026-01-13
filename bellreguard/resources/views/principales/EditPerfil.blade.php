@@ -7,7 +7,7 @@
     @vite(['resources/sass/principales/editarPerfil.scss'])
 
     <section id="perfilContainer">
-    <form action="{{ route('perfil.update', auth()->user()->id) }}" method="POST" class="perfilForm">
+    <form action="{{ route('perfil.update', auth()->user()->id) }}" method="POST" class="perfilForm" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -46,6 +46,14 @@
             <label>Fecha de nacimiento</label>
             <input type="date" name="fecha_nacimiento"
                    value="{{ old('fecha_nacimiento', auth()->user()->fecha_nacimiento) }}">
+        </div>
+
+        <div class="foto">
+            <label for="foto">Foto:</label>
+            <input type="file" name="foto" accept="image/*">
+            @error('foto')
+                {{ $message }}
+            @enderror
         </div>
 
         <div class="campo">

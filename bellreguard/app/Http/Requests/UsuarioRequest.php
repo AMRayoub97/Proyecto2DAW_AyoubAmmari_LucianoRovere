@@ -30,6 +30,7 @@ class UsuarioRequest extends FormRequest
             'fecha_nacimiento' => 'nullable|date|before:today',
             'telefono' => 'nullable|string|regex:/^[0-9]{9,15}$/',
             'genero' => 'nullable|in:masculino,femenino,otro',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
         ];
     }
 
@@ -58,6 +59,10 @@ class UsuarioRequest extends FormRequest
         'telefono.regex' => 'El teléfono debe contener solo números (9 a 15 dígitos).',
 
         'genero.in' => 'El género seleccionado no es válido.',
+
+        'foto.image' => 'No es una imagen',
+        'foto.mimes' => 'Tipo imagen',
+        'foto.max' => 'Tamaño máximo'
     ];
 }
 
