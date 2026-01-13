@@ -60,8 +60,9 @@ Route::get('cookies', function(){
 
 /*---------NOTICIAS-------*/
 Route::get('noticias',[NoticiaController::class, 'index'])->name('noticias.index');
-
 Route::get('noticias/{tst}',[NoticiaController::class, 'show'])->name('noticias.show');
+
+Route::get('noticias/tutor/{tst}',[NoticiaController::class, 'showTutor'])->name('noticias.tutor');
 
 
 /*-----------EVENTOS------------*/

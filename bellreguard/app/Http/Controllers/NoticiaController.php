@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Noticia;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\TestStatus\Notice;
 
@@ -49,6 +50,16 @@ class NoticiaController extends Controller
 
         return view('noticias.show')->with('noticia', $noticia)->with('NoticiasRelacionadas', $NoticiasRelacionadas)
                                     ->with('top', $top);
+    }
+
+    /**
+     * mostrar perfil del tutor
+     */
+    public function showTutor(string $id)
+    {
+        $tutor = Usuario::findOrFail($id);
+
+        return view('noticias.perfilTutor')->with('tutor', $tutor);
     }
 
     /**

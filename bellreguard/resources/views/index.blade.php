@@ -73,7 +73,7 @@
                         <article>
                             <div class="infoNoticia">
                                 <div class="infoUsuarioNoticia">
-                                    <a href="#">
+                                    <a href="{{ route('noticias.tutor', $noticia->tutor?->id) }}">
                                         @if(empty($noticia->tutor?->foto))
                                             <img src="{{ asset('images/perfil_default.webp')}}" alt="autor">
                                         @else
