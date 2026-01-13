@@ -58,45 +58,6 @@
                             <img src="{{ asset('images/logo.png') }}" alt=""></a>
                         </div>
 
-                    </article>
-                    <article>
-                        <div class="equipoDestacado">
-                            <strong>OCK</strong>
-                            <a href="#">
-                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
-                        </div>
-
-                        <div class="resultadoDesatacados">
-                            <h3>11/12/2025</h3>
-                            <h3>17:00</h3>
-                            <a href="#">Highlights</a>
-                        </div>
-
-                        <div class="equipoDestacado">
-                        <strong>VLC</strong>
-                            <a href="#">
-                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
-                        </div>
-
-                    </article>
-                    <article>
-                        <div class="equipoDestacado">
-                            <strong>MAR</strong>
-                            <a href="#">
-                            <img src="{{ asset('images/logo.png') }}" alt=""></a>
-                        </div>
-
-                        <div class="resultadoDesatacados">
-                            <h3>0 - 0</h3>
-                            <a href="#">Highlights</a>
-                        </div>
-
-                        <div class="equipoDestacado">
-                        <strong>ESP </strong>
-                            <a href="#">
-                        <img src="{{ asset('images/logo.png') }}" alt=""></a>
-                        </div>
-
                     </article> -->
                 </section>
             </div>
@@ -105,7 +66,7 @@
             <hr>
             <div class="notcias-eventos">
                 <div id="noticias">
-                    <a href="{{ route('noticias') }}">
+                    <a href="{{ route('noticias.index') }}">
                         <h1>ÚLTIMAS NOTICIAS</h1>
                     </a>
                     <article>
@@ -119,7 +80,7 @@
                             <small>2025-01-12</small>
                         </div>
                         <hr>
-                        <a href="{{ route('noticias') }}">
+                        <a href="{{ route('noticias.index') }}">
                             <p>El jugador del equipo nacional de baloncesto firmó un contrato histórico que lo convierte en uno de los deportistas mejor pagados del país.</p>
                         </a>
                     </article>
@@ -134,7 +95,7 @@
                             <small>2025-01-12</small>
                         </div>
                         <hr>
-                        <a href="{{ route('noticias') }}">
+                        <a href="{{ route('noticias.index') }}">
                             <p>El torneo juvenil de baloncesto concluyó este fin de semana, destacando el talento emergente de jóvenes promesas que podrían llegar a la liga profesional.</p>
                         </a>
                     </article>
