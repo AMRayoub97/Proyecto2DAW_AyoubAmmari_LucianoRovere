@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Jugador;
 use Illuminate\Http\Request;
 use App\Http\Requests\JugadorRequest;
+use Illuminate\Support\Facades\Auth;
 
 class JugadoresController extends Controller
 {
@@ -23,7 +24,11 @@ class JugadoresController extends Controller
      */
     public function create()
     {
-        return view('jugadores.create');
+        if(Auth::user()->role == 'admin'){
+            return view('jugadores.create');
+        }else{
+            return redirect()->route('jugadores.index')->with('danger', 'No tienes permiso para acceder esta pagina');
+        }
     }
 
     /**
@@ -32,19 +37,23 @@ class JugadoresController extends Controller
     public function store(JugadorRequest $request)
     {
 
-        $data = $request->validated();
+        if(Auth::user()->role == 'admin'){
+            $data = $request->validated();
 
-        if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
-            $file->move(public_path('images/jugadores'), $filename);
-            $data['foto'] = $filename;
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+                $file->move(public_path('images/jugadores'), $filename);
+                $data['foto'] = $filename;
+            }
+
+            Jugador::create($data);
+
+            return redirect()->route('jugadores.index')
+                            ->with('success', 'Jugador añadido correctamente');
+        }else{
+            return redirect()->route('jugadores.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
-
-        Jugador::create($data);
-
-        return redirect()->route('jugadores.index')
-                         ->with('success', 'Jugador añadido correctamente');
     }
 
     /**
@@ -62,9 +71,13 @@ class JugadoresController extends Controller
      */
     public function edit(string $id)
     {
-        $jugador = Jugador::findOrFail($id);
+        if(Auth::user()->role == 'admin'){
+            $jugador = Jugador::findOrFail($id);
 
-        return view('jugadores.edit', compact('jugador'));
+            return view('jugadores.edit', compact('jugador'));
+        }else{
+            return redirect()->route('jugadores.index')->with('danger', 'No tienes permiso para acceder esta pagina');
+        }
     }
 
     /**
@@ -72,20 +85,24 @@ class JugadoresController extends Controller
      */
     public function update(JugadorRequest $request, string $id)
     {
-        $jugador = Jugador::findOrFail($id);
+        if(Auth::user()->role == 'admin'){
+            $jugador = Jugador::findOrFail($id);
 
-        $data = $request->validated();
+            $data = $request->validated();
 
-        if ($request->hasFile('foto')) {
-            $file = $request->file('foto');
-            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
-            $file->move(public_path('images/jugadores'), $filename);
-            $data['foto'] = $filename;
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+                $file->move(public_path('images/jugadores'), $filename);
+                $data['foto'] = $filename;
+            }
+
+            $jugador->update($data);
+
+            return redirect()->route('jugadores.index')->with('success', 'El jugador ' . $jugador->nombre . ' ha sido editado correctamente');
+        }else{
+            return redirect()->route('jugadores.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
-
-        $jugador->update($data);
-
-        return redirect()->route('jugadores.index')->with('success', 'El jugador ' . $jugador->nombre . ' ha sido editado correctamente');
     }
 
     /**
@@ -93,9 +110,13 @@ class JugadoresController extends Controller
      */
     public function destroy(string $id)
     {
-        Jugador::findOrFail($id)->delete();
-        
-        return redirect()->route('jugadores.index')
-                        ->with('success', 'Se ha eliminado el jugador correctamente');
+        if(Auth::user()->role == 'admin'){
+            Jugador::findOrFail($id)->delete();
+
+            return redirect()->route('jugadores.index')
+                            ->with('success', 'Se ha eliminado el jugador correctamente');
+        }else{
+            return redirect()->route('jugadores.index')->with('danger', 'No tienes permiso para acceder esta pagina');
+        }
     }
 }

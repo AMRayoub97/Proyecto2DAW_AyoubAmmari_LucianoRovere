@@ -28,7 +28,7 @@ class EquipoController extends Controller
         if(Auth::user()->role == 'admin'){
             return view('equipos.create');
         }else{
-            return redirect()->route('equipos.index');
+            return redirect()->route('equipos.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
     }
 
@@ -53,7 +53,7 @@ class EquipoController extends Controller
 
             return redirect()->route('equipos.index')->with('success', 'Equipo creado correctamente.');
         }else{
-            return redirect()->route('equipos.index');
+            return redirect()->route('equipos.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
 
     }
@@ -78,7 +78,7 @@ class EquipoController extends Controller
 
             return view('equipos.edit', compact('equipo'));
         }else{
-            return redirect()->route('equipos.index');
+            return redirect()->route('equipos.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
     }
 
@@ -104,7 +104,7 @@ class EquipoController extends Controller
             return redirect()->route('equipos.index')->with('success', 'El equipo ' . $equipo->nombre . ' ha sido editado correctamente');
 
         }else{
-            return redirect()->route('equipos.index');
+            return redirect()->route('equipos.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
     }
 
@@ -118,7 +118,7 @@ class EquipoController extends Controller
             return redirect()->route('equipos.index')
                             ->with('success', 'Se ha eliminado el equipo correctamente');
             }else{
-            return redirect()->route('equipos.index');
+            return redirect()->route('equipos.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
     }
 }

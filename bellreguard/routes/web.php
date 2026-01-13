@@ -22,10 +22,6 @@ Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registr
 Route::post('registrar', [LoginController::class , 'registrar']);
 
 
-/*------------------Jugadores-----------------------*/
-Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
-Route::get('/jugadores/{id}', [JugadoresController::class, 'show'])->name('jugadores.show');
-
 /*-----------Auth------------*/
 Route::middleware(['auth'])->group(function () {
     /*------------------Jugadores-----------------------*/
@@ -37,6 +33,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('perfile/{id}',[UsuarioController::class, 'show'])->name('perfil');
 });
 
+/*------------------Jugadores-----------------------*/
+Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
+Route::get('/jugadores/{id}', [JugadoresController::class, 'show'])->name('jugadores.show');
 
 /*-----------------Equipos------------------*/
 Route::get('equipos', [EquipoController::class, 'index'])->name('equipos.index');

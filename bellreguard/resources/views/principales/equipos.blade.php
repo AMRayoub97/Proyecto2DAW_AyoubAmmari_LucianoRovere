@@ -25,6 +25,12 @@
                     </div>
                 @endif
 
+                @if(session()->has('danger'))
+                    <div class="alert alert-danger" role="alert">
+                    {{ session('danger') }}
+                </div>
+                @endif
+
             <div class="tarjetas">
                 @foreach($equipos as $equipo)
                 <div class="tarjeta">

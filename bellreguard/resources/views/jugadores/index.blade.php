@@ -17,11 +17,18 @@
             </div>
             <hr>
             <!-- mensajes -->
-             @if(session()->has('success'))
+                @if(session()->has('success'))
                     <div class="alert alert-success" role="alert">
                         {{ session('success') }}
                     </div>
                 @endif
+
+                @if(session()->has('danger'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('danger') }}
+                    </div>
+                @endif
+
             <div class="tarjetas">
 
                 @foreach($jugadores as $jugador)
