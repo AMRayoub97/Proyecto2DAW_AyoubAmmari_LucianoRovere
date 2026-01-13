@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('equipos', EquipoController::class)->except(['index','show']);
 
     /*-----------------Perfil------------------*/
-    Route::get('perfile/{id}',[UsuarioController::class, 'show'])->name('perfil');
+    Route::resource('perfil', UsuarioController::class);
 });
 
 /*------------------Jugadores-----------------------*/

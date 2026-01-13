@@ -16,7 +16,7 @@
                 <li><a href="{{ route('registrar') }}">Registrar</a></li>
             @endguest
             @auth
-                <li><a href="{{ route('perfil', auth()->user()->id) }}">Perfil</a></li>
+                <li><a href="{{ route('perfil.show', auth()->user()->id) }}">Perfil</a></li>
                 <li><a href="{{ route('logout') }}">cerrar session</a></li>
             @endauth
         </ul>

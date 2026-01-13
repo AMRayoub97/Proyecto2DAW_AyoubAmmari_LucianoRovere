@@ -13,7 +13,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -47,7 +47,8 @@ class UsuarioController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $usuario = Usuario::findOrFail($id);
+        return view('principales.EditPerfil', compact('usuario'));
     }
 
     /**
