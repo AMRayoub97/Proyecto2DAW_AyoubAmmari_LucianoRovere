@@ -6,6 +6,12 @@
 
     @vite(['resources/sass/principales/perfile.scss','resources/js/principales/perfile.js'])
 
+    @if(session()->has('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
+
     <div class="contenido">
         <section id="info">
             <div class="infoUsuario">

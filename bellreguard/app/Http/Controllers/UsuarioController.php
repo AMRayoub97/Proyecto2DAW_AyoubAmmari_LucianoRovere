@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsuarioRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -54,9 +55,22 @@ class UsuarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UsuarioRequest $request, string $id)
     {
-        //
+        $usuario = Usuario::findOrFail($id);
+
+        $data = $request->validated();
+
+        if ($request->hasFile('foto')) {
+            $file = $request->file('foto');
+            $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
+            $file->move(public_path('images/usuarios'), $filename);
+            $data['foto'] = $filename;
+        }
+
+        $usuario->update($data);
+
+        return redirect()->route('perfil.show', $id)->with('success', 'ha editado su perfil correctamente');
     }
 
     /**

@@ -2,6 +2,8 @@
     color: black;
 }
 #perfilContainer {
+    margin: 0 auto;
+    width: 80%;
     display: flex;
     justify-content: center;
     padding: 40px;
@@ -51,7 +53,7 @@
 .btnGuardar {
     width: 100%;
     padding: 12px;
-    background: #4f46e5;
+    background: linear-gradient(135deg, #dc2626 0%, #000 100%);
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -62,7 +64,7 @@
 }
 
 .btnGuardar:hover {
-    background: #4338ca;
+    background: linear-gradient(135deg, #000 0%, #dc2626 100%);
 }
 
 .error {

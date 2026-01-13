@@ -24,7 +24,7 @@ class UsuarioRequest extends FormRequest
         return [
             'nombre' => 'required|string|min:2|max:50',
             'apellidos' => 'nullable|string|min:2|max:80',
-            'correo' => 'required|email|max:100|unique:correo,',
+            'correo' => 'required|email|max:100',
             'contrasena' => 'nullable|string|min:5',
             'nacionalidad' => 'nullable|string|max:50',
             'fecha_nacimiento' => 'nullable|date|before:today',

@@ -38,11 +38,6 @@
         </div>
 
         <div class="campo">
-            <label>Confirmar contraseña</label>
-            <input type="password" name="contrasena_confirmation">
-        </div>
-
-        <div class="campo">
             <label>Nacionalidad</label>
             <input type="text" name="nacionalidad" value="{{ old('nacionalidad', auth()->user()->nacionalidad) }}">
         </div>
