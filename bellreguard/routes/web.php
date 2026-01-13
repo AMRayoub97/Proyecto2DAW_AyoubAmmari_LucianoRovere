@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PartidosController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -65,3 +66,5 @@ Route::get('noticias/{tst}',function(){
 Route::get('partidos',function(){
     return view('partidos.index');
 })->name('partidos');
+
+Route::resource('partidos', PartidosController::class);
