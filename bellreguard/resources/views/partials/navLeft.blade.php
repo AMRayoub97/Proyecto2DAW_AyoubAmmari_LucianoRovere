@@ -6,7 +6,7 @@
             @endauth
             <li><a href="{{ route('tienda') }}">Tienda</a></li>
             <li><a href="{{ route('eventos.index') }}">Eventos</a></li>
-            <li><a href="{{ route('noticias') }}">Noticias</a></li>
+            <li><a href="{{ route('noticias.index') }}">Noticias</a></li>
             <li><a href="#">Estadisticas</a></li>
         </ul>
     </div>

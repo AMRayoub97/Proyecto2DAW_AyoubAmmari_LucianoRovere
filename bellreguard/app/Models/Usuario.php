@@ -62,4 +62,7 @@ class Usuario extends Authenticatable
         return 'correo';
     }
 
+    public function noticia(){
+        return $this->hasMany(Noticia::class, 'tutor_id');
+    }
 }

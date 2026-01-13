@@ -8,21 +8,24 @@
 
 <section id="news-detail">
 
-    {{ $tst = 1 }}
 
     {{-- HERO NOTICIA --}}
     <header class="news-header">
         <img src="{{ asset('images/noticias/n1.jpg') }}" alt="Imagen noticia">
 
         <div class="overlay">
-            <span class="tag">PRIMER EQUIPO</span>
-            <h1>Victoria épica en casa ante el líder</h1>
+            <span class="tag">{{ $top->categoria }}</span>
+            <h1>{{ $top->titulo }}</h1>
 
             <div class="meta">
-                <img src="{{ asset('images/perfil_default.webp') }}" alt="autor">
+                @if(empty($top->tutor->foto))
+                    <img src="{{ asset('images/perfil_default.webp')}}" alt="autor">
+                @else
+                    <img src="{{ asset('images/usuarios/' . $top->tutor->foto)}}" alt="autor">
+                @endif
                 <div>
-                    <strong>Club Bellreguard</strong>
-                    <small>12 Enero 2025 · 4 min lectura</small>
+                    <strong>{{ $top->tutor?->nombre }}</strong>
+                    <small>{{ $top->fecha }}</small>
                 </div>
             </div>
         </div>
@@ -30,30 +33,20 @@
 
     {{-- CONTENIDO --}}
     <article class="news-content">
-        <p class="lead">
-            El Club Bellreguard firmó una de las victorias más importantes de la temporada
-            tras un último cuarto lleno de intensidad y carácter.
-        </p>
+        <h1 class="lead">
+            {{ $noticia->titulo }}
 
-        <p>
-            El encuentro comenzó con mucha igualdad entre ambos conjuntos, destacando
-            la intensidad defensiva y el ritmo alto de juego.
-        </p>
+        <img src="{{ asset('images/noticias/' . $noticia->foto) }}" alt="Acción del partido">
 
-        <img src="{{ asset('images/noticias/n2.jpg') }}" alt="Acción del partido">
-
-        <p>
-            En el último cuarto, el equipo local mostró su mejor versión,
-            apoyado por una afición que no dejó de animar hasta el final.
-        </p>
 
         <blockquote>
-            “Este equipo nunca se rinde. La victoria es fruto del trabajo diario”
+            <strong>
+                {{ $noticia->contenido }}
+            </strong>
         </blockquote>
 
         <p>
-            Con este triunfo, el Club Bellreguard se coloca en la parte alta de la tabla
-            y afronta el próximo partido con máxima confianza.
+            {{ $noticia->todo_contenido }}
         </p>
     </article>
 
@@ -62,25 +55,19 @@
         <h2>🔗 Noticias relacionadas</h2>
 
         <div class="related-grid">
-            <article class="news-card">
-                <a href="{{ route('noticia', $tst) }}">
-                <img src="{{ asset('images/noticias/n2.jpg') }}">
-                <div class="card-body">
-                    <span class="tag">CANTERA</span>
-                    <h3>Gran actuación del junior este fin de semana</h3>
-                </div>
-                </a>
-            </article>
-
-            <article class="news-card">
-                <a href="{{ route('noticia', $tst) }}">
-                <img src="{{ asset('images/noticias/n2.jpg') }}">
-                <div class="card-body">
-                    <span class="tag">AFICIÓN</span>
-                    <h3>La grada vuelve a responder</h3>
-                </div>
-                </a>
-            </article>
+            @forelse($NoticiasRelacionadas as $NoticiaRelacionada)
+                <article class="news-card">
+                    <a href="{{ route('noticias.show', $NoticiaRelacionada->id) }}">
+                    <img src="{{ asset('images/noticias/'. $NoticiaRelacionada->foto) }}">
+                    <div class="card-body">
+                        <span class="tag">{{ $NoticiaRelacionada->categoria }}</span>
+                        <h3>{{ $NoticiaRelacionada->titulo }}</h3>
+                    </div>
+                    </a>
+                </article>
+            @empty
+                <h1>No Hay Noticias</h1>
+            @endforelse
         </div>
     </section>
 

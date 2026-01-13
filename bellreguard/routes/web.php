@@ -4,6 +4,7 @@ use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\PartidosController;
 use App\Http\Controllers\UsuarioController;
@@ -58,13 +59,11 @@ Route::get('cookies', function(){
 })->name('cookies');
 
 /*---------NOTICIAS-------*/
-Route::get('noticias',function(){
-    return view('noticias.index');
-})->name('noticias');
+Route::get('noticias',[NoticiaController::class, 'index'])->name('noticias.index');
 
-Route::get('noticias/{tst}',function(){
-    return view('noticias.show');
-})->name('noticia');
+Route::get('noticias/{tst}',[NoticiaController::class, 'show'])->name('noticias.show');
+
+
 /*-----------EVENTOS------------*/
 Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index');
 
