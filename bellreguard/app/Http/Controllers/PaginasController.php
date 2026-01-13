@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evento;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 
 class PaginasController extends Controller
@@ -12,9 +13,10 @@ class PaginasController extends Controller
      */
     public function index()
     {
+        $noticias = Noticia::orderBy('fecha')->limit(4)->get();
         $eventos = Evento::orderBy('fecha', 'DESC')->limit(4)->get();
 
-        return view('index', compact('eventos'));
+        return view('index')->with('eventos', $eventos)->with('noticias', $noticias);
     }
 
     /**

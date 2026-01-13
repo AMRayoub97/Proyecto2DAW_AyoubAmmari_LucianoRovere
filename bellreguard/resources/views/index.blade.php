@@ -69,51 +69,31 @@
                     <a href="{{ route('noticias.index') }}">
                         <h1>ÚLTIMAS NOTICIAS</h1>
                     </a>
-                    <article>
-                        <div class="infoNoticia">
-                            <div class="infoUsuarioNoticia">
-                                <a href="{{ route('jugadores.index') }}">
-                                    <img src="{{ asset('images/perfil_default.webp') }}" alt="fotoUsuaroNoticia" target="_blank">
-                                    <strong>Joan Barber Molió</strong>
-                                </a>
+                    @forelse($noticias as $noticia)
+                        <article>
+                            <div class="infoNoticia">
+                                <div class="infoUsuarioNoticia">
+                                    <a href="#">
+                                        @if(empty($noticia->tutor?->foto))
+                                            <img src="{{ asset('images/perfil_default.webp')}}" alt="autor">
+                                        @else
+                                            <img src="{{ asset('images/usuarios/' . $noticia->tutor?->foto) }}" alt="fotoUsuaroNoticia" target="_blank">
+                                        @endif
+                                        <strong>{{ $noticia->tutor?->nombre }}</strong>
+                                    </a>
+                                </div>
+                                <small>{{ $noticia->fecha }}</small>
                             </div>
-                            <small>2025-01-12</small>
-                        </div>
-                        <hr>
-                        <a href="{{ route('noticias.index') }}">
-                            <p>El jugador del equipo nacional de baloncesto firmó un contrato histórico que lo convierte en uno de los deportistas mejor pagados del país.</p>
-                        </a>
-                    </article>
-                    <article>
-                        <div class="infoNoticia">
-                            <div class="infoUsuarioNoticia">
-                                <a href="https://www.fcbarcelona.es/es/baloncesto/primer-equipo/staff/4401539/xavi-pascual" target="_blank">
-                                    <img src="{{ asset('images/entrenadores/XaviPascual.avif') }}" alt="fotoUsuaroNoticia">
-                                    <strong>Xavi Pascual</strong>
-                                </a>
-                            </div>
-                            <small>2025-01-12</small>
-                        </div>
-                        <hr>
-                        <a href="{{ route('noticias.index') }}">
-                            <p>El torneo juvenil de baloncesto concluyó este fin de semana, destacando el talento emergente de jóvenes promesas que podrían llegar a la liga profesional.</p>
-                        </a>
-                    </article>
-                    <article>
-                        <div class="infoNoticia">
-                            <div class="infoUsuarioNoticia">
-                                <a href="https://www.realmadrid.com/es-ES/baloncesto/primer-equipo/plantilla/sergio-scariolo" target="_blank">
-                                    <img src="{{ asset('images/entrenadores/Sergio-Scariolo.png') }}" alt="fotoUsuaroNoticia">
-                                    <strong>Sergio Scariolo</strong>
-                                </a>
-                            </div>
-                            <small>2025-01-12</small>
-                        </div>
-                        <hr>
-                        <a href="#">
-                            <p>El estadio principal de la ciudad será sede de un partido internacional de baloncesto, atrayendo a fanáticos y medios de comunicación de todo el mundo.</p>
-                        </a>
-                    </article>
+                            <hr>
+                            <a href="{{ route('noticias.show', $noticia->id) }}">
+                                <h4>{{ $noticia->titulo }}</h4>
+                                <p>{{ $noticia->contenido }}</p>
+                            </a>
+                        </article>
+
+                    @empty
+                        <h1>NO HAY NOTICIAS </h1>
+                    @endforelse
                 </div>
 
                 <hr>
