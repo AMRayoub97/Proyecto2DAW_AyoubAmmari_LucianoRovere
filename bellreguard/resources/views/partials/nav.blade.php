@@ -3,7 +3,7 @@
     <nav id="navHeadr">
         <ul>
             <li><a href="{{ url('/') }}">Inicio</a></li>
-            <li><a href="#">Partidos</a></li>
+            <li><a href="{{route('partidos.index')}}">Partidos</a></li>
             <li><a href="{{ route('equipos.index') }}">Equipos</a></li>
             <li><a href="{{ route('jugadores.index') }}">Jugadores</a></li>
         </ul>

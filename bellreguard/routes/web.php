@@ -5,6 +5,7 @@ use App\Http\Controllers\EventoController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PaginasController;
+use App\Http\Controllers\PartidosController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -70,5 +71,8 @@ Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index')
 /*-----------PARTIDOS------------*/
 Route::get('partidos', function () {
     return view('partidos.index');
+
 })->name('partidos');
+
+Route::resource('partidos', PartidosController::class);
 
