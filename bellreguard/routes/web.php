@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\PartidosController;
+use App\Http\Controllers\PermisosController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +34,9 @@ Route::middleware(['auth'])->group(function () {
 
     /*-----------------Perfil------------------*/
     Route::resource('perfil', UsuarioController::class);
+
+    /*----------------Permisos------------*/
+    Route::resource('permisos', PermisosController::class);
 });
 
 /*------------------Jugadores-----------------------*/

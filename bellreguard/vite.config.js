@@ -36,6 +36,8 @@ export default defineConfig({
                 'resources/sass/partidos/index.scss',
                 'resources/sass/principales/editarPerfil.scss',
                 'resources/sass/noticias/perfilTutor.scss',
+                'resources/sass/permisos/index.scss',
+                'resources/sass/permisos/edit.scss',
             ],
             refresh: true,
         }),

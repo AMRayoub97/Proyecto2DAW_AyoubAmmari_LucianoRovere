@@ -31,6 +31,7 @@ class Usuario extends Authenticatable
         'fecha_nacimiento',
         'telefono',
         'foto',
+        'role',
     ];
 
     /**

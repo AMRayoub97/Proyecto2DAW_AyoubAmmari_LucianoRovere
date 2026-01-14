@@ -8,6 +8,11 @@
             <li><a href="{{ route('eventos.index') }}">Eventos</a></li>
             <li><a href="{{ route('noticias.index') }}">Noticias</a></li>
             <li><a href="#">Estadisticas</a></li>
+            @auth
+                @if(auth()->user()->role == 'admin')
+                     <li><a href="{{ route('permisos.index') }}">Permisos</a></li>
+                @endif
+            @endauth
         </ul>
     </div>
     <input type="submit" value="→" id="ocultarNavBtn">

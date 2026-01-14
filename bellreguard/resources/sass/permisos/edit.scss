@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    color: #000;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+}
+
+.contenedor-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.form-usuario {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.grupo label {
+    font-weight: bold;
+}
+
+.grupo input,
+.grupo select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.grupo input:disabled {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.text-danger {
+    color: #dc3545;
+    font-size: 0.875rem;
+}
+
+.btns{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.btns a{
+    text-decoration: none;
+}
+
+.btn-guardar {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(135deg, #7a0000 0%, #000 100%);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.btn-guardar:hover {
+    background: linear-gradient(135deg, #000 0%, #7a0000 100%);
+}
