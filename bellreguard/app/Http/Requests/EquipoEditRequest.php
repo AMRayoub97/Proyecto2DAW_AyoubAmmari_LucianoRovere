@@ -24,7 +24,7 @@ class EquipoEditRequest extends FormRequest
         return [
             'nombre' => 'required|string|max:255',
             'foto' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
-            'categoria' => 'required|in:Junior,Senior,Amateur,Profesional',
+            'categoria' => 'required|in:Junior,Senior,Cadete,Infantil,Alevín,Benjamín,Juvenil,Prebenjamín',
             'genero' => 'required|in:M,F',
             'entrenador' => 'required|string|max:255',
         ];

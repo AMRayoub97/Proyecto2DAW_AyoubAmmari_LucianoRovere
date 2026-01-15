@@ -37,6 +37,10 @@ Route::middleware(['auth'])->group(function () {
 
     /*----------------Permisos------------*/
     Route::resource('permisos', PermisosController::class);
+
+    
+    Route::resource('partidos', PartidosController::class)->except(['index','show']);
+
 });
 
 /*------------------Jugadores-----------------------*/
@@ -73,10 +77,5 @@ Route::get('noticias/tutor/{tst}',[NoticiaController::class, 'showTutor'])->name
 Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index');
 
 /*-----------PARTIDOS------------*/
-Route::get('partidos', function () {
-    return view('partidos.index');
-
-})->name('partidos');
-
-Route::resource('partidos', PartidosController::class);
+Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
 

@@ -9,20 +9,23 @@
                 <h2>PARTIDOS</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
-                    <a href="{{ route('jugadores.create') }}">AÑADIR</a>
+                    <a href="{{ route('partidos.create') }}">AÑADIR +</a>
                 @endauth
             </div>
             <hr>
-<main><div class="cab">
-    <h2>Jugando ahora</h2>
-</div>
+<main>
+    <div class="cab">
+        <h2>Jugando ahora</h2>
+    </div>
 
 <section id="destacados">
-
+    @foreach ($partidos as $partido)
     <article>
         <div class="equipoDestacado">
-            <strong>Equipo 1</strong>
-            <img src="" alt="">
+        
+             <strong>{{$partido->equipo?->nombre}}</strong>
+            <img src="{{ $partido->equipo?->foto }}" alt="logo-equipo">   
+        
         </div>
 
         <div class="resultadoDesatacados">
@@ -32,61 +35,11 @@
         </div>
 
         <div class="equipoDestacado">
-            <strong>Equipo 2</strong>
-            <img src="" alt="">
+            <strong>{{$partido->nombre}}</strong>
+            <img src="{{ $partido->foto }}" alt="">
         </div>
     </article>
-<article>
-        <div class="equipoDestacado">
-            <strong>Equipo 1</strong>
-            <img src="" alt="">
-        </div>
-
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>84 - 82</h3>
-            <a href="#">Highlights</a>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>Equipo 2</strong>
-            <img src="" alt="">
-        </div>
-    </article><article>
-        <div class="equipoDestacado">
-            <strong>Equipo 1</strong>
-            <img src="" alt="">
-        </div>
-
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>84 - 82</h3>
-            <a href="#">Highlights</a>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>Equipo 2</strong>
-            <img src="" alt="">
-        </div>
-    </article>
-    <article>
-        <div class="equipoDestacado">
-            <strong>Equipo 3</strong>
-            <img src="" alt="">
-        </div>
-
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>57 - 75</h3>
-            <a href="#">Highlights</a>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>Equipo 4</strong>
-            <img src="" alt="">
-        </div>
-    </article>
-
+    @endforeach
 </section>
 
 </section>

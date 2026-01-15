@@ -10,7 +10,7 @@ class Partido extends Model
 
 
     protected $fillable = [
-        'equipo_local_id',
+        'equipo_id',
         'equipo_visitante_id',
         'fecha',
         'lugar',
@@ -22,8 +22,8 @@ class Partido extends Model
     }
 
     /*equipoLocal*/
-    public function equipoLocal(){
-        return $this->hasOne(Equipo::class, 'equipo_local_id');
+    public function equipo(){
+        return $this->belongsTo(Equipo::class, 'equipo_id');
     }
 
     /*equipoVisitante*/

@@ -31,12 +31,13 @@ class DatabaseSeeder extends Seeder
             UsuariosSeeder::class,
             EquiposSeeder::class,
             JugadoresSeeder::class,
-            PartidosSeeder::class,
             EstadisticasEquipoSeeder::class,
             EstadisticasJugadorSeeder::class,
             EventosSeeder::class,
             NoticiasSeeder::class,
-        ]);
+            EquiposVisitantesSeeder::class,
+            PartidosSeeder::class,
+            ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 

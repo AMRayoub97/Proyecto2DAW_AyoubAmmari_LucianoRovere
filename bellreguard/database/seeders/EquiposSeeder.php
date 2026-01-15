@@ -13,20 +13,26 @@ class EquiposSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         DB::table('equipos')->truncate();
 
         DB::table('equipos')->insert([
-            ['nombre' => 'UPB Gandia', 'categoria' => 'Profesional', 'genero' => 'M', 'entrenador' => 'Entrenador A', 'foto' => 'gandia.jpg'],
-            ['nombre' => 'Valencia Basket', 'categoria' => 'Senior', 'genero' => 'M', 'entrenador' => 'Entrenador B', 'foto' => 'LogoValenciaBasket.png'],
-            ['nombre' => 'Real Madrid Baloncesto', 'categoria' => 'Amateur', 'genero' => 'M', 'entrenador' => 'Entrenador C', 'foto' => 'madrid.jpg'],
-            ['nombre' => 'FC Barcelona Basquet', 'categoria' => 'Profesional', 'genero' => 'M', 'entrenador' => 'Entrenador D', 'foto' => 'barcelona.jpeg'],
-            ['nombre' => 'Movistar Estudiantes', 'categoria' => 'Amateur', 'genero' => 'M', 'entrenador' => 'Entrenador E', 'foto' => 'Movistarestudiantes.jpg'],
-            ['nombre' => 'CB Lucentum Alicante', 'categoria' => 'Senior', 'genero' => 'M', 'entrenador' => 'Entrenador F', 'foto' => 'alicante.jpg'],
-            ['nombre' => 'Covirán Granada', 'categoria' => 'Junior', 'genero' => 'M', 'entrenador' => 'Entrenador G', 'foto' => 'granada.png'],
-            ['nombre' => 'Unicaja Málaga', 'categoria' => 'Profesional', 'genero' => 'M', 'entrenador' => 'Entrenador H', 'foto' => 'malaga.png'],
-            ['nombre' => 'Basquet Manresa', 'categoria' => 'Junior', 'genero' => 'M', 'entrenador' => 'Entrenador I', 'foto' => 'manresa.png'],
-            ['nombre' => 'Surne Bilbao Basket', 'categoria' => 'Senior', 'genero' => 'M', 'entrenador' => 'Entrenador J', 'foto' => 'bilbao.jpeg'],
-        ]);
+            ['nombre' => 'Senior Masculino', 'categoria' => 'Senior', 'genero' => 'M', 'entrenador' => 'Entrenador A', 'foto' => 'logo.png'],
+            ['nombre' => 'Senior Femenino', 'categoria' => 'Senior', 'genero' => 'F', 'entrenador' => 'Entrenador B', 'foto' => 'logo.png'],
+            ['nombre' => 'Juvenil Masculino', 'categoria' => 'Juvenil', 'genero' => 'M', 'entrenador' => 'Entrenador C', 'foto' => 'logo.png'],
+            ['nombre' => 'Juvenil Femenino', 'categoria' => 'Juvenil', 'genero' => 'F', 'entrenador' => 'Entrenador D', 'foto' => 'logo.png'],
+            ['nombre' => 'Cadete Masculino', 'categoria' => 'Cadete', 'genero' => 'M', 'entrenador' => 'Entrenador E', 'foto' => 'logo.png'],
+            ['nombre' => 'Cadete Femenino', 'categoria' => 'Cadete', 'genero' => 'F', 'entrenador' => 'Entrenador F', 'foto' => 'logo.png'],
+            ['nombre' => 'Alevín Masculino', 'categoria' => 'Alevín', 'genero' => 'M', 'entrenador' => 'Entrenador G', 'foto' => 'logo.png'],
+            ['nombre' => 'Alevín Femenino', 'categoria' => 'Alevín', 'genero' => 'F', 'entrenador' => 'Entrenador H', 'foto' => 'logo.png'],
+            ['nombre' => 'Benjamín Masculino', 'categoria' => 'Benjamín', 'genero' => 'M', 'entrenador' => 'Entrenador I', 'foto' => 'logo.png'],
+            ['nombre' => 'Benjamín Femenino', 'categoria' => 'Benjamín', 'genero' => 'F', 'entrenador' => 'Entrenador J', 'foto' => 'logo.png'],
+            ['nombre' => 'Prebenjamín Masculino', 'categoria' => 'Prebenjamín', 'genero' => 'M', 'entrenador' => 'Entrenador I', 'foto' => 'logo.png'],
+            ['nombre' => 'Prebenjamín Femenino', 'categoria' => 'Prebenjamín', 'genero' => 'F', 'entrenador' => 'Entrenador J', 'foto' => 'logo.png'],
+        
+            ]);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
     }
 }

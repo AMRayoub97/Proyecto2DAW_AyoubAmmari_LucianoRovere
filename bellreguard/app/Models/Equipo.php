@@ -23,6 +23,10 @@ class Equipo extends Model
         return $this->hasMany(Jugador::class, 'equipo_id');
     }
 
+    public function partido(){
+        return $this->hasMany(Partido::class, 'equipo_id');
+    }
+
     public function estadisticaEquipo(){
         return $this->hasOne(EstadisticaEquipo::class, 'equipo_id');
     }
