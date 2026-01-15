@@ -9,7 +9,11 @@
         </ul>
     </nav>
     <div class="perfilOp">
-        @if(empty(auth()->user()->foto))
+        @auth
+            <strong>Hola, {{ auth()->user()->nombre }}</strong>
+        @endauth
+
+            @if(empty(auth()->user()->foto))
                 <img id="fotoPerfil" src="{{asset('/images/perfil_default.webp') }}" alt="Default profile picture">
             @else
                 <img id="fotoPerfil" src="{{ asset('/images/usuarios/'. auth()->user()->foto) }}" alt="Default profile picture">

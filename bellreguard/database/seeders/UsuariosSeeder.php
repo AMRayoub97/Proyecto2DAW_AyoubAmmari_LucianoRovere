@@ -15,6 +15,8 @@ class UsuariosSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
         DB::table('usuarios')->truncate();// limpia la tabla
 
         $usuario = new Usuario();
@@ -22,6 +24,17 @@ class UsuariosSeeder extends Seeder
         $usuario->apellidos = 'admin';
         $usuario->correo = 'admin';
         $usuario->password = bcrypt('admin');
+        $usuario->role = 'admin';
         $usuario->save();
+
+        $entrenador = new Usuario();
+        $entrenador->nombre = 'entrenador';
+        $entrenador->apellidos = 'entrenador';
+        $entrenador->correo = 'entrenador';
+        $entrenador->password = bcrypt('entrenador');
+        $entrenador->role = 'entrenador';
+        $entrenador->save();
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

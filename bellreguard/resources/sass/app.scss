@@ -103,6 +103,10 @@ header .perfilOp {
     display: flex;
     align-items: center;
 }
+header .perfilOp strong{
+    color: white;
+    font-weight: bold;
+}
 
 header .perfilOp ul#perfilLista {
     position: absolute;
