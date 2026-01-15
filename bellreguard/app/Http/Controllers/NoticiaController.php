@@ -48,7 +48,7 @@ class NoticiaController extends Controller
             if ($request->hasFile('foto')) {
                 $file = $request->file('foto');
                 $filename = time() . '_' . $file->getClientOriginalName(); // nombre único
-                $file->move(public_path('images/jugadores'), $filename);
+                $file->move(public_path('images/noticias'), $filename);
                 $data['foto'] = $filename;
             }else{
                 $data['foto'] = 'not1.jpg';
