@@ -7,6 +7,9 @@
     flex-flow: column nowrap;
 }
 
+h2{
+    color: #000;
+}
 
  .cab{
     width: 80%;
@@ -15,7 +18,8 @@
     justify-content: space-between;
     align-items: center;
 }
- .cab h2{
+
+ .cab *{
     color: black;
 }
 hr{
@@ -32,6 +36,62 @@ hr{
     color: white;
     text-decoration: none;
 }
+
+.filtros {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-add {
+    padding: 0.5rem 1.2rem;
+    background-color: black;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 1.8rem;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    min-width: 160px;
+    padding: 0.5rem 0;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: white;
+    text-decoration: none;
+    background-color: #7a0000;
+    margin-bottom: 0.5rem;
+}
+
+.dropdown-menu li a:hover {
+    background-color: black;
+}
+
 
  .tarjetas {
     width: 98%;

@@ -11,11 +11,37 @@
             <div class="cab">
                 <h2>EQUIPOS</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
-                @auth
-                 @if(auth()->user()?->role == 'admin')
-                    <a href="{{ route('equipos.create') }}">AÑADIR</a>
-                 @endif
-                @endauth
+                <div class="filtros">
+                    @auth
+                        @if(auth()->user()?->role == 'admin')
+                            <a href="{{ route('equipos.create') }}" class="btn-add">AÑADIR</a>
+                        @endif
+                    @endauth
+
+                    <div class="dropdown">
+                        <span class="dropdown-toggle" id="toggleFiltro">
+                            FILTRAR POR ▾
+                        </span>
+
+                        <ul class="dropdown-menu" id="menuFiltro">
+                            <li>
+                                <a href="{{ route('equipos.index') }}">Todos</a>
+                            </li>
+
+                            @foreach($categor as $cat)
+                                <li>
+                                    <a href="{{ route('equipos.index', ['categoria' => $cat]) }}">
+                                        {{ $cat }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+
+                    </div>
+                </div>
+
+
+
             </div>
             <hr>
             <!-- mensajes -->
@@ -31,6 +57,7 @@
                 </div>
                 @endif
 
+            <h2>Equipos locales:</h2>
             <div class="tarjetas">
                 @foreach($equipos as $equipo)
                 <div class="tarjeta">
@@ -70,6 +97,47 @@
             </div>
             <div class="d-flex justify-content-center mt-4" id="paginas">
                 {{ $equipos->links('pagination::bootstrap-5') }}
+            </div>
+
+            <h2>Equipos visitantes:</h2>
+            <div class="tarjetas">
+                @foreach($equiposV as $equipoV)
+                <div class="tarjeta">
+                    <div class="cont">
+                        <div class="lista">
+                            @auth
+                             @if(auth()->user()?->role == 'admin')
+                            <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
+                            <ul class="listaUl">
+                                <li><a href="{{ route('equipos.edit', $equipoV->id) }}">Editar</a></li>
+                                <hr>
+                                <form action="{{ route('equipos.destroy', $equipoV->id) }}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+
+                                    <li><button name="borrar" >Borrar</button></li>
+                                </form>
+                            </ul>
+                            @endif
+                            @endauth
+
+                        </div>
+
+                        <img src="{{ asset('/images/equipos/'. $equipoV->foto) }}" id="fotoEquipo">
+                        <strong>0.0</strong>
+                    </div>
+
+                    <h3>{{ $equipoV->nombre }}</h3>
+
+                    <div class="btnsJugador">
+                        <a href="{{ route('equipos.show', $equipoV->id) }}">Ver Perfil</a>
+                        <a href="#">⭐</a>
+                    </div>
+                </div>
+                @endforeach
+
+                <div class="d-flex justify-content-center mt-4" id="paginas">
+                {{ $equiposV->links('pagination::bootstrap-5') }}
             </div>
 
 

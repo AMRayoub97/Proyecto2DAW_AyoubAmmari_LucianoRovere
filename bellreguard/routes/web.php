@@ -54,7 +54,6 @@ Route::get('/jugadores/{id}', [JugadoresController::class, 'show'])->name('jugad
 Route::get('equipos', [EquipoController::class, 'index'])->name('equipos.index');
 Route::get('equipos/{id}', [EquipoController::class, 'show'])->name('equipos.show');
 
-
 /*-----------------Tienda------------*/
 Route::get('/tienda', function(){
     return view('principales.tienda');

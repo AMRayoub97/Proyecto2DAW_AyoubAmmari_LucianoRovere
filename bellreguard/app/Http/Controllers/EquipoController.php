@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EquipoEditRequest;
 use App\Http\Requests\EquipoRequest;
 use App\Models\Equipo;
+use App\Models\Equipo_V;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,11 +14,19 @@ class EquipoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $equipos = Equipo::paginate(6);
+        if ($request->filled('categoria')) {
+            $equipos = Equipo::where('categoria', $request->categoria)->paginate(6);
+        }else{
+            $equipos = Equipo::paginate(6);
+        }
 
-        return view('principales.equipos', compact('equipos'));
+        $categor = ['Junior', 'Senior', 'Cadete', 'Infantil', 'Alevín', 'Benjamín', 'Juvenil', 'Prebenjamín'];
+
+        $equiposV = Equipo_V::paginate(6);
+
+        return view('principales.equipos')->with('equipos', $equipos)->with('equiposV', $equiposV)->with('categor', $categor);
     }
 
     /**
@@ -121,4 +130,5 @@ class EquipoController extends Controller
             return redirect()->route('equipos.index')->with('danger', 'No tienes permiso para acceder esta pagina');
         }
     }
+
 }
