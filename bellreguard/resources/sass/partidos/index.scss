@@ -4,10 +4,17 @@
     color: black;
 }
 
+body{
+    overflow-x: hidden;
+    height: 100%;
+}
+
 main {
+    overflow-x: hidden;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 1rem;
+    
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     color: #111;
 }
@@ -177,7 +184,7 @@ hr {
     scroll-snap-type: x mandatory;
     gap: 5%;
     padding-bottom: 1rem;
-
+    padding: 0.5rem 0;
     /* Barra de scroll visible */
     scrollbar-width: thin;
     scrollbar-color: var(--color-head) #f0f0f0;
@@ -199,16 +206,17 @@ hr {
 }
 
 #destacados article {
-    flex: 0 0 40%;              
+    flex: 0 0 450px;              
     scroll-snap-align: center;
 
-    min-height: 14rem;          
-    padding: 0.5rem;           
+    max-width: 450px;
+    min-height: 15rem;          
+    padding: 1rem;           
 
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 0.5rem;
 
     background-color: rgb(248, 248, 248);
     border-radius: 14px;
@@ -222,6 +230,7 @@ hr {
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 #destacados article a{
@@ -230,6 +239,7 @@ hr {
 
 #destacados article strong{
     color: black;
+    text-align: center;
 }
 
 #destacados article img {

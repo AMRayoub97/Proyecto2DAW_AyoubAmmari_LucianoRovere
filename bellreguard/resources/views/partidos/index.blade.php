@@ -14,89 +14,43 @@
             </div>
             <hr>
 <main>
-    <div class="cab">
-        <h2>Jugando ahora</h2>
-    </div>
 
-<section id="destacados">
-    @foreach ($partidos as $partido)
-    <article>
-        <div class="equipoDestacado">
-        
-             <strong>{{$partido->equipo?->nombre}}</strong>
-            <img src="{{ $partido->equipo?->foto }}" alt="logo-equipo">   
-        
-        </div>
-
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>84 - 82</h3>
-            <a href="#">Highlights</a>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>{{$partido->nombre}}</strong>
-            <img src="{{ $partido->foto }}" alt="">
-        </div>
-    </article>
-    @endforeach
-</section>
-
-</section>
-    <div class="cab">
+<div class="cab">
     <br>
-    <h2>Próximos Partidos</h2>
+    <h2>Jugando Ahora </h2>
     <br>
 </div>
 <section id="destacados">
 
     <article>
         <div class="equipoDestacado">
-            <strong>Equipo 1</strong>
+            <strong>Equipo Local</strong>
             <img src="" alt="">
         </div>
 
         <div class="resultadoDesatacados">
             <small>2026-01-12</small>
-            <h3>84 - 82</h3>
-            <a href="#">Highlights</a>
+            <h3>VS</h3>
         </div>
 
         <div class="equipoDestacado">
-            <strong>Equipo 2</strong>
+            <strong>Equipo Visit</strong>
             <img src="" alt="">
         </div>
     </article>
-<article>
+      <article>
         <div class="equipoDestacado">
-            <strong>Equipo 1</strong>
+            <strong>Equipo Local</strong>
             <img src="" alt="">
         </div>
 
         <div class="resultadoDesatacados">
             <small>2026-01-12</small>
-            <h3>84 - 82</h3>
-            <a href="#">Highlights</a>
+            <h3>VS</h3>
         </div>
 
         <div class="equipoDestacado">
-            <strong>Equipo 2</strong>
-            <img src="" alt="">
-        </div>
-    </article><article>
-        <div class="equipoDestacado">
-            <strong>Equipo 1</strong>
-            <img src="" alt="">
-        </div>
-
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>84 - 82</h3>
-            <a href="#">Highlights</a>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>Equipo 2</strong>
+            <strong>Equipo Visit</strong>
             <img src="" alt="">
         </div>
     </article>
@@ -108,8 +62,7 @@
 
         <div class="resultadoDesatacados">
             <small>2026-01-12</small>
-            <h3>2 - 4</h3>
-            <a href="#">Highlights</a>
+            <h3>VS</h3>
         </div>
 
         <div class="equipoDestacado">
@@ -119,6 +72,34 @@
     </article>
 
 </section>
+    <div class="cab">
+        <h2>Próximos Partidos</h2>
+    </div>
+
+<section id="destacados">
+    @foreach ($partidos as $partido)
+    <article>
+        <div class="equipoDestacado">
+        
+             <strong>{{$partido->equipo?->nombre}}</strong>
+            <img src="{{ $partido->equipo?->foto }}" alt="">   
+        
+        </div>
+
+        <div class="resultadoDesatacados">
+            <small>2026-01-12</small>
+            
+            <strong>Próximamente</strong>
+        </div>
+
+        <div class="equipoDestacado">
+            <strong>{{$partido->nombre}}</strong>
+            <img src="{{ $partido->foto }}" alt="">
+        </div>
+    </article>
+    @endforeach
+</section>
+
 </main>
 @endsection
 
