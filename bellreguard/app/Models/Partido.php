@@ -28,6 +28,6 @@ class Partido extends Model
 
     /*equipoVisitante*/
     public function equipoVisitante(){
-        return $this->hasOne(Equipo::class, 'equipo_visitante_id');
+        return $this->belongsTo(Equipo_V::class, 'equipo_visitante_id');
     }
 }

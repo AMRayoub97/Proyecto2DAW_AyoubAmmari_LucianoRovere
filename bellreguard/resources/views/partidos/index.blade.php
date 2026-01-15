@@ -93,8 +93,8 @@
         </div>
 
         <div class="equipoDestacado">
-            <strong>{{$partido->nombre}}</strong>
-            <img src="{{ $partido->foto }}" alt="">
+            <strong>{{$partido->equipoVisitante?->nombre}} | {{$partido->equipoVisitante->categoria}}</strong>
+            <img src="{{ $partido->equipoVisitante?->foto }}" alt="">
         </div>
     </article>
     @endforeach

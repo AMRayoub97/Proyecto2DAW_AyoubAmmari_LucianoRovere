@@ -45,8 +45,8 @@
                 <input type="text" name="equipovisit" id="equipovisit" list="lista-visit" required>
 
                 <datalist id="lista-visit">
-                   @forelse ($equipos as $equipo)
-                        <option value="{{$equipo->nombre}}"></option>
+                   @forelse ($equiposV as $equipoV)
+                        <option value="{{$equipoV->nombre}} | {{$equipoV->genero}} | {{$equipoV->categoria}}"></option>
                    @empty
                        <strong>No hay equipos</strong>
                    @endforelse
@@ -61,6 +61,16 @@
                 
                 <label for="ciudad">Estadio del Partido:</label>
                 <input type="text" name="ciudad" id="ciudad" list="lista-localidad" required>
+                <datalist id="lista-visit">
+                   @forelse ($partidos as $partido)
+                   <option value="{{$partido->lugar}}"></option>
+                   <option value="Gandía"></option>
+                   @empty
+                       <strong>No hay lugares</strong>
+                   @endforelse
+                   
+                    
+                </datalist>
                 
             </div>
 

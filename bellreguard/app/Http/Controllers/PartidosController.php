@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PartidoRequest;
 use App\Models\Equipo;
+use App\Models\Equipo_V;
 use App\Models\Partido;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -24,8 +25,12 @@ class PartidosController extends Controller
      */
     public function create()
     {
+        $partidos = Partido::get();
         $equipos=Equipo::get();
-        return view('partidos.create')->with("equipos", $equipos);
+        $equiposVisitantes=Equipo_V::get();
+        return view('partidos.create')->with("equipos", $equipos)
+                                        ->with('partidos', $partidos)
+                                        ->with('equiposV', $equiposVisitantes);
 
     }
 
