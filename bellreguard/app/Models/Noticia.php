@@ -15,6 +15,7 @@ class Noticia extends Model
         'categoria',
         'foto',
         'tutor_id',
+        'todo_contenido',
     ];
 
     public function tutor(){

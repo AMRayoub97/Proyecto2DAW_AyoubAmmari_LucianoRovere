@@ -8,6 +8,28 @@
 
 <section id="news-page">
 
+    <div class="cab">
+                <h2>Noticias</h2>
+                <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
+                @auth
+                 @if(auth()->user()?->role == 'admin')
+                    <a href="{{ route('noticias.create') }}">AÑADIR</a>
+                 @endif
+                @endauth
+            </div>
+            <hr>
+            <!-- mensajes -->
+                @if(session()->has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session()->has('danger'))
+                    <div class="alert alert-danger" role="alert">
+                        {{ session('danger') }}
+                    </div>
+                @endif
 
     {{-- HERO NOTICIA --}}
     <section class="news-hero">
@@ -49,12 +71,12 @@
 
         @forelse($noticias as $noticia)
             <article class="news-row">
-                <a href="{{ route('noticias.show', $destacada->id)}}">
-                <img src="{{ asset('images/noticias/'. $destacada->foto) }}">
+                <a href="{{ route('noticias.show', $noticia->id)}}">
+                <img src="{{ asset('images/noticias/'. $noticia->foto) }}">
                 <div>
-                    <h3>{{ $destacada->titulo }}</h3>
-                    <p>{{ $destacada->contenido }}</p>
-                    <small>{{ $destacada->fecha }}</small>
+                    <h3>{{ $noticia->titulo }}</h3>
+                    <p>{{ $noticia->contenido }}</p>
+                    <small>{{ $noticia->fecha }}</small>
                 </div>
                 </a>
             </article>

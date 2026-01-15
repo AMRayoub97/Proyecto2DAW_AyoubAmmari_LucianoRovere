@@ -38,6 +38,7 @@ export default defineConfig({
                 'resources/sass/noticias/perfilTutor.scss',
                 'resources/sass/permisos/index.scss',
                 'resources/sass/permisos/edit.scss',
+                'resources/sass/noticias/create.scss',
             ],
             refresh: true,
         }),

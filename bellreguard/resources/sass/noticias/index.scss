@@ -14,6 +14,32 @@ a {
     font-family: 'Poppins', sans-serif;
 }
 
+
+ .cab{
+    width: 80%;
+    margin: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ .cab h2{
+    color: black;
+}
+hr{
+    margin: 0 auto;
+    background-color: #7a0000;
+    height: 0.1rem;
+    border: none;
+    width: 95%;
+}
+ .cab a{
+    padding: 0.5rem 1rem;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+}
+
 /* HERO */
 .news-hero {
     position: relative;

@@ -38,8 +38,11 @@ Route::middleware(['auth'])->group(function () {
     /*----------------Permisos------------*/
     Route::resource('permisos', PermisosController::class);
 
-    
+    /*----------------Partidos------------*/
     Route::resource('partidos', PartidosController::class)->except(['index','show']);
+
+    /*--------------Noticias-------------*/
+    Route::resource('noticias', NoticiaController::class)->except(['index','show']);
 
 });
 
