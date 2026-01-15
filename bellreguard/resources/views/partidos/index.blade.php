@@ -80,21 +80,21 @@
     @foreach ($partidos as $partido)
     <article>
         <div class="equipoDestacado">
-        
+
              <strong>{{$partido->equipo?->nombre}}</strong>
-            <img src="{{ $partido->equipo?->foto }}" alt="">   
-        
+            <img src="{{ asset('images/equipos/'. $partido->equipo?->foto)  }}" alt="{{ $partido->equipo?->nombre }}">
+
         </div>
 
         <div class="resultadoDesatacados">
             <small>2026-01-12</small>
-            
+
             <strong>Próximamente</strong>
         </div>
 
         <div class="equipoDestacado">
             <strong>{{$partido->equipoVisitante?->nombre}} | {{$partido->equipoVisitante->categoria}}</strong>
-            <img src="{{ $partido->equipoVisitante?->foto }}" alt="">
+            <img src="{{ asset('images/equipos/'. $partido->equipoVisitante?->foto)  }}" alt="{{ $partido->equipoVisitante?->nombre }}">
         </div>
     </article>
     @endforeach
