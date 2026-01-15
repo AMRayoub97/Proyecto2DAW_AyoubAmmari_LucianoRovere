@@ -40,7 +40,7 @@ class PartidosController extends Controller
     public function store(PartidoRequest $request)
     {
         if(Auth::user()->role == 'admin'){
-            $data = $request->validated();    
+            $data = $request->validated();
 
             Partido::create($data);
                return redirect()->route('partidos.index')
@@ -55,7 +55,7 @@ class PartidosController extends Controller
      */
     public function show(string $id)
     {
-    
+
     }
     /**
      * Show the form for editing the specified resource.
@@ -70,7 +70,7 @@ class PartidosController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        
+
     }
 
     /**
