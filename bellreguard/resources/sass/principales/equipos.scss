@@ -149,6 +149,26 @@ hr{
     padding-right: 0.5rem;
 }
 
+.tarjeta .inf{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+.tarjeta .inf strong:last-child{
+    background-color: lightgray;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+ .tarjeta strong{
+    background-color: #7a0000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+ }
+
  .tarjeta .cont{
     width: 95%;
     display: flex;

@@ -86,6 +86,10 @@
                     </div>
 
                     <h3>{{ $equipo->nombre }}</h3>
+                    <div class="inf">
+                        <strong>{{ $equipo->categoria }}</strong>
+                        <strong>{{ $equipo->genero }}</strong>
+                    </div>
 
                     <div class="btnsJugador">
                         <a href="{{ route('equipos.show', $equipo->id) }}">Ver Perfil</a>

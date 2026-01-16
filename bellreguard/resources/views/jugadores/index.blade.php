@@ -10,7 +10,7 @@
                 <h2>JUGADORES</h2>
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
-                 @if(auth()->user()?->role == 'admin')
+                 @if(auth()->user()?->role == 'admin' || auth()->user()->role == 'entrenador')
                     <a href="{{ route('jugadores.create') }}">AÑADIR</a>
                  @endif
                 @endauth
@@ -35,7 +35,7 @@
                     <div class="tarjeta">
                         <div class="lista">
                             @auth
-                                @if(auth()->user()?->role == 'admin')
+                                @if(auth()->user()?->role == 'admin'  || auth()->user()->role == 'entrenador')
                                 <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
                                 <ul class="listaUl">
                                     <li><a href="{{ route('jugadores.edit', $jugador->id) }}">Editar</a></li>

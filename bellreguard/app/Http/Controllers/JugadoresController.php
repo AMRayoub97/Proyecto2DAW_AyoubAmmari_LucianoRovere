@@ -24,7 +24,7 @@ class JugadoresController extends Controller
      */
     public function create()
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin' || Auth::user()->role == 'entrenador'){
             return view('jugadores.create');
         }else{
             return redirect()->route('jugadores.index')->with('danger', 'No tienes permiso para acceder esta pagina');
@@ -37,7 +37,7 @@ class JugadoresController extends Controller
     public function store(JugadorRequest $request)
     {
 
-        if(Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin'  || Auth::user()->role == 'entrenador'){
             $data = $request->validated();
 
             if ($request->hasFile('foto')) {
@@ -71,7 +71,7 @@ class JugadoresController extends Controller
      */
     public function edit(string $id)
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin' || Auth::user()->role == 'entrenador'){
             $jugador = Jugador::findOrFail($id);
 
             return view('jugadores.edit', compact('jugador'));
@@ -85,7 +85,7 @@ class JugadoresController extends Controller
      */
     public function update(JugadorRequest $request, string $id)
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin' || Auth::user()->role == 'entrenador'){
             $jugador = Jugador::findOrFail($id);
 
             $data = $request->validated();
@@ -110,7 +110,7 @@ class JugadoresController extends Controller
      */
     public function destroy(string $id)
     {
-        if(Auth::user()->role == 'admin'){
+        if(Auth::user()->role == 'admin' || Auth::user()->role == 'entrenador'){
             Jugador::findOrFail($id)->delete();
 
             return redirect()->route('jugadores.index')
