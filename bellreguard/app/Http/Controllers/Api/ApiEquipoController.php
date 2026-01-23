@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
 
-class EquipoController extends Controller
+class ApiEquipoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class EquipoController extends Controller
     public function index(Request $request)
     {
         $nom = $request->query('nom');
-        
+
         if($nom){
             $equipos = Equipo::where('nombre', 'LIKE', '%' . $nom . '%')->get();
         }else{
