@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             menu.style.display = 'none';
         }
     });
-    
+
     const botonesEditar = document.querySelectorAll('.listaEditar');
 
     botonesEditar.forEach(boton => {
@@ -28,8 +28,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
 
+
+        const busqueda = document.getElementById("busqueda");
+        const sug_busqueda = document.getElementById("sug_busqueda");
+
+        busqueda.addEventListener('keyup', async (e) =>{
+            e.preventDefault();
+
+            const value = busqueda.value;
+
+            if (value.length === 0) {
+                sug_busqueda.innerHTML = "";
+                return;
+            }
+
+            try {
+                const res = await fetch(`http://localhost/api/equipos?nom=${value}`);
+
+                if (!res.ok) {
+                    throw new Error("error fetch equipos");
+                }
+
+                const data = await res.json();
+
+                sug_busqueda.innerHTML = "";
+
+                data.forEach(element => {
+                    const li = document.createElement("li");
+                    li.textContent = element.nombre;
+                    sug_busqueda.appendChild(li);
+                });
+
+            } catch (error) {
+                console.error(error);
+            }
+
+        });
+});
 
 /*async function mostrarEquipos() {
   try {

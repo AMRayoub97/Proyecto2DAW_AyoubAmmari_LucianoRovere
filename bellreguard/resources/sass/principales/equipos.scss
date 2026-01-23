@@ -19,9 +19,58 @@ h2{
     align-items: center;
 }
 
- .cab *{
+.cab *{
     color: black;
 }
+
+#barra_busqueda{
+    position: relative;
+    width: 260px;
+}
+
+#busqueda{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+#busqueda:focus{
+    border-color: #7a0000;
+}
+
+/* ===== SUGGESTIONS ===== */
+#sug_busqueda{
+    position: absolute;
+    top: 110%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+#sug_busqueda li{
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#sug_busqueda li:hover{
+    background-color: #f2f2f2;
+}
+
+
+
 hr{
     margin: 0 auto;
     background-color: #7a0000;

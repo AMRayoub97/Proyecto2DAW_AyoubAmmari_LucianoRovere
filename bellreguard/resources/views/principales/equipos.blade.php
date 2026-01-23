@@ -10,6 +10,15 @@
         <section>
             <div class="cab">
                 <h2>EQUIPOS</h2>
+
+                <div id="barra_busqueda">
+                    <input type="text" id="busqueda" placeholder="Buscar por nombre ....">
+                    <ul id="sug_busqueda">
+
+                    </ul>
+                </div>
+
+
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 <div class="filtros">
                     @auth
@@ -39,9 +48,6 @@
 
                     </div>
                 </div>
-
-
-
             </div>
             <hr>
             <!-- mensajes -->
