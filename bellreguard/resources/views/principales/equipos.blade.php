@@ -109,49 +109,6 @@
                 {{ $equipos->links('pagination::bootstrap-5') }}
             </div>
 
-            <h2>Equipos visitantes:</h2>
-            <div class="tarjetas">
-                @foreach($equiposV as $equipoV)
-                <div class="tarjeta">
-                    <div class="cont">
-                        <div class="lista">
-                            @auth
-                             @if(auth()->user()?->role == 'admin')
-                            <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
-                            <ul class="listaUl">
-                                <li><a href="{{ route('equipos.edit', $equipoV->id) }}">Editar</a></li>
-                                <hr>
-                                <form action="{{ route('equipos.destroy', $equipoV->id) }}" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-
-                                    <li><button name="borrar" >Borrar</button></li>
-                                </form>
-                            </ul>
-                            @endif
-                            @endauth
-
-                        </div>
-
-                        <img src="{{ asset('/images/equipos/'. $equipoV->foto) }}" id="fotoEquipo">
-                        <strong>0.0</strong>
-                    </div>
-
-                    <h3>{{ $equipoV->nombre }}</h3>
-
-                    <div class="btnsJugador">
-                        <a href="{{ route('equipos.show', $equipoV->id) }}">Ver Perfil</a>
-                        <a href="#">⭐</a>
-                    </div>
-                </div>
-                @endforeach
-
-                <div class="d-flex justify-content-center mt-4" id="paginas">
-                {{ $equiposV->links('pagination::bootstrap-5') }}
-            </div>
-
-
-
         </section>
 @endsection
 

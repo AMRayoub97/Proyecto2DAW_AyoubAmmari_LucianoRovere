@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Equipo;
 use Illuminate\Http\Request;
 
-class ApiEquipoController extends Controller
+class EquipoController extends Controller
 {
     /**
      * Display a listing of the resource.
