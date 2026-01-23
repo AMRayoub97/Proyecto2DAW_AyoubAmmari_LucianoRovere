@@ -15,91 +15,68 @@
             <hr>
 <main>
 
-<div class="cab">
-    <br>
-    <h2>Jugando Ahora </h2>
-    <br>
-</div>
-<section id="destacados">
+    <!--
+        CREAR CONDICION IF, 
+        SI la fecha del partido es igual a la de hoy: Mostrar en "Jugando ahora" 
+        SI es mayor:Mostrar en "Próximos partidos"
+    -->
+   @if ($fecha = $partidosHoy)
+       
+   
+    <div class="cab">
+        <br>
+        <h2>Jugando Ahora </h2>
+        <br>
+    </div>
+    <section id="destacados">
+        @foreach ($partidosHoy as $partido)
+            <article>
+                <div class="equipoDestacado">
+                    <strong>{{$partido->equipo?->nombre}}</strong>
+                    <img src="{{asset('images/equipos/'. $partido->equipo?->foto)}}" alt="{{$partido->equipo?->nombre}}">
+                </div>
 
-    <article>
-        <div class="equipoDestacado">
-            <strong>Equipo Local</strong>
-            <img src="" alt="">
-        </div>
+                <div class="resultadoDesatacados">
+                    <small>{{$partido->fecha}}</small>
+                    <h3>VS</h3>
+                </div>
 
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>VS</h3>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>Equipo Visit</strong>
-            <img src="" alt="">
-        </div>
-    </article>
-      <article>
-        <div class="equipoDestacado">
-            <strong>Equipo Local</strong>
-            <img src="" alt="">
-        </div>
-
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>VS</h3>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>Equipo Visit</strong>
-            <img src="" alt="">
-        </div>
-    </article>
-    <article>
-        <div class="equipoDestacado">
-            <strong>Equipo 3</strong>
-            <img src="" alt="">
-        </div>
-
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
-            <h3>VS</h3>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>Equipo 4</strong>
-            <img src="" alt="">
-        </div>
-    </article>
-
-</section>
+                <div class="equipoDestacado">
+                    <strong>{{$partido->equipoVisitante?->nombre}} | {{$partido->equipoVisitante->categoria}}</strong>
+                    <img src="{{asset('images/equipos/'. $partido->equipoVisitante?->foto)}}" alt="{{$partido->equipoVisitante?->nombre}}">
+                </div>
+            </article>
+        @endforeach
+    </section>
+    @endif
     <div class="cab">
         <h2>Próximos Partidos</h2>
     </div>
+   
+    <section id="destacados">
+        @foreach ($partidosProximos as $partido)
+        <article>
+            <div class="equipoDestacado">
 
-<section id="destacados">
-    @foreach ($partidos as $partido)
-    <article>
-        <div class="equipoDestacado">
+                <strong>{{$partido->equipo?->nombre}}</strong>
+                <img src="{{asset('images/equipos/'. $partido->equipo?->foto)}}" alt="{{$partido->equipo?->nombre}}">
 
-             <strong>{{$partido->equipo?->nombre}}</strong>
-            <img src="{{ asset('images/equipos/'. $partido->equipo?->foto)  }}" alt="{{ $partido->equipo?->nombre }}">
+            </div>
 
-        </div>
+            <div class="resultadoDesatacados">
+                <small>{{$partido->fecha}}</small>
 
-        <div class="resultadoDesatacados">
-            <small>2026-01-12</small>
+                <strong>Próximamente</strong>
+            </div>
 
-            <strong>Próximamente</strong>
-        </div>
-
-        <div class="equipoDestacado">
-            <strong>{{$partido->equipoVisitante?->nombre}} | {{$partido->equipoVisitante->categoria}}</strong>
-            <img src="{{ asset('images/equipos/'. $partido->equipoVisitante?->foto)  }}" alt="{{ $partido->equipoVisitante?->nombre }}">
-        </div>
-    </article>
-    @endforeach
-</section>
-
+            <div class="equipoDestacado">
+                <strong>{{$partido->equipoVisitante?->nombre}} | {{$partido->equipoVisitante->categoria}}</strong>
+                <img src="{{asset('images/equipos/'. $partido->equipoVisitante?->foto)}}" alt="{{$partido->equipoVisitante?->nombre}}">
+            </div>
+        </article>
+        @endforeach
+    </section>
+   
 </main>
 @endsection
 

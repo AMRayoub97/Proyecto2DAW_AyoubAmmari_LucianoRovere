@@ -7,7 +7,10 @@ use App\Models\Equipo;
 use App\Models\Equipo_V;
 use App\Models\Partido;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+
+use function Symfony\Component\Clock\now;
 
 class PartidosController extends Controller
 {
@@ -16,8 +19,17 @@ class PartidosController extends Controller
      */
     public function index()
     {
+        $fecha = Carbon::now('Europe/Madrid')->format('Y-m-d');
         $partidos=Partido::get();
-        return view('partidos.index')->with("partidos", $partidos);
+        
+        $partidosHoy = Partido::where('fecha', '=', $fecha)->get();
+        $partidosProximos = Partido::where('fecha', '>', $fecha)->get();
+
+        return view('partidos.index')
+                                    ->with("partidos", $partidos)
+                                    ->with('fecha', $fecha)
+                                    ->with('partidosHoy',$partidosHoy)
+                                    ->with('partidosProximos', $partidosProximos);
     }
 
     /**
