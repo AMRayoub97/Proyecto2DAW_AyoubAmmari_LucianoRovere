@@ -1,4 +1,4 @@
-async function getProducto(){
+/*async function getProducto(){
     try{
 
         const res = await fetch(`https://fakestoreapi.com/products/${id_producto}`);
@@ -47,4 +47,4 @@ async function getProducto(){
 }
 
 
-getProducto();
+getProducto();*/

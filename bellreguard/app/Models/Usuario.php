@@ -66,4 +66,8 @@ class Usuario extends Authenticatable
     public function noticia(){
         return $this->hasMany(Noticia::class, 'tutor_id');
     }
+
+    public function comentarioProducto(){
+        return $this->hasMany(ComentariosProducto::class, 'usuario_id');
+    }
 }

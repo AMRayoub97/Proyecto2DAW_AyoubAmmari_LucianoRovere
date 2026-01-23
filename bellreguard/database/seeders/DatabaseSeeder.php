@@ -37,6 +37,8 @@ class DatabaseSeeder extends Seeder
             NoticiasSeeder::class,
             EquiposVisitantesSeeder::class,
             PartidosSeeder::class,
+            ProductosSeeder::class,
+            ComentarioProductoSeeder::class
             ]);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=1;');

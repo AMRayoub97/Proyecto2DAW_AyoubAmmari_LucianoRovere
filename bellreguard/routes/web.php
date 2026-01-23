@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ComentariosProductoController;
 use App\Http\Controllers\EquipoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\JugadoresController;
@@ -8,7 +9,9 @@ use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\PaginasController;
 use App\Http\Controllers\PartidosController;
 use App\Http\Controllers\PermisosController;
+use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\UsuarioController;
+use App\Models\ComentariosProducto;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
     /*--------------Noticias-------------*/
     Route::resource('noticias', NoticiaController::class)->except(['index','show']);
 
+    /*------------------Tienda---------------*/
+    Route::resource('tienda', ProductoController::class)->except(['index','show'])->middleware('auth');
+
 });
 
 /*------------------Jugadores-----------------------*/
@@ -55,13 +61,11 @@ Route::get('equipos', [EquipoController::class, 'index'])->name('equipos.index')
 Route::get('equipos/{id}', [EquipoController::class, 'show'])->name('equipos.show');
 
 /*-----------------Tienda------------*/
-Route::get('/tienda', function(){
-    return view('principales.tienda');
-})->name('tienda');
+Route::get('tienda', [ProductoController::class, 'index'])->name('tienda.index');
+Route::get('tienda/{id}', [ProductoController::class, 'show'])->name('tienda.show');
+Route::resource('comentario', ComentariosProductoController::class);
 
-Route::get('/tienda/{id}', function ($id) {
-    return view('principales.producto', compact('id'));
-})->name('producto');
+
 
 /*--------------COOKIES----------*/
 Route::get('cookies', function(){
