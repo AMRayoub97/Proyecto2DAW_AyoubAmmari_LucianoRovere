@@ -39,6 +39,8 @@ export default defineConfig({
                 'resources/sass/permisos/index.scss',
                 'resources/sass/permisos/edit.scss',
                 'resources/sass/noticias/create.scss',
+                'resources/sass/equipos/edit.scss',
+                
             ],
             refresh: true,
         }),
