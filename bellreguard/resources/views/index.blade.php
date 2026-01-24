@@ -6,6 +6,11 @@
 
     @vite(['resources/sass/principales/index.scss', 'resources/js/principales/index.js'])
 
+    @if(session()->has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
 
         <section id="principal" class="fade-in">
             <div id="banner">

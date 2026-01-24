@@ -50,6 +50,9 @@ Route::middleware(['auth'])->group(function () {
     /*------------------Tienda---------------*/
     Route::resource('tienda', ProductoController::class)->except(['index','show'])->middleware('auth');
 
+    /*--------Guardar eventos de db al calendario de google*/
+    Route::get('/sync-events', [EventoController::class, 'syncToGoogleCalendar'])->middleware('auth');
+
 });
 
 /*------------------Jugadores-----------------------*/
@@ -84,4 +87,5 @@ Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index')
 
 /*-----------PARTIDOS------------*/
 Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
+
 
