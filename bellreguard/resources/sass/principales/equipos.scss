@@ -207,21 +207,26 @@ hr{
     display: none ;
     margin: 0 auto;
     list-style: none;
-    background-color: lightgray;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
     margin-right: 2rem;
 }
-.tarjeta .cont .lista ul li {
-    margin: 0 auto;
-}
-.tarjeta .cont .lista ul li a{
-    color: black;
+.tarjeta .cont .lista ul button{
+    color: white;
+    background: linear-gradient(135deg, #121213, #571111);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
     text-decoration: none;
     font-weight: bold;
     padding-right: 0.5rem;
+
+}
+
+.tarjeta .cont .lista ul button:hover{
+    background: linear-gradient(135deg, #571111, #121213);
+    transform: scale(1.1)
 }
 
 .tarjeta .inf{
