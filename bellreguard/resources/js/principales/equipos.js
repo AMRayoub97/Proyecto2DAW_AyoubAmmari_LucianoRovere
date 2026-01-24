@@ -34,24 +34,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('closeModal');
 
     document.querySelectorAll('.openEdit').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation(); // مهم
             iframe.src = btn.dataset.url;
             modal.classList.remove('hidden');
         });
     });
 
     closeBtn.addEventListener('click', () => {
-        modal.classList.add('hidden');
-        iframe.src = '';
+        closeModal();
     });
 
-    window.addEventListener('message', (event) => {
-    if (event.data === 'closeEditModal') {
-        document.getElementById('editModal').classList.add('hidden');
-        document.getElementById('editIframe').src = '';
-        location.reload(); // اختياري: باش يتحدث الداتا
+    modal.addEventListener('click', () => {
+        closeModal();
+    });
+
+    document.querySelector('.modal-window').addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+
+    function closeModal() {
+        modal.classList.add('hidden');
+        iframe.src = '';
     }
-});
+
+        window.addEventListener('message', (event) => {
+        if (event.data === 'closeEditModal') {
+            document.getElementById('editModal').classList.add('hidden');
+            document.getElementById('editIframe').src = '';
+            location.reload(); 
+        }
+    });
 
 
 

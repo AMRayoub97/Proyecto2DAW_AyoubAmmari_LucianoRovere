@@ -12,7 +12,6 @@ html, body {
 }
 
 
-/* الخلفية */
 .edit-window {
     background: #e5e5e5;
     height: 100%;
@@ -20,7 +19,6 @@ html, body {
 }
 
 
-/* النافذة */
 .window {
     width: 100%;
     max-width: 720px;
@@ -31,7 +29,6 @@ html, body {
     animation: fadeIn 0.3s ease;
 }
 
-/* الهيدر */
 .window-header {
     background: linear-gradient(135deg, #1f1f1f, #0a0a0a);
     color: #ffffff;
@@ -46,7 +43,7 @@ html, body {
 .window-header span{
     color: white;
 }
-/* زر الإغلاق */
+/* cerrar btn*/
 .window-header button {
     background: #ff4d4f;
     border: none;
@@ -63,19 +60,16 @@ html, body {
     transform: scale(1.05);
 }
 
-/* جسم النافذة */
 .window-body {
     padding: 28px;
 }
 
-/* الفورم */
 .form-jugador {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 22px;
 }
 
-/* الحقول */
 .form-jugador .grupo {
     display: flex;
     flex-direction: column;
@@ -104,7 +98,7 @@ html, body {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
-/* زر Guardar */
+//cerrar btn
 .form-jugador .btn-guardar {
     grid-column: 1 / -1;
     margin-top: 28px;
