@@ -47,6 +47,9 @@ Route::middleware(['auth'])->group(function () {
     /*--------------Noticias-------------*/
     Route::resource('noticias', NoticiaController::class)->except(['index','show']);
 
+    /*--------------Eventos-------------*/
+    Route::resource('eventos', EventoController::class)->except(['index','show'])->middleware(['auth']);
+
     /*------------------Tienda---------------*/
     Route::resource('tienda', ProductoController::class)->except(['index','show'])->middleware('auth');
 

@@ -25,7 +25,19 @@
     @endif
 
     <div class="events-grid">
-        <h3 class="section-title">Calendario Oficial</h3>
+        @if(session()->has('success'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('success') }}
+                    </div>
+                @endif
+        <div class="cabEvt">
+            <h3 class="section-title">Calendario Oficial</h3>
+            @auth
+                @if(auth()->user()->role == 'admin')
+                    <a href="{{ route('eventos.create') }}">Anadir</a>
+                @endif
+            @endauth
+        </div>
 
         @foreach($eventos as $evento)
         <div class="event-detailed-card {{ $evento->estado }}">

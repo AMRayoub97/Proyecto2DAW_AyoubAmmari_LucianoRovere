@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventoRequest;
 use App\Models\Evento;
 use Google\Client;
 use Google\Service\Calendar;
@@ -28,15 +29,47 @@ class EventoController extends Controller
      */
     public function create()
     {
-        //
+        return  view('eventos.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(EventoRequest $request)
     {
-        //
+        // method para guardar evento en calendario tambien
+        $evento = Evento::create($request->validated());
+
+        // 3️⃣ Push to Google Calendar (only if user is admin)
+        if(Auth::user()->role === 'admin') {
+            $client = new Client();
+            $client->setAuthConfig(storage_path('app/google/bellreguard-d754feb1b72b.json'));
+            $client->addScope(Calendar::CALENDAR);
+
+            $service = new Calendar($client);
+            $calendarId = '84c77a57829987452c49d60bb03eaab97665b000d99116c01f48819584c0168b@group.calendar.google.com';
+
+            $startDate = Carbon::parse($evento->fecha);
+            $endDate = $startDate->copy()->addHour();
+
+            $googleEvent = new Event([
+                'summary' => $evento->titulo,
+                'location' => $evento->lugar,
+                'description' => $evento->descripcion ?? '',
+                'start' => new EventDateTime([
+                    'dateTime' => $startDate->toRfc3339String(),
+                    'timeZone' => 'Europe/Madrid'
+                ]),
+                'end' => new EventDateTime([
+                    'dateTime' => $endDate->toRfc3339String(),
+                    'timeZone' => 'Europe/Madrid'
+                ]),
+            ]);
+
+            $service->events->insert($calendarId, $googleEvent);
+        }
+
+        return redirect()->route('eventos.index')->with('success', 'Evento creado y añadido al Google Calendar!');
     }
 
     /**
