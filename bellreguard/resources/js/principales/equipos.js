@@ -29,6 +29,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const modal = document.getElementById('editModal');
+    const iframe = document.getElementById('editIframe');
+    const closeBtn = document.getElementById('closeModal');
+
+    document.querySelectorAll('.openEdit').forEach(btn => {
+        btn.addEventListener('click', () => {
+            iframe.src = btn.dataset.url;
+            modal.classList.remove('hidden');
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.classList.add('hidden');
+        iframe.src = '';
+    });
+
+    window.addEventListener('message', (event) => {
+    if (event.data === 'closeEditModal') {
+        document.getElementById('editModal').classList.add('hidden');
+        document.getElementById('editIframe').src = '';
+        location.reload(); // اختياري: باش يتحدث الداتا
+    }
+});
+
+
+
 
         const busqueda = document.getElementById("busqueda");
         const sug_busqueda = document.getElementById("sug_busqueda");

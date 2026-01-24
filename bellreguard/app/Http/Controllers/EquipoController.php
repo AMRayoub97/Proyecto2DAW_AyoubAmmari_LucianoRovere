@@ -110,7 +110,7 @@ class EquipoController extends Controller
 
             $equipo->update($data);
 
-            return redirect()->route('equipos.index')->with('success', 'El equipo ' . $equipo->nombre . ' ha sido editado correctamente');
+            return back()->with('success', 'El equipo ' . $equipo->nombre . ' ha sido editado correctamente');
 
         }else{
             return redirect()->route('equipos.index')->with('danger', 'No tienes permiso para acceder esta pagina');

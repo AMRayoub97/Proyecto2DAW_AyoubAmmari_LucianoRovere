@@ -1,14 +1,14 @@
 
+    @vite(['resources/sass/equipos/edit.scss'])
 
-
+@if(session('success'))
+    <script>
+        // سدّ الwindow (modal) من داخل iframe
+        window.parent.postMessage('closeEditModal', '*');
+    </script>
+@endif
 
 <div class="window">
-    @if(session('success'))
-        <script>
-            // سدّ الwindow (modal) من داخل iframe
-            window.parent.postMessage('closeEditModal', '*');
-        </script>
-    @endif
     <div class="window-header">
         <span>Editar equipo – {{ $equipo->nombre }}</span>
         <button type="button" onclick="window.parent.postMessage('closeEditModal', '*')">✖</button>
