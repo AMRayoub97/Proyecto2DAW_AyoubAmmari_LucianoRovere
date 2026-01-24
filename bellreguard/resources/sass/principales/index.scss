@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 
 /* Principal Section */
 section#principal {
@@ -94,7 +97,7 @@ section#principal {
   font-weight: bold;
 }
 
-.destac hr {
+hr {
   margin: 0.5rem auto;
   border: 0.6px solid rgb(0, 0, 0);
 }
@@ -207,6 +210,37 @@ section#principal {
     text-decoration:underline;
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px); // katbda shwia ta7t
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0); // kaybda normal
+}
+
+.scroll {
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+#destacados article, #noticias article {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#destacados article:hover, #noticias article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+
 /*----------notcias-eventos-----------*/
 .notcias-eventos{
     display: flex;
@@ -281,6 +315,51 @@ section#principal {
     min-width: 100%;
     min-height: 30rem;
 }
+
+.custom-calendar {
+    width: 100%;
+    max-width: 400px;
+    margin: 1rem auto;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.calendar-day {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar-day.has-event {
+    background: #ff5959;
+    color: #fff;
+}
+
+.calendar-day span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
 
 .event-detailed-card {
     min-width: 45%;
@@ -379,6 +458,113 @@ section#principal {
         &:hover { background: #f0f0f0; }
     }
 }
+/* Contacto */
+#contacto {
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#contacto h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: black;
+    font-weight: bold;
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.contact-card {
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px 20px;
+    background: linear-gradient(145deg, #fff, #f0f0f0);
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+    font-size: 1.3rem;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+    cursor: pointer;
+}
+
+.contact-card i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #7a0000;
+}
+
+.contact-card p {
+    margin: 0;
+    color: #222;
+    font-weight: 600;
+}
+
+.contact-card:hover {
+     transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+    background: linear-gradient(145deg, #7a0000, #202020);
+    color: white;
+}
+
+.contact-card:hover i, .contact-card:hover p {
+    color: white;
+}
+
+/* Mapa */
+#mapa {
+    width: 100%;
+    background-color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#mapa h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: black;
+    font-weight: bold;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 450px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-cards { gap: 30px; }
+    #contacto h2, #mapa h2 { font-size: 2rem; }
+    .contact-card { font-size: 1.2rem; padding: 20px; }
+    .contact-card i { font-size: 2.5rem; }
+}
+
+@media (max-width: 480px) {
+    .contact-card { font-size: 1.1rem; padding: 15px; }
+    .contact-card i { font-size: 2.2rem; }
+}
+
+
 
 /*--------movil--------------*/
 @media (max-width: 992px) {
