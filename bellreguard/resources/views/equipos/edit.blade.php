@@ -1,73 +1,53 @@
-@extends('plantilla')
 
-@section('titulo', 'editar equipo')
 
-@section('contenido')
-    @vite(['resources/sass/equipos/create.scss'])
 
-    {{-- Mensaje de éxito --}}
+
+<div class="window">
     @if(session('success'))
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
+        <script>
+            // سدّ الwindow (modal) من داخل iframe
+            window.parent.postMessage('closeEditModal', '*');
+        </script>
     @endif
+    <div class="window-header">
+        <span>Editar equipo – {{ $equipo->nombre }}</span>
+        <button type="button" onclick="window.parent.postMessage('closeEditModal', '*')">✖</button>
+    </div>
 
-    <div class="contenedor-form">
-        <h1>Editar el equipo <strong>{{ $equipo->nombre }}</strong></h1>
-
+    <div class="window-body">
         <form action="{{ route('equipos.update' , $equipo->id) }}" method="POST" enctype="multipart/form-data" class="form-jugador">
-            @method('PUT')
             @csrf
+            @method('PUT')
 
-            {{-- Nombre --}}
             <div class="grupo">
                 <label>Nombre</label>
                 <input type="text" name="nombre" value="{{ $equipo->nombre }}" required>
-                @error('nombre')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
             </div>
 
-            {{-- Foto --}}
             <div class="grupo">
                 <label>Foto</label>
-                <input type="file" name="foto" accept="image/*">
-                @error('foto')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
+                <input type="file" name="foto">
             </div>
 
-            {{-- categoria --}}
             <div class="grupo">
-                <label>categoria</label>
+                <label>Categoría</label>
                 <input type="text" name="categoria" value="{{ $equipo->categoria }}">
-                @error('categoria')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
             </div>
 
-            {{-- Género --}}
             <div class="grupo">
                 <label>Género</label>
                 <select name="genero">
                     <option value="M" {{ $equipo->genero == 'M' ? 'selected' : '' }}>M</option>
                     <option value="F" {{ $equipo->genero == 'F' ? 'selected' : '' }}>F</option>
                 </select>
-                @error('genero')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
             </div>
 
-            {{-- entrenador --}}
             <div class="grupo">
-                <label>entrenador </label>
+                <label>Entrenador</label>
                 <input type="text" name="entrenador" value="{{ $equipo->entrenador }}">
-                @error('entrenador')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
             </div>
 
-            <button type="submit" class="btn-guardar">Guardar equipo</button>
+            <button type="submit" class="btn-guardar">Guardar</button>
         </form>
     </div>
-@endsection
+</div>

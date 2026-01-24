@@ -73,7 +73,12 @@
                              @if(auth()->user()?->role == 'admin')
                             <img src="{{ asset('images/lista.png') }}" alt="lista" class="listaEditar">
                             <ul class="listaUl">
-                                <li><a href="{{ route('equipos.edit', $equipo->id) }}">Editar</a></li>
+                                <button
+                                    class="openEdit"
+                                    data-url="{{ route('equipos.edit', $equipo->id) }}">
+                                    Editar
+                                </button>
+
                                 <hr>
                                 <form action="{{ route('equipos.destroy', $equipo->id) }}" method="POST">
                                     @method('DELETE')
@@ -103,6 +108,18 @@
                     </div>
                 </div>
                 @endforeach
+
+                <div id="editModal" class="modal hidden">
+                    <div class="modal-window">
+                        <button id="closeModal">✖</button>
+                        <iframe
+                            id="editIframe"
+                            src=""
+                            frameborder="0">
+                        </iframe>
+                    </div>
+                </div>
+
 
             </div>
             <div class="d-flex justify-content-center mt-4" id="paginas">
