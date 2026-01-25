@@ -342,6 +342,7 @@ footer section ul li a{
     background-color: #777;
 }
 
+/*---tablet---*/
 @media (max-width: 992px) {
     body {
         grid-template-columns: 1fr !important;
@@ -365,25 +366,27 @@ footer section ul li a{
         grid-template-columns: 25% 50% 25%;
         align-items: center;
         gap: 10px;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem !important;
         max-height: none;
-        height: 15rem;
+        height: 10rem;
     }
 
     header img#logo, header img#fotoPerfil {
-        width: 150px;
-        height: 150px;
+        width: 80px;
+        height: 80px;
     }
 
+
     header #navHeadr {
-        width: 100%;
+        width: 50%;
         display: flex;
         justify-content: center;
+        margin-right: 1rem !important;
     }
 
     header #navHeadr ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-flow: row nowrap;
         width: 100%;
         padding: 0;
         list-style: none;
@@ -395,10 +398,11 @@ footer section ul li a{
     }
 
     header #navHeadr ul li a {
-        font-size: 2rem;
+        font-size: 1.5rem;
         white-space: nowrap;
     }
 
+    /*-----nav izquierda---*/
     #navLeft {
         grid-area: naL;
         width: 100% !important;
@@ -411,7 +415,7 @@ footer section ul li a{
     #navIzquierda {
         width: 100%;
         padding: 1rem;
-        min-height: 6rem;
+        min-height: 4rem;
         background-color: rgb(172, 168, 168);
     }
 
@@ -423,12 +427,12 @@ footer section ul li a{
     }
 
     #navIzquierda ul li a{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 
     #navLeft #ocultarNavBtn {
         width: 100% !important;
-        height: 6rem !important;
+        height: 3rem !important;
         background-color: #333;
         color: white;
         border: none;
@@ -448,6 +452,7 @@ footer section ul li a{
         height: 80%;
     }
 
+    /*---footer--*/
    footer {
         grid-area: foo;
         min-width: 0 !important;
@@ -458,11 +463,16 @@ footer section ul li a{
             "sec";
         max-height: none;
         padding: 2rem 1rem;
-        gap: 1.5rem;
+        gap: 5%;
         height: auto;
         margin-bottom: 2rem;
+        display: flex;
+        flex-flow: row nowrap;
     }
 
+    footer .redes{
+        max-width: 48%;
+    }
     footer .redes ul {
         display: flex;
         flex-direction: column;
@@ -478,12 +488,12 @@ footer section ul li a{
         height: 15rem !important;
     }
     footer .redes ul li a{
-        font-size: 3rem;
+        font-size: 1rem;
         margin-left: 2rem;
     }
 
     footer section {
-        width: 100%;
+        width: 45%;
         justify-content: center;
     }
 
@@ -494,7 +504,7 @@ footer section ul li a{
     }
 
     footer section ul li a {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     /*--COOKIES--*/
@@ -506,10 +516,18 @@ footer section ul li a{
 
 /* Ajuste para móviles muy pequeños */
 @media (max-width: 480px) {
+
+    header{
+        padding: 0.5rem 1rem !important;
+    }
     header #navHeadr ul {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+    }
+
+    header #navHeadr ul li a{
+        font-size: 1rem;
     }
 
     #navIzquierda ul {

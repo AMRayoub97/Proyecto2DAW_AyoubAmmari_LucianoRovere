@@ -566,11 +566,14 @@ hr {
 
 
 
-/*--------movil--------------*/
+/*--------tablet--------------*/
 @media (max-width: 992px) {
+
     *{
         font-size: 1.5rem;
+        color: black;
     }
+
     section#principal {
         width: 100%;
     }
@@ -605,8 +608,9 @@ hr {
         scroll-snap-align: center;
         margin: 0;
         box-shadow: none;
-        width: 100%;
+        width: 80%;
         margin: 0 auto;
+        padding: 0 1rem;
         min-height: 12rem;
         display: flex;
         align-items: center;
@@ -668,7 +672,15 @@ hr {
     }
 }
 
+/*----------movil****/
 @media (max-width: 480px) {
+
+    /*---destacados---*/
+    #destacados article{
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
     #destacados article img {
         width: 70px;
         height: 70px;
@@ -676,5 +688,25 @@ hr {
 
     #destacados article .resultadoDesatacados h3 {
         font-size: 1rem;
+    }
+
+    /*--calendario---*/
+    .eventos .calendario{
+        margin: 0 auto;
+        max-width: 60%;
+        min-width: 60%;
+    }
+
+    /*---eventos--*/
+    .eventos .event-detailed-card{
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    .eventos .event-detailed-card *{
+        font-size: 1rem;
+    }
+
+    .eventos .card-actions{
+        display: none;
     }
 }

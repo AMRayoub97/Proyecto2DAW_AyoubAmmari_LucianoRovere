@@ -1,3 +1,4 @@
+
 .events-page {
     background-color: #f4f4f4;
     min-height: 100vh;
@@ -88,6 +89,7 @@
     border-radius: 12px;
     margin-bottom: 15px;
     overflow: hidden;
+    color: black;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     border-left: 5px solid #ccc;
 
@@ -108,13 +110,17 @@
         .month { color: #7a0000; font-weight: bold; }
     }
 
+    .card-side-info .hour{
+        color: black;
+    }
+
     .card-main-content {
         flex-grow: 1;
         padding: 20px;
         .top-bar {
             font-size: 0.7rem;
             text-transform: uppercase;
-            color: #888;
+            color: black;
             margin-bottom: 8px;
         }
         .event-title { margin: 0; color: #333; font-size: 1.3rem; }
