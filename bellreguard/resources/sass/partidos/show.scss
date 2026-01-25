@@ -104,11 +104,21 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 499px) {
+        .partido-detalle{
+            min-width: 120%;
+        }
+
+        .cab h2{
+            color: black;
+        }
+
         .partido-card {
+            margin: 0 auto;
             flex-direction: column;
             text-align: center;
             gap: 1.5rem;
+            min-width: 110%;
 
             .info-partido { flex: 1 1 100%; }
             .equipo { flex: 1 1 100%; }

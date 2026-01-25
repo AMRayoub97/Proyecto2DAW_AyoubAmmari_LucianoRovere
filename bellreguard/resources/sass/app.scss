@@ -402,6 +402,10 @@ footer section ul li a{
         white-space: nowrap;
     }
 
+    header .perfilOp strong{
+        display: none;
+    }
+
     /*-----nav izquierda---*/
     #navLeft {
         grid-area: naL;
