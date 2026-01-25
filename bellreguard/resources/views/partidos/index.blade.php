@@ -16,13 +16,13 @@
 <main>
 
     <!--
-        CREAR CONDICION IF, 
-        SI la fecha del partido es igual a la de hoy: Mostrar en "Jugando ahora" 
+        CREAR CONDICION IF,
+        SI la fecha del partido es igual a la de hoy: Mostrar en "Jugando ahora"
         SI es mayor:Mostrar en "Próximos partidos"
     -->
    @if ($fecha = $partidosHoy)
-       
-   
+
+
     <div class="cab">
         <br>
         <h2>Jugando Ahora </h2>
@@ -30,6 +30,7 @@
     </div>
     <section id="destacados">
         @foreach ($partidosHoy as $partido)
+        <a href="{{ route('partidos.show', $partido->id) }}">
             <article>
                 <div class="equipoDestacado">
                     <strong>{{$partido->equipo?->nombre}}</strong>
@@ -46,15 +47,17 @@
                     <img src="{{asset('images/equipos/'. $partido->equipoVisitante?->foto)}}" alt="{{$partido->equipoVisitante?->nombre}}">
                 </div>
             </article>
+        </a>
         @endforeach
     </section>
     @endif
     <div class="cab">
         <h2>Próximos Partidos</h2>
     </div>
-   
+
     <section id="destacados">
         @foreach ($partidosProximos as $partido)
+        <a href="{{ route('partidos.show', $partido->id) }}">
         <article>
             <div class="equipoDestacado">
 
@@ -74,9 +77,10 @@
                 <img src="{{asset('images/equipos/'. $partido->equipoVisitante?->foto)}}" alt="{{$partido->equipoVisitante?->nombre}}">
             </div>
         </article>
+        </a>
         @endforeach
     </section>
-   
+
 </main>
 @endsection
 

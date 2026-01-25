@@ -90,5 +90,5 @@ Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index')
 
 /*-----------PARTIDOS------------*/
 Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
-
+Route::get('partidos/{id}', [PartidosController::class, 'show'])->name('partidos.show');
 

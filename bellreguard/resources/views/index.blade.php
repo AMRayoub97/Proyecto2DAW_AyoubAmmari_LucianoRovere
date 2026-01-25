@@ -46,41 +46,44 @@
                 <hr>
                 <section id="destacados">
                     @forelse($partidos as $partido)
-                        <article>
-                            <div class="equipoDestacado">
-                                <strong>{{ $partido->equipo?->nombre }}</strong>
-                                <a href="#">
-                                <img src="{{ asset('images/equipos/'. $partido->equipo?->foto ) }}" alt=""></a>
-                            </div>
+                        <a href="{{ route('partidos.show', $partido->id) }}">
 
-                            @if($partido->estado == 'proximamente')
-                                <div class="resultadoDesatacados">
-                                    <h3>{{ $partido->fecha }}</h3>
-                                    <a href="#">{{ $partido->estado }}</a>
+                            <article>
+                                <div class="equipoDestacado">
+                                    <strong>{{ $partido->equipo?->nombre }}</strong>
+                                    <a href="{{ route('equipos.show', $partido->equipo?->id) }}">
+                                    <img src="{{ asset('images/equipos/'. $partido->equipo?->foto ) }}" alt=""></a>
                                 </div>
 
-                                @elseif($partido->estado == 'en_vivo')
-
-                                <div class="resultadoDesatacados">
-                                    <h3>{{ $partido->resultado }}</h3>
-                                    <a href="#" style="background-color: green">{{ $partido->estado }}</a>
-                                </div>
-
-                                @else
+                                @if($partido->estado == 'proximamente')
                                     <div class="resultadoDesatacados">
-                                        <h3>{{ $partido->resultado }}</h3>
-                                        <a href="#" style="background-color: gray">{{ $partido->estado }}</a>
+                                        <h3>{{ $partido->fecha }}</h3>
+                                        <a href="{{ route('partidos.show', $partido->id) }} }}">{{ $partido->estado }}</a>
                                     </div>
 
-                            @endif
+                                    @elseif($partido->estado == 'en_vivo')
 
-                            <div class="equipoDestacado">
-                            <strong>{{ $partido->equipoVisitante?->nombre }} </strong>
-                                <a href="#">
-                                <img src="{{ asset('images/equipos/'. $partido->equipoVisitante?->foto) }}" alt=""></a>
-                            </div>
+                                    <div class="resultadoDesatacados">
+                                        <h3>{{ $partido->resultado }}</h3>
+                                        <a href="{{ route('partidos.show', $partido->id) }} }}" style="background-color: green">{{ $partido->estado }}</a>
+                                    </div>
 
-                        </article>
+                                    @else
+                                        <div class="resultadoDesatacados">
+                                            <h3>{{ $partido->resultado }}</h3>
+                                            <a href="{{ route('partidos.show', $partido->id) }} }}" style="background-color: gray">{{ $partido->estado }}</a>
+                                        </div>
+
+                                @endif
+
+                                <div class="equipoDestacado">
+                                <strong>{{ $partido->equipoVisitante?->nombre }} </strong>
+                                    <a href="{{ route('equipos.show', $partido->equipo?->id) }}">
+                                    <img src="{{ asset('images/equipos/'. $partido->equipoVisitante?->foto) }}" alt=""></a>
+                                </div>
+                            </article>
+                        </a>
+
                     @empty
                         <h1>NO HAY PARTIDOS POR AHORA</h1>
                     @endforelse

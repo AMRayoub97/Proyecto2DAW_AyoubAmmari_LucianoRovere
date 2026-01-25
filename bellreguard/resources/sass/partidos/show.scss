@@ -1,0 +1,117 @@
+
+.partido-detalle {
+    max-width: 80%;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    .cab {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: black;
+        h2 { font-size: 2rem; }
+    }
+
+    hr {
+        border: 1px solid #7a0000;
+        margin: 1rem 0 2rem 0;
+    }
+
+    .btn-volver {
+        text-decoration: none;
+        color: #fff;
+        background-color: #7a0000;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        transition: 0.3s;
+        &:hover {
+            background-color: black;
+        }
+    }
+
+    .partido-card {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #111;
+        color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        gap: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .equipo {
+            flex: 1 1 25%;
+            text-align: center;
+            img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 3px solid #7a0000;
+                margin-bottom: 1rem;
+                transition: transform 0.3s;
+            }
+            strong {
+                display: block;
+                font-size: 1.1rem;
+            }
+            img:hover {
+                transform: scale(1.1);
+            }
+            a{
+                text-decoration: none;
+            }
+        }
+
+        .info-partido {
+            flex: 1 1 40%;
+            text-align: center;
+            h3 {
+                font-size: 2rem;
+                color: #7a0000;
+                margin-bottom: 1rem;
+            }
+            p {
+                margin: 0.5rem 0;
+                font-size: 1.1rem;
+            }
+            .resultado.proximamente {
+                color: #FDB927; // dorado para futuros partidos
+                font-weight: bold;
+            }
+
+            .btn-editar {
+                display: inline-block;
+                margin-top: 1rem;
+                padding: 0.5rem 1rem;
+                background-color: #7a0000;
+                color: white;
+                border-radius: 8px;
+                text-decoration: none;
+                transition: 0.3s;
+                &:hover {
+                    background-color: black;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .partido-card {
+            flex-direction: column;
+            text-align: center;
+            gap: 1.5rem;
+
+            .info-partido { flex: 1 1 100%; }
+            .equipo { flex: 1 1 100%; }
+        }
+    }
+}

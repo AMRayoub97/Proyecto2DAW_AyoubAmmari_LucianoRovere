@@ -21,7 +21,7 @@ class PartidosController extends Controller
     {
         $fecha = Carbon::now('Europe/Madrid')->format('Y-m-d');
         $partidos=Partido::get();
-        
+
         $partidosHoy = Partido::where('fecha', '=', $fecha)->get();
         $partidosProximos = Partido::where('fecha', '>', $fecha)->get();
 
@@ -67,7 +67,9 @@ class PartidosController extends Controller
      */
     public function show(string $id)
     {
+        $partido = Partido::findOrFail($id);
 
+        return view('partidos.show')->with('partido', $partido);
     }
     /**
      * Show the form for editing the specified resource.
