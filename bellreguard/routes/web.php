@@ -92,3 +92,7 @@ Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index')
 Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
 Route::get('partidos/{id}', [PartidosController::class, 'show'])->name('partidos.show');
 
+/*--------contacto------*/
+Route::get('contacto', function(){
+    return view('principales.contacto');
+})->name('contacto');

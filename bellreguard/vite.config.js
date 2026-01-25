@@ -41,6 +41,7 @@ export default defineConfig({
                 'resources/sass/noticias/create.scss',
                 'resources/sass/equipos/edit.scss',
                 'resources/sass/partidos/show.scss',
+                'resources/sass/principales/contacto.scss',
                 
             ],
             refresh: true,
