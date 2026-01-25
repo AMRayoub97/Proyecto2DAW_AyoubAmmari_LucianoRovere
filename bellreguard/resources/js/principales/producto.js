@@ -21,7 +21,9 @@ abrirModal.addEventListener('click', e => {
     modal.classList.add('activo');
 });
 
-
+cerrarModal.addEventListener('click', () => {
+    modal.classList.remove('activo');
+})
 
 modal.addEventListener('click', e => {
     if (e.target === modal) {
@@ -48,22 +50,6 @@ form.addEventListener('submit', e => {
         });
     }, 150);
 });
-
-
-/* SWEET ALERT */
-function alerta(){
-
-    Swal.fire({
-        icon: 'success',
-        title: '¡Solicitud enviada!',
-        text: 'Se abrirá tu cliente de correo para completar el envío.',
-        confirmButtonColor: '#7a0000',
-        confirmButtonText: 'Aceptar'
-    }).then(() => {
-        form.submit();
-        modal.classList.remove('activo');
-    });
-}
 
 
 
