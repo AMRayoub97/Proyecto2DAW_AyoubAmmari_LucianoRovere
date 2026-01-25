@@ -21,14 +21,77 @@
 
             <p>{{ $producto->descripcion }}</p>
             <strong>Categoria: {{ $producto->categoria }}</strong>
+            <strong>Talla:
+                <select id="listaTalla" name="talla">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    <option value="XXXL">XXXL</option>
+                </select>
+            </strong>
 
             <div class="categoria">
                 <strong>Cantidad: {{ $producto->cantidad }} disponibles</strong>
                 <strong>{{ $producto->precio }} $</strong>
             </div>
-            <a href="#">COMPRAR AHORA</a>
+            <a href="#" id="abrirModal" class="btn-comprar">COMPRAR AHORA</a>
         </aside>
     </div>
+
+    <!-- MODAL CONTACTO PRODUCTO -->
+    <div id="modalProducto" class="modal-producto">
+        <div class="modal-contenido">
+            <span class="cerrar-modal" id="cerrarModal">&times;</span>
+
+            <h2>comprar el producto: *{{ $producto->nombre }}*</h2>
+            <p>Talla: <strong><span id="tallaSeleccionada">-</span></strong></p>
+            <input type="hidden" name="Talla" id="inputTalla">
+
+            <!-- action="mailto:club@test.com"
+                method="POST" -->
+            <form
+                id="formCompraProducto"
+
+                enctype="text/plain"
+                class="form-modal"
+            >
+                <input type="hidden" name="Producto" value="{{ $producto->nombre }}">
+
+                <div class="grupo-form">
+                    <label>Nombre</label>
+                    <input type="text" name="Nombre" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label>Email</label>
+                    <input type="email" name="Email" required>
+                </div>
+
+                <div class="grupo-form">
+                    <label>Teléfono</label>
+                    <input type="tel" name="Telefono">
+                </div>
+
+                <div class="grupo-form">
+                    <label>Mensaje</label>
+                    <textarea name="Mensaje" rows="4">
+                            Estoy interesado en el producto {{ $producto->nombre }}
+                    </textarea>
+                </div>
+
+                <button type="submit">ENVIAR CONSULTA</button>
+            </form>
+
+            <div class="info-contacto">
+                <p>📧 club@bellreguard.com</p>
+                <p>📞 +34 666 666 666</p>
+                <p>📍 Ronda dels Esports, 46713 Bellreguard</p>
+            </div>
+        </div>
+    </div>
+
 
     <div class="comentarios">
         <aside class="comentarios-lista">

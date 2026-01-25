@@ -1,3 +1,73 @@
+import Swal from 'sweetalert2';
+
+const abrirModal = document.getElementById('abrirModal');
+const cerrarModal = document.getElementById('cerrarModal');
+const modal = document.getElementById('modalProducto');
+
+const listaTalla = document.getElementById('listaTalla');
+const tallaSeleccionada = document.getElementById('tallaSeleccionada');
+const inputTalla = document.getElementById('inputTalla');
+
+const form = document.getElementById('formCompraProducto');
+
+/* ABRIR MODAL */
+abrirModal.addEventListener('click', e => {
+    e.preventDefault();
+
+    const talla = listaTalla.value;
+    tallaSeleccionada.textContent = talla;
+    inputTalla.value = talla;
+
+    modal.classList.add('activo');
+});
+
+
+
+modal.addEventListener('click', e => {
+    if (e.target === modal) {
+        modal.classList.remove('activo');
+    }
+});
+
+/* SWEET ALERT  */
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    //  Cerrar modal
+    modal.classList.remove('activo');
+
+    setTimeout(() => {
+        Swal.fire({
+            icon: 'success',
+            title: '¡Solicitud enviada!',
+            text: 'Se abrirá tu cliente de correo para completar el envío.',
+            confirmButtonColor: '#7a0000',
+            confirmButtonText: 'Aceptar'
+        }).then(() => {
+            form.submit();
+        });
+    }, 150);
+});
+
+
+/* SWEET ALERT */
+function alerta(){
+
+    Swal.fire({
+        icon: 'success',
+        title: '¡Solicitud enviada!',
+        text: 'Se abrirá tu cliente de correo para completar el envío.',
+        confirmButtonColor: '#7a0000',
+        confirmButtonText: 'Aceptar'
+    }).then(() => {
+        form.submit();
+        modal.classList.remove('activo');
+    });
+}
+
+
+
+
 /*async function getProducto(){
     try{
 

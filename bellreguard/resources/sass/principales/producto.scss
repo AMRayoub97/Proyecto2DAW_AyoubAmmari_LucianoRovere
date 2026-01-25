@@ -184,3 +184,107 @@
 .reaccion a:hover {
     background: #e0e0e0;
 }
+
+
+/*--modal--*/
+/* BOTÓN COMPRAR */
+.btn-comprar {
+    display: inline-block;
+    background: #7a0000;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-comprar:hover {
+    background: #5a0000;
+}
+
+/* MODAL */
+.modal-producto {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal-producto.activo {
+    display: flex;
+}
+
+.modal-contenido {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    animation: aparecer 0.3s ease;
+    color: black;
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #7a0000;
+}
+
+/* FORM */
+.form-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.grupo-form label {
+    font-weight: bold;
+}
+
+.grupo-form input,
+.grupo-form textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.form-modal button {
+    background: #7a0000;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-modal button:hover {
+    background: #5a0000;
+}
+
+/* INFO */
+.info-contacto {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .modal-contenido {
+        padding: 1.5rem 1rem;
+    }
+}
