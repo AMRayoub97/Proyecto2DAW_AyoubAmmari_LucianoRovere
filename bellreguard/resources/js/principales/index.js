@@ -1,4 +1,4 @@
-async function getPartidos(){
+/*async function getPartidos(){
     const destac = document.getElementById("destacados");
 
     try{
@@ -49,7 +49,8 @@ async function getPartidos(){
     }
 
 
-}
+}*/
+
 document.addEventListener('DOMContentLoaded', function() {
 
     getPartidos();

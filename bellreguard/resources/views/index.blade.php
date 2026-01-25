@@ -45,6 +45,45 @@
                 <h1>🔥 DESTACADOS HOY</h1>
                 <hr>
                 <section id="destacados">
+                    @forelse($partidos as $partido)
+                        <article>
+                            <div class="equipoDestacado">
+                                <strong>{{ $partido->equipo?->nombre }}</strong>
+                                <a href="#">
+                                <img src="{{ asset('images/equipos/'. $partido->equipo?->foto ) }}" alt=""></a>
+                            </div>
+
+                            @if($partido->estado == 'proximamente')
+                                <div class="resultadoDesatacados">
+                                    <h3>{{ $partido->fecha }}</h3>
+                                    <a href="#">{{ $partido->estado }}</a>
+                                </div>
+
+                                @elseif($partido->estado == 'en_vivo')
+
+                                <div class="resultadoDesatacados">
+                                    <h3>{{ $partido->resultado }}</h3>
+                                    <a href="#" style="background-color: green">{{ $partido->estado }}</a>
+                                </div>
+
+                                @else
+                                    <div class="resultadoDesatacados">
+                                        <h3>{{ $partido->resultado }}</h3>
+                                        <a href="#" style="background-color: gray">{{ $partido->estado }}</a>
+                                    </div>
+
+                            @endif
+
+                            <div class="equipoDestacado">
+                            <strong>{{ $partido->equipoVisitante?->nombre }} </strong>
+                                <a href="#">
+                                <img src="{{ asset('images/equipos/'. $partido->equipoVisitante?->foto) }}" alt=""></a>
+                            </div>
+
+                        </article>
+                    @empty
+                        <h1>NO HAY PARTIDOS POR AHORA</h1>
+                    @endforelse
                     <!--<article>
                         <div class="equipoDestacado">
                             <strong>VLC</strong>
