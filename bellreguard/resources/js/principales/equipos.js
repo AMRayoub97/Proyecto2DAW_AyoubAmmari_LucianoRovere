@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (event.data === 'closeEditModal') {
             document.getElementById('editModal').classList.add('hidden');
             document.getElementById('editIframe').src = '';
-            location.reload(); 
+            location.reload();
         }
     });
 
@@ -98,6 +98,33 @@ document.addEventListener('DOMContentLoaded', () => {
                     li.textContent = element.nombre;
                     sug_busqueda.appendChild(li);
                 });
+
+
+                const tarjetas = document.querySelector(".tarjetas");
+
+                tarjetas.innerHTML = ``;
+
+                data.forEach(equipo => {
+                const tarjeta = document.createElement('div');
+                tarjeta.classList.add('tarjeta');
+
+                tarjeta.innerHTML = `
+                    <div class="cont">
+                        <img src="/images/equipos/${equipo.foto}" id="fotoEquipo">
+                        <strong>0.0</strong>
+                    </div>
+                    <h3>${equipo.nombre}</h3>
+                    <div class="inf">
+                        <strong>${equipo.categoria}</strong>
+                        <strong>${equipo.genero}</strong>
+                    </div>
+                    <div class="btnsJugador">
+                        <a href="/equipos/${equipo.id}">Ver Perfil</a>
+                        <a href="#">⭐</a>
+                    </div>
+                `;
+                tarjetas.appendChild(tarjeta);
+            });
 
             } catch (error) {
                 console.error(error);
