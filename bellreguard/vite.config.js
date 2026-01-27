@@ -42,7 +42,9 @@ export default defineConfig({
                 'resources/sass/equipos/edit.scss',
                 'resources/sass/partidos/show.scss',
                 'resources/sass/principales/contacto.scss',
+                'resources/sass/estadisticas/index.scss',
                 
+
             ],
             refresh: true,
         }),

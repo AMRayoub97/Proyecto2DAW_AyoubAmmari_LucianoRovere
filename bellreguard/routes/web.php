@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComentariosProductoController;
 use App\Http\Controllers\EquipoController;
+use App\Http\Controllers\EstadisticasEquipoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\JugadoresController;
 use App\Http\Controllers\LoginController;
@@ -96,3 +97,7 @@ Route::get('partidos/{id}', [PartidosController::class, 'show'])->name('partidos
 Route::get('contacto', function(){
     return view('principales.contacto');
 })->name('contacto');
+
+/*---------ESTADISTICAS-------*/
+Route::get('estadisticas',[EstadisticasEquipoController::class, 'index'])->name('estadisticas.index');
+//Route::get('noticias/{tst}',[NoticiaController::class, 'show'])->name('noticias.show');
