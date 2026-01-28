@@ -14,6 +14,84 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const busqueda = document.getElementById('busqueda');
+    const sug_busqueda = document.getElementById('sug_busqueda');
+    const tarjetas = document.querySelector(".tarjetas");
+
+    busqueda.addEventListener('keyup', mostrarJugadores);
+
+    //fetch base de datos de  jugadores
+    async function mostrarJugadores(e){
+        e.preventDefault();
+
+        sug_busqueda.innerHTML = ``;
+
+        var nom = busqueda.value;
+
+        if(!nom.length) return;
+
+        const res = await fetch(`http://localhost/api/jugadoresApi?nom=${nom}`);
+
+        if (!res.ok) {
+            console.error('Error en la API:', res.status);
+            return;
+        }
+
+        const data = await res.json();
+
+        sug_busqueda.innerHTML = ``;
+        tarjetas.innerHTML = ``;
+
+        if(!data) return 'no hay datos';
+
+        data.forEach(jugador => {
+            const li = document.createElement("li");
+            li.innerText = jugador.nombre;
+
+            sug_busqueda.appendChild(li);
+
+            tarjetas.innerHTML +=`
+                <div class="tarjeta">
+                    <div class="contenido" style="background-image: url('images/jugadores/${jugador.foto}'">
+                        <table>
+                            <tr>
+                                <th colspan="2"> ${jugador.nombre}</th>
+                            </tr>
+                            <tr>
+                                <th>Altura</th>
+                                <th>${jugador.altura}  m</th>
+                            </tr>
+                            <tr>
+                                <th>Peso</th>
+                                <th> ${jugador.peso } kg</th>
+                            </tr>
+                            <tr>
+                                <th>Edad</th>
+                                <th> ${jugador.edad}  años</th>
+                            </tr>
+                            <tr>
+                                <th>Experiencia</th>
+                                <th> ${jugador.experiencia}  años</th>
+                            </tr>
+                            <tr>
+                                <th>Nacionalidad</th>
+                                <th>${jugador.nacionalidad} </th>
+                            </tr>
+                        </table>
+                        <strong> ${jugador.puntuacion} </strong>
+                    </div>
+
+                    <div class="btnsJugador">
+                        <a href="/jugadores/${jugador.id})" >Ver Perfil</a>
+                        <a href="#">⭐</a>
+                    </div>
+                </div>
+            `;
+
+        });
+    }
+
 });
 
 /*async function mostrarJugadores() {

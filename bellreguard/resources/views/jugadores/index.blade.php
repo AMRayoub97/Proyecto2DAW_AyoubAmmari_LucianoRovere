@@ -8,6 +8,14 @@
         <section>
             <div class="cab">
                 <h2>JUGADORES</h2>
+                
+                <div id="barra_busqueda">
+                    <input type="text" id="busqueda" placeholder="Buscar por nombre ....">
+                    <ul id="sug_busqueda">
+
+                    </ul>
+                </div>
+
                 <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
                 @auth
                  @if(auth()->user()?->role == 'admin' || auth()->user()->role == 'entrenador')
