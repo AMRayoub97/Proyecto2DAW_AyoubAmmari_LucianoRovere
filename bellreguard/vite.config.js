@@ -43,6 +43,7 @@ export default defineConfig({
                 'resources/sass/partidos/show.scss',
                 'resources/sass/principales/contacto.scss',
                 'resources/sass/estadisticas/index.scss',
+                'resources/js/auth/login.js',
                 
 
             ],

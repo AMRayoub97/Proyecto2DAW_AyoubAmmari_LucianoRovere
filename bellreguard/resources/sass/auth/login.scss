@@ -78,6 +78,29 @@
         width: 25px;
         height: 25px;
     }
+    .password-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .password-wrapper .custom-input {
+        padding-right: 45px;
+    }
+
+    .toggle-password {
+        position: absolute;
+        right: 15px;
+        top: 60%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 1.3rem;
+        opacity: 0.6;
+    }
+
+    .toggle-password:hover {
+        opacity: 1;
+    }
+
 
     .btn-submit-red {
         width: 100%;

@@ -4,7 +4,7 @@
 
 @section('contenido')
 
-    @vite(['resources/sass/auth/login.scss'])
+    @vite(['resources/sass/auth/login.scss', 'resources/js/auth/login.js'])
 
 
     <div class="login-wrapper">
@@ -26,8 +26,21 @@
                     <label for="correo">correo</label>
                     <input type="text" name="correo" placeholder="bellreguard@correo.com" class="custom-input" required value="{{ old('correo') }}">
 
-                    <label for="password">password</label>
-                    <input type="password" name="password" placeholder="****" class="custom-input" required>
+                    <div class="password-wrapper">
+                        <label for="password">password</label>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="****"
+                            class="custom-input"
+                            required
+                        >
+
+                        <span class="toggle-password" id="togglePass">👁️</span>
+                    </div>
+
 
                     <div class="check-box-area">
                         <input type="checkbox" name="recordar" id="remember">
