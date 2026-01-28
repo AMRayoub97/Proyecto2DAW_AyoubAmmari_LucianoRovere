@@ -29,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         var nom = busqueda.value;
 
-        if(!nom.length) return;
 
         const res = await fetch(`http://localhost/api/jugadoresApi?nom=${nom}`);
 
