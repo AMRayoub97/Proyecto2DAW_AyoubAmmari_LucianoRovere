@@ -38,7 +38,7 @@
                             required
                         >
 
-                        <span class="toggle-password" id="togglePass">👁️</span>
+                        <span class="toggle-password" id="togglePass"><i class="bi bi-eye-fill"></i></span>
                     </div>
 
 
