@@ -1,0 +1,22 @@
+name: Deploy Laravel Sail (Remote)
+on:
+  push:
+    branches: [ "main" ]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Despliegue de web xunga
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.IP }}
+          username: ${{ secrets.USUARIO }}
+          key:  ${{ secrets.PASS }}
+          script: |
+            set -e
+            cd /var/www/Proyecto2DAW_AyoubAmmari_LucianoRovere/
+            git pull
+            ./vendor/bin/sail down
+            ./vendor/bin/sail up -d --build
+            ./vendor/bin/sail artisan migrate --force
+            npm run build
