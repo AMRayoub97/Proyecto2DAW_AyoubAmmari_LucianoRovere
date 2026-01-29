@@ -46,7 +46,7 @@
                 <hr>
                 <section id="destacados">
                     @forelse($partidos as $partido)
-                        <a href="{{ route('partidos.show', $partido->id) }}"> <!-- mostrar partidos -->
+                        <a href="{{ route('partidos.show', $partido->id) }}"> <!-- mostrar partidos 1 -->
 
                             <article>
                                 <div class="equipoDestacado">

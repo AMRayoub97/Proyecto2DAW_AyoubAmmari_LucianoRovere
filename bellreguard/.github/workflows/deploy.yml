@@ -6,7 +6,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Despliegue de web xunga
+      - name: Despliegue de web
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.IP }}
