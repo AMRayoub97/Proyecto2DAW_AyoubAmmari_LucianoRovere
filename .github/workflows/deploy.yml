@@ -11,7 +11,7 @@ jobs:
         with:
           host: ${{ secrets.IP }}
           username: ${{ secrets.USUARIO }}
-          key:  ${{ secrets.PASS }}
+          password:  ${{ secrets.PASS }}
           script: |
             set -e
             cd /var/www/Proyecto2DAW_AyoubAmmari_LucianoRovere/
