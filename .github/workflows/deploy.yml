@@ -16,5 +16,6 @@ jobs:
             set -e
             cd /var/www/Proyecto2DAW_AyoubAmmari_LucianoRovere/
             git pull
+            cd ./bellreguard/
             php artisan migrate --force
             npm run build
