@@ -16,7 +16,5 @@ jobs:
             set -e
             cd /var/www/Proyecto2DAW_AyoubAmmari_LucianoRovere/
             git pull
-            ./vendor/bin/sail down
-            ./vendor/bin/sail up -d --build
-            ./vendor/bin/sail artisan migrate --force
+            php artisan migrate --force
             npm run build
