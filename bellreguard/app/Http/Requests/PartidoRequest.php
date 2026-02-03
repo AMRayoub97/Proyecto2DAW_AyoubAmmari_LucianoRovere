@@ -23,7 +23,7 @@ class PartidoRequest extends FormRequest
     {
         return [
             'equipo_id' => 'required|integer|exists:equipos,id',
-            'equipo_visitante_id' => 'required|integer|exists:equipos_visitantes,id|different:equipo_id',
+            'equipo_visitante_id' => 'required|integer|exists:equipos_visitantes,id',
             'lugar' => 'required|string|max:255',
             'fecha' => 'required|date|after_or_equal:now',
         ];
@@ -39,7 +39,6 @@ class PartidoRequest extends FormRequest
             'equipo_visitante_id.required' => 'Debes seleccionar un equipo visitante',
             'equipo_visitante_id.integer' => 'El valor del equipo visitante no es válido',
             'equipo_visitante_id.exists' => 'El equipo visitante seleccionado no existe',
-            'equipo_visitante_id.different' => 'El equipo visitante no puede ser el mismo que el local',
 
             'lugar.required' => 'Debes indicar el estadio o lugar del partido',
             'lugar.string' => 'El nombre del estadio no es válido',
