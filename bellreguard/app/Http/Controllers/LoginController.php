@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegistrarRequest;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,7 +13,7 @@ class LoginController extends Controller
     public function loginForm(){
         return view('auth.login');
     }
-    
+
     public function login(Request $request){
         $credenciales = $request->only('correo', 'password');
 
@@ -35,15 +36,13 @@ class LoginController extends Controller
         return view('auth.registrar');
     }
 
-    public function registrar(Request $request){
+    public function registrar(RegistrarRequest $request){
 
-        $usuario = new Usuario();
-        $usuario->nombre = $request->input('nombre');
-        $usuario->apellidos = $request->input('apellidos');
-        $usuario->correo = $request->input('correo');
-        $usuario->password =  Hash::make($request->input('password'));
-        $usuario->fecha_nacimiento = $request->input('fecha_nacimiento');
-        $usuario->save();
+        $usuario = $request->validated();
+
+        $usuario->password = Hash::make($request->input('password'));
+
+        Usuario::create($usuario);
 
         return redirect()->route('login');
     }
