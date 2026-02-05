@@ -13,9 +13,14 @@
             </a>
         </div>
 
-        <div class="forward-btn">
-            <a href="{{ route('equipos.index') }}">Editar</a>
-        </div>
+        @auth
+            @if(auth()->user()->role == 'admin')
+                <div class="forward-btn">
+                    <a href="{{ route('equipos.edit', $equipo->id) }}">Editar</a>
+                </div>
+            @endif
+        @endauth
+
 
 
         <div class="team-main-info">

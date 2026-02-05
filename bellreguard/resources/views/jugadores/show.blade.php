@@ -13,9 +13,16 @@
                     <img src="{{ asset('images/flechaAtras.webp') }}" alt="flecha" >
                 </a>
             </div>
-             <div class="forward-btn">
-                <a href="{{ route('jugadores.index') }}">Editar</a>
-            </div>
+
+            @auth
+
+                @if(auth()->user()->role == 'admin' || auth()->user()->role == 'entrenador')
+                    <div class="forward-btn">
+                        <a href="{{ route('jugadores.edit', $jugador->id) }}">Editar</a>
+                    </div>
+                @endif
+            @endauth
+
 
             <div class="player-image">
                 <img src="{{ asset('images/jugadores/' . $jugador->foto) }}" alt="fotoJugador">
