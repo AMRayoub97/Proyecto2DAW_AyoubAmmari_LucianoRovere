@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var nom = busqueda.value;
 
 
-        const res = await fetch(`http://localhost/api/jugadoresApi?nom=${nom}`);
+        const res = await fetch(`/api/jugadoresApi?nom=${nom}`);
 
         if (!res.ok) {
             console.error('Error en la API:', res.status);

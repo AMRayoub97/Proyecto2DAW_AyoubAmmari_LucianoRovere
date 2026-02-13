@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             try {
-                const res = await fetch(`http://localhost/api/equiposAPi?nom=${value}`);
+                const res = await fetch(`/api/equiposAPi?nom=${value}`);
 
                 if (!res.ok) {
                     throw new Error("error fetch equipos");
