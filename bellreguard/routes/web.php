@@ -24,9 +24,13 @@ Route::get('login',[LoginController::class, 'loginForm'])->name('login')->middle
 Route::post('login', [LoginController::class , 'login']);
 Route::get('logout', [LoginController::class , 'logout'])->name('logout')->middleware('auth');
 
+Route::get('/auth/google', [LoginController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
+
 /*-----------------Regisrar-----------------*/
 Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registrar');
 Route::post('registrar', [LoginController::class , 'registrar']);
+
 
 
 /*-----------Auth------------*/

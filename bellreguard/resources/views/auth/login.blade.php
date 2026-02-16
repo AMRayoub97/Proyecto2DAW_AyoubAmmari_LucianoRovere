@@ -48,6 +48,14 @@
                     </div>
 
                     <button type="submit" class="btn-submit-red">Log-In</button>
+
+
+                    <div style="text-align: center; margin: 15px 0;"> o </div>
+
+                    <a href="{{ route('google.login') }}" class="btn-google" style="display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; color: #444; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
+                        <img src="https://fonts.gstatic.com/s/i/productlogos/googleg/v6/24px.svg" alt="Google logo">
+                        Iniciar sesión con Google
+                    </a>
                 </form>
             </div>
         </div>

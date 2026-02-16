@@ -32,6 +32,7 @@ class Usuario extends Authenticatable
         'telefono',
         'foto',
         'role',
+        'remember_token',
     ];
 
     /**
