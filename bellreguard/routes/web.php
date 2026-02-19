@@ -32,37 +32,6 @@ Route::get('registrar',[LoginController::class, 'registrarForm'])->name('registr
 Route::post('registrar', [LoginController::class , 'registrar']);
 
 
-
-/*-----------Auth------------*/
-Route::middleware(['auth'])->group(function () {
-    /*------------------Jugadores-----------------------*/
-    Route::resource('jugadores', JugadoresController::class)->except(['index','show']);
-
-    Route::resource('equipos', EquipoController::class)->except(['index','show']);
-
-    /*-----------------Perfil------------------*/
-    Route::resource('perfil', UsuarioController::class);
-
-    /*----------------Permisos------------*/
-    Route::resource('permisos', PermisosController::class);
-
-    /*----------------Partidos------------*/
-    Route::resource('partidos', PartidosController::class)->except(['index','show']);
-
-    /*--------------Noticias-------------*/
-    Route::resource('noticias', NoticiaController::class)->except(['index','show']);
-
-    /*--------------Eventos-------------*/
-    Route::resource('eventos', EventoController::class)->except(['index','show'])->middleware(['auth']);
-
-    /*------------------Tienda---------------*/
-    Route::resource('tienda', ProductoController::class)->except(['index','show'])->middleware('auth');
-
-    /*--------Guardar eventos de db al calendario de google*/
-    Route::get('/sync-events', [EventoController::class, 'syncToGoogleCalendar'])->middleware('auth');
-
-});
-
 /*------------------Jugadores-----------------------*/
 Route::get('/jugadores', [JugadoresController::class, 'index'])->name('jugadores.index');
 Route::get('/jugadores/{id}', [JugadoresController::class, 'show'])->name('jugadores.show');
@@ -105,3 +74,35 @@ Route::get('contacto', function(){
 /*---------ESTADISTICAS-------*/
 Route::get('estadisticas',[EstadisticasEquipoController::class, 'index'])->name('estadisticas.index');
 //Route::get('noticias/{tst}',[NoticiaController::class, 'show'])->name('noticias.show');
+
+
+
+/*-----------Auth------------*/
+Route::middleware(['auth'])->group(function () {
+    /*------------------Jugadores-----------------------*/
+    Route::resource('jugadores', JugadoresController::class)->except(['index','show']);
+
+    Route::resource('equipos', EquipoController::class)->except(['index','show']);
+
+    /*-----------------Perfil------------------*/
+    Route::resource('perfil', UsuarioController::class);
+
+    /*----------------Permisos------------*/
+    Route::resource('permisos', PermisosController::class);
+
+    /*----------------Partidos------------*/
+    Route::resource('partidos', PartidosController::class)->except(['index','show']);
+
+    /*--------------Noticias-------------*/
+    Route::resource('noticias', NoticiaController::class)->except(['index','show']);
+
+    /*--------------Eventos-------------*/
+    Route::resource('eventos', EventoController::class)->except(['index','show'])->middleware(['auth']);
+
+    /*------------------Tienda---------------*/
+    Route::resource('tienda', ProductoController::class)->except(['index','show'])->middleware('auth');
+
+    /*--------Guardar eventos de db al calendario de google*/
+    Route::get('/sync-events', [EventoController::class, 'syncToGoogleCalendar'])->middleware('auth');
+
+});
