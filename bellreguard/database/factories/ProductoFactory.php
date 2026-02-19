@@ -20,7 +20,6 @@ class ProductoFactory extends Factory
         $talla = ['S','M','L','XL','XXL','XXXL'];
 
         return [
-            'nombre' => fake()->name(),
             'precio' => fake()->numberBetween(0, 150),
             'descripcion' => fake()->text(),
             'categoria' => $genero[rand(0,2)],

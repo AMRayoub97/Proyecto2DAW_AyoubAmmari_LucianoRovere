@@ -17,7 +17,7 @@
     <div class="tarjetas">
         @forelse($productos as $producto)
             <article>
-                <img src="{{ asset('images/'. $producto->foto) }}" alt="fotoProducto">
+                <img src="{{ asset('images/productos/'. $producto->foto) }}" alt="fotoProducto">
                 <div class="info">
                     <h2>{{ $producto->nombre }}</h2>
                     <div class="detalle">

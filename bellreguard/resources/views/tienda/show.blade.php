@@ -8,7 +8,7 @@
 
     <div class="contenido">
         <section class="producto-image">
-            <img src="{{ asset('images/'. $producto->foto) }}" alt="Imagen del producto">
+            <img src="{{ asset('images/productos/'. $producto->foto) }}" alt="Imagen del producto">
         </section>
         <aside class="info-producto">
             <div class="titulo">
