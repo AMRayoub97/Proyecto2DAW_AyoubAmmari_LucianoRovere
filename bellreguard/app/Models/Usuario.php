@@ -2,10 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Events\Authenticated;
-use Illuminate\Container\Attributes\Authenticated as AttributesAuthenticated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -58,11 +55,6 @@ class Usuario extends Authenticatable
         ];
     }
 
-
-    public function getAuthIdentifierName()
-    {
-        return 'correo';
-    }
 
     public function noticia(){
         return $this->hasMany(Noticia::class, 'tutor_id');

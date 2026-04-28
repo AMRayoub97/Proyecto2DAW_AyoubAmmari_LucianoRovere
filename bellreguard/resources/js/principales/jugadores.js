@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 document.addEventListener('DOMContentLoaded', () => {
     const botonesEditar = document.querySelectorAll('.listaEditar');
 
@@ -18,6 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const busqueda = document.getElementById('busqueda');
     const sug_busqueda = document.getElementById('sug_busqueda');
     const tarjetas = document.querySelector(".tarjetas");
+
+    // confirmar antes de borrar un jugador
+    document.querySelectorAll('button[name="borrar"]').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'Esta acción no se puede deshacer.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#7a0000',
+                cancelButtonColor: '#555',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar',
+            }).then(result => {
+                if (result.isConfirmed) btn.closest('form').submit();
+            });
+        });
+    });
 
     busqueda.addEventListener('keyup', mostrarJugadores);
 

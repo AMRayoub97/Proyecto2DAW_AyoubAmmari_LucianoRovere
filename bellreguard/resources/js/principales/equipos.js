@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const toggle = document.getElementById('toggleFiltro');
@@ -11,6 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!toggle.contains(e.target) && !menu.contains(e.target)) {
             menu.style.display = 'none';
         }
+    });
+
+    // confirmar antes de borrar un equipo
+    document.querySelectorAll('button[name="borrar"]').forEach(btn => {
+        btn.addEventListener('click', e => {
+            e.preventDefault();
+
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: 'Esta acción no se puede deshacer.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#7a0000',
+                cancelButtonColor: '#555',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar',
+            }).then(result => {
+                if (result.isConfirmed) btn.closest('form').submit();
+            });
+        });
     });
 
     const botonesEditar = document.querySelectorAll('.listaEditar');
