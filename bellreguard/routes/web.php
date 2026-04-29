@@ -64,6 +64,7 @@ Route::get('eventos', [EventoController::class, 'index'])->name('eventos.index')
 
 /*-----------PARTIDOS------------*/
 Route::get('partidos', [PartidosController::class, 'index'])->name('partidos.index');
+Route::get('partidos/create', [PartidosController::class, 'create'])->name('partidos.create')->middleware('auth');
 Route::get('partidos/{id}', [PartidosController::class, 'show'])->name('partidos.show');
 
 /*--------contacto------*/

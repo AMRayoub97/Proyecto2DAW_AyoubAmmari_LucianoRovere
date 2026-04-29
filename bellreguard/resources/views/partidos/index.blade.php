@@ -3,84 +3,67 @@
 @section('titulo', 'Partidos')
 
 @section('contenido')
- @vite(['resources/sass/partidos/index.scss'])
-        <section>
-            <div class="cab">
-                <h2>PARTIDOS</h2>
-                <!-- MUESTRA SOLO AL ADMINISTRADORES Y ENTRENADORES-->
-                @auth
-                    <a href="{{ route('partidos.create') }}">AÑADIR +</a>
-                @endauth
+    @vite(['resources/sass/partidos/index.scss', 'resources/js/partidos/index.js'])
+
+    <section>
+        <div class="cab animate__animated animate__fadeInDown">
+            <h2>PARTIDOS</h2>
+            @auth
+                <a href="{{ route('partidos.create') }}">AÑADIR +</a>
+            @endauth
+        </div>
+        <hr>
+
+        @if($partidosHoy->count())
+            <div class="seccion-titulo animate__animated animate__fadeIn">
+                <span class="dot-live"></span>
+                <h3>Jugando Ahora</h3>
             </div>
-            <hr>
-<main>
-
-    <!--
-        CREAR CONDICION IF,
-        SI la fecha del partido es igual a la de hoy: Mostrar en "Jugando ahora"
-        SI es mayor:Mostrar en "Próximos partidos"
-    -->
-   @if ($fecha = $partidosHoy)
-
-
-    <div class="cab">
-        <br>
-        <h2>Jugando Ahora </h2>
-        <br>
-    </div>
-    <section id="destacados">
-        @foreach ($partidosHoy as $partido)
-        <a href="{{ route('partidos.show', $partido->id) }}">
-            <article>
-                <div class="equipoDestacado">
-                    <strong>{{$partido->equipo?->nombre}}</strong>
-                    <img src="{{asset('images/equipos/'. $partido->equipo?->foto)}}" alt="{{$partido->equipo?->nombre}}">
-                </div>
-
-                <div class="resultadoDesatacados">
-                    <small>{{$partido->fecha}}</small>
-                    <h3>VS</h3>
-                </div>
-
-                <div class="equipoDestacado">
-                    <strong>{{$partido->equipoVisitante?->nombre}} | {{$partido->equipoVisitante->categoria}}</strong>
-                    <img src="{{asset('images/equipos/'. $partido->equipoVisitante?->foto)}}" alt="{{$partido->equipoVisitante?->nombre}}">
-                </div>
-            </article>
-        </a>
-        @endforeach
-    </section>
-    @endif
-    <div class="cab">
-        <h2>Próximos Partidos</h2>
-    </div>
-
-    <section id="destacados">
-        @foreach ($partidosProximos as $partido)
-        <a href="{{ route('partidos.show', $partido->id) }}">
-        <article>
-            <div class="equipoDestacado">
-
-                <strong>{{$partido->equipo?->nombre}}</strong>
-                <img src="{{asset('images/equipos/'. $partido->equipo?->foto)}}" alt="{{$partido->equipo?->nombre}}">
-
+            <div class="destacados">
+                @foreach($partidosHoy as $partido)
+                    <a href="{{ route('partidos.show', $partido->id) }}" class="tarjeta-partido animate__animated animate__fadeInUp">
+                        <div class="equipo">
+                            <img src="{{ asset('images/equipos/' . $partido->equipo?->foto) }}" alt="{{ $partido->equipo?->nombre }}">
+                            <strong>{{ $partido->equipo?->nombre }}</strong>
+                        </div>
+                        <div class="resultado">
+                            <small>{{ $partido->fecha }}</small>
+                            <span class="vs">VS</span>
+                            <span class="badge-live">En vivo</span>
+                        </div>
+                        <div class="equipo">
+                            <img src="{{ asset('images/equipos/' . $partido->equipoVisitante?->foto) }}" alt="{{ $partido->equipoVisitante?->nombre }}">
+                            <strong>{{ $partido->equipoVisitante?->nombre }}</strong>
+                            <small>{{ $partido->equipoVisitante?->categoria }}</small>
+                        </div>
+                    </a>
+                @endforeach
             </div>
+        @endif
 
-            <div class="resultadoDesatacados">
-                <small>{{$partido->fecha}}</small>
-
-                <strong>Próximamente</strong>
-            </div>
-
-            <div class="equipoDestacado">
-                <strong>{{$partido->equipoVisitante?->nombre}} | {{$partido->equipoVisitante->categoria}}</strong>
-                <img src="{{asset('images/equipos/'. $partido->equipoVisitante?->foto)}}" alt="{{$partido->equipoVisitante?->nombre}}">
-            </div>
-        </article>
-        </a>
-        @endforeach
+        <div class="seccion-titulo animate__animated animate__fadeIn">
+            <h3>Próximos Partidos</h3>
+        </div>
+        <div class="destacados">
+            @foreach($partidosProximos as $partido)
+                <a href="{{ route('partidos.show', $partido->id) }}" class="tarjeta-partido animate__animated animate__fadeInUp">
+                    <div class="equipo">
+                        <img src="{{ asset('images/equipos/' . $partido->equipo?->foto) }}" alt="{{ $partido->equipo?->nombre }}">
+                        <strong>{{ $partido->equipo?->nombre }}</strong>
+                    </div>
+                    <div class="resultado">
+                        <small>{{ $partido->fecha }}</small>
+                        <span class="vs">VS</span>
+                        <span class="badge-proximo">Próximamente</span>
+                    </div>
+                    <div class="equipo">
+                        <img src="{{ asset('images/equipos/' . $partido->equipoVisitante?->foto) }}" alt="{{ $partido->equipoVisitante?->nombre }}">
+                        <strong>{{ $partido->equipoVisitante?->nombre }}</strong>
+                        <small>{{ $partido->equipoVisitante?->categoria }}</small>
+                    </div>
+                </a>
+            @endforeach
+        </div>
     </section>
 
-</main>
 @endsection
-

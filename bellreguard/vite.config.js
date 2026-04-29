@@ -34,6 +34,8 @@ export default defineConfig({
                 'resources/sass/equipos/create.scss',
                 'resources/sass/eventos/index.scss',
                 'resources/sass/partidos/index.scss',
+                'resources/js/partidos/index.js',
+                'resources/sass/partidos/create.scss',
                 'resources/sass/principales/editarPerfil.scss',
                 'resources/sass/noticias/perfilTutor.scss',
                 'resources/sass/permisos/index.scss',
