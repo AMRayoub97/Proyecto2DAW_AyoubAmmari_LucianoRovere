@@ -8,7 +8,7 @@
 
 .featured-event {
     height: 350px;
-    background: linear-gradient(135deg, #7a0000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #cc0000 0%, #111 100%);
     position: relative;
     display: flex;
     align-items: center;
@@ -40,7 +40,7 @@
             display: inline-block;
             padding: 8px 20px;
             text-align: center;
-            background: linear-gradient(135deg, #7a0000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #cc0000 0%, #111 100%);
             color: #fff !important;
             border-radius: 50px;
             font-weight: 600;
@@ -53,7 +53,7 @@
             transition: 1s ease;
 
             &:hover{
-                background: linear-gradient(135deg,#1a1a1a  0%, #7a0000 100%);
+                background: linear-gradient(135deg,#111  0%, #cc0000 100%);
             }
 }
 
@@ -97,7 +97,7 @@
         border-left-color: #28a745;
         .dot { background: #28a745; animation: pulse 1.5s infinite; }
     }
-    &.finalizado { border-left-color: #7a0000; opacity: 0.9; }
+    &.finalizado { border-left-color: #cc0000; opacity: 0.9; }
     &.proximamente { border-left-color: #FDB927; }
 
     .card-side-info {
@@ -107,7 +107,7 @@
         text-align: center;
         border-right: 1px solid #eee;
         .day { display: block; font-size: 1.8rem; font-weight: bold; color: #333; }
-        .month { color: #7a0000; font-weight: bold; }
+        .month { color: #cc0000; font-weight: bold; }
     }
 
     .card-side-info .hour{
@@ -162,9 +162,9 @@
     }
 
     .btn-primary {
-        background: #7a0000;
+        background: #cc0000;
         color: white;
-        &:hover { background: #5a0000; }
+        &:hover { background: #aa0000; }
 
         &.live {
             background: #28a745;

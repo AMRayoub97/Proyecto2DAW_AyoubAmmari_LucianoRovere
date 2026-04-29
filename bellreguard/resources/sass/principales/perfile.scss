@@ -32,7 +32,7 @@
     height: 110px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #7a0000;
+    border: 3px solid #cc0000;
 }
 
 #infoDerecha strong {
@@ -51,7 +51,7 @@
 #infoDerecha #cambiarFoto {
     margin-top: 0.5rem;
     padding: 0.55rem 1.4rem;
-    background-color: #7a0000;
+    background-color: #cc0000;
     color: white;
     border-radius: 25px;
     text-decoration: none;
@@ -61,7 +61,7 @@
 }
 
 #infoDerecha #cambiarFoto:hover {
-    background-color: #a00000;
+    background-color: #dd0000;
 }
 
 #infoDerecha #cerrarSesion {

@@ -110,7 +110,7 @@ section#principal {
     display: inline-block;
     padding: 0.85rem 2.4rem;
     background: white;
-    color: #7a0000;
+    color: #cc0000;
     font-size: 0.95rem;
     font-weight: 800;
     letter-spacing: 2px;
@@ -253,7 +253,7 @@ hr {
 }
 
 #noticias h4{
-    color: #5a0000;
+    color: #aa0000;
     font-weight: bold;
     text-decoration:underline;
 }
@@ -414,7 +414,7 @@ hr {
         border-left-color: #28a745;
         .dot { background: #28a745; animation: pulse 1.5s infinite; }
     }
-    &.finalizado { border-left-color: #7a0000; opacity: 0.9; }
+    &.finalizado { border-left-color: #cc0000; opacity: 0.9; }
     &.proximamente { border-left-color: #FDB927; }
 
     .card-side-info {
@@ -424,7 +424,7 @@ hr {
         text-align: center;
         border-right: 1px solid #eee;
         .day { display: block; font-size: 1.8rem; font-weight: bold; color: #333; }
-        .month { color: #7a0000; font-weight: bold; }
+        .month { color: #cc0000; font-weight: bold; }
     }
 
     .card-main-content {
@@ -480,9 +480,9 @@ hr {
     }
 
     .btn-primary {
-        background: #7a0000;
+        background: #cc0000;
         color: white;
-        &:hover { background: #5a0000; }
+        &:hover { background: #aa0000; }
 
         &.live {
             background: #28a745;
@@ -535,7 +535,7 @@ hr {
 .contact-card i {
     font-size: 3rem;
     margin-bottom: 15px;
-    color: #7a0000;
+    color: #cc0000;
 }
 
 .contact-card p {
@@ -547,7 +547,7 @@ hr {
 .contact-card:hover {
      transform: translateY(-10px) scale(1.05);
     box-shadow: 0 20px 35px rgba(0,0,0,0.2);
-    background: linear-gradient(145deg, #7a0000, #202020);
+    background: linear-gradient(145deg, #cc0000, #202020);
     color: white;
 }
 

@@ -6,13 +6,13 @@ main{
 .team-profile {
     width: 100%;
     margin: 0 auto;
-    background-color: #1a1a1a;
+    background-color: #111;
     color: white;
     min-height: 100vh;
 }
 
 .team-header {
-    background: linear-gradient(135deg, #7a0000 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #cc0000 0%, #111 100%);
     padding: 3rem 1rem;
     text-align: center;
     position: relative;
@@ -33,7 +33,7 @@ main{
         a{
             display: inline-block;
             padding: 12px 40px;
-            background: linear-gradient(135deg, #7a0000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #cc0000 0%, #111 100%);
             color: #fff !important;
             border-radius: 50px;
             font-weight: 600;
@@ -47,7 +47,7 @@ main{
             transition: 1s ease;
 
             &:hover{
-                background: linear-gradient(135deg,#1a1a1a  0%, #7a0000 100%);
+                background: linear-gradient(135deg,#111  0%, #cc0000 100%);
             }
         }
     }
@@ -105,7 +105,7 @@ main{
     padding: 2rem;
 
     h3 {
-        border-left: 5px solid #7a0000;
+        border-left: 5px solid #cc0000;
         padding-left: 15px;
         margin-bottom: 2rem;
         text-transform: uppercase;

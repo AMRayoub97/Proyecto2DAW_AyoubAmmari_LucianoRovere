@@ -24,7 +24,7 @@ main > section {
 
 .cab a {
     padding: 0.6rem 1.5rem;
-    background-color: #7a0000;
+    background-color: #cc0000;
     border-radius: 25px;
     color: white;
     text-decoration: none;
@@ -35,12 +35,12 @@ main > section {
 }
 
 .cab a:hover {
-    background-color: #a00000;
+    background-color: #dd0000;
 }
 
 hr {
     margin: 0 auto 2rem auto;
-    background-color: #7a0000;
+    background-color: #cc0000;
     height: 3px;
     border: none;
     width: 100%;
@@ -65,7 +65,7 @@ hr {
 }
 
 #busqueda:focus {
-    border-color: #7a0000;
+    border-color: #cc0000;
 }
 
 #sug_busqueda {
@@ -123,7 +123,7 @@ hr {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    background-color: #1a1a1a;
+    background-color: #111;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     transition: transform 0.25s, box-shadow 0.25s;
 }
@@ -184,7 +184,7 @@ hr {
 
 .tarjeta .lista ul li a:hover {
     background-color: #f5f5f5;
-    color: #7a0000;
+    color: #cc0000;
 }
 
 .tarjeta .lista ul hr {
@@ -200,7 +200,7 @@ hr {
     background: none;
     border: none;
     padding: 0.6rem 1rem;
-    color: #7a0000;
+    color: #cc0000;
     font-weight: 600;
     font-size: 0.88rem;
     cursor: pointer;
@@ -272,7 +272,7 @@ hr {
     right: 1rem;
     z-index: 10;
     padding: 0.3rem 0.75rem;
-    background-color: #7a0000;
+    background-color: #cc0000;
     border-radius: 20px;
     color: white;
     font-size: 0.85rem;
@@ -291,7 +291,7 @@ hr {
 
 .btnsJugador > a:first-child {
     padding: 0.5rem 1.3rem;
-    background-color: #7a0000;
+    background-color: #cc0000;
     color: white;
     border-radius: 20px;
     font-size: 0.85rem;
@@ -303,7 +303,7 @@ hr {
 }
 
 .btnsJugador > a:first-child:hover {
-    background-color: #a00000;
+    background-color: #dd0000;
 }
 
 .tarjeta .btnsJugador a:last-child {
@@ -316,8 +316,8 @@ hr {
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #7a0000;
-    border-color: #7a0000;
+    background-color: #cc0000;
+    border-color: #cc0000;
     color: #fff;
 }
 

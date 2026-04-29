@@ -24,7 +24,7 @@ main > section {
 
 .cab a {
     padding: 0.6rem 1.5rem;
-    background-color: #7a0000;
+    background-color: #cc0000;
     border-radius: 25px;
     color: white;
     text-decoration: none;
@@ -35,12 +35,12 @@ main > section {
 }
 
 .cab a:hover {
-    background-color: #a00000;
+    background-color: #dd0000;
 }
 
 hr {
     margin: 0 auto 2rem auto;
-    background-color: #7a0000;
+    background-color: #cc0000;
     height: 3px;
     border: none;
     width: 100%;
@@ -83,7 +83,7 @@ hr {
     padding-bottom: 1.2rem;
     margin-bottom: 2rem;
     scrollbar-width: thin;
-    scrollbar-color: #7a0000 #e5e5e5;
+    scrollbar-color: #cc0000 #e5e5e5;
 }
 
 .destacados::-webkit-scrollbar {
@@ -96,7 +96,7 @@ hr {
 }
 
 .destacados::-webkit-scrollbar-thumb {
-    background: #7a0000;
+    background: #cc0000;
     border-radius: 10px;
 }
 

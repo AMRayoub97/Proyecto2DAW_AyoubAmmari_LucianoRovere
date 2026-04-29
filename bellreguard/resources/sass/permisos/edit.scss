@@ -71,7 +71,7 @@ h1 {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background: linear-gradient(135deg, #7a0000 0%, #000 100%);
+    background: linear-gradient(135deg, #cc0000 0%, #000 100%);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -80,5 +80,5 @@ h1 {
 }
 
 .btn-guardar:hover {
-    background: linear-gradient(135deg, #000 0%, #7a0000 100%);
+    background: linear-gradient(135deg, #000 0%, #cc0000 100%);
 }

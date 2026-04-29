@@ -41,7 +41,7 @@
 .contenedor-form hr {
     border: none;
     height: 3px;
-    background-color: #7a0000;
+    background-color: #cc0000;
     border-radius: 2px;
     margin-bottom: 2rem;
 }
@@ -80,7 +80,7 @@
 
 .grupo input:focus,
 .grupo select:focus {
-    border-color: #7a0000;
+    border-color: #cc0000;
     background-color: white;
 }
 
@@ -90,7 +90,7 @@
     padding: 0.8rem;
     border: none;
     border-radius: 25px;
-    background-color: #7a0000;
+    background-color: #cc0000;
     color: white;
     font-size: 0.95rem;
     font-weight: 700;
@@ -100,7 +100,7 @@
 }
 
 .btn-guardar:hover {
-    background-color: #a00000;
+    background-color: #dd0000;
 }
 
 @media (max-width: 600px) {

@@ -17,7 +17,7 @@
 }
 
 :root{
-    --color-head: #7a0000;
+    --color-head: #cc0000;
     --nav-col: 15vw;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -55,13 +55,13 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #7a0000;
+    background: linear-gradient(to right, #111 0%, #8b0000 55%, #cc0000 100%);
     padding: 0 3rem;
     height: 82px;
     position: sticky;
     top: 0;
     z-index: 200;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 .header-logo {
@@ -105,7 +105,7 @@ header #navHeadr ul {
 
 header #navHeadr ul li a {
     display: block;
-    color: rgba(255, 255, 255, 0.82);
+    color: rgba(255, 255, 255, 0.55);
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -116,7 +116,7 @@ header #navHeadr ul li a {
 }
 
 header #navHeadr ul li a:hover {
-    background: rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.07);
     color: white;
 }
 
@@ -129,7 +129,7 @@ header .perfilOp {
 }
 
 header .perfilOp strong {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.55);
     font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.3px;
@@ -140,7 +140,7 @@ header img#fotoPerfil {
     width: 52px;
     height: 52px;
     border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     cursor: pointer;
     transition: border-color 0.2s, transform 0.2s;
     object-fit: cover;
@@ -148,7 +148,7 @@ header img#fotoPerfil {
 }
 
 header img#fotoPerfil:hover {
-    border-color: white;
+    border-color: rgba(255, 255, 255, 0.7);
     transform: scale(1.07);
 }
 
@@ -191,7 +191,7 @@ header .perfilOp ul#perfilLista li a {
 
 header .perfilOp ul#perfilLista li a:hover {
     background-color: #f5f5f5;
-    color: var(--color-head);
+    color: #cc0000;
 }
 
 /*Nav Izquierda*/
@@ -211,7 +211,7 @@ header .perfilOp ul#perfilLista li a:hover {
     flex-direction: column;
     flex: 1;
     padding: 1.2rem 0.8rem;
-    background-color: #1e1e1e;
+    background-color: #111;
 }
 
 #navIzquierda.oculto {
@@ -310,7 +310,7 @@ footer {
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #e05555;
+    color: #cc0000;
     margin-bottom: 1rem;
 }
 
@@ -465,7 +465,7 @@ footer {
 }
 
 #accept-cookies {
-    background-color: #7a0000;
+    background-color: #cc0000;
     color: white;
 }
 
@@ -475,7 +475,7 @@ footer {
 }
 
 #accept-cookies:hover {
-    background-color: #a00000;
+    background-color: #dd0000;
 }
 
 #reject-cookies:hover {
@@ -550,7 +550,7 @@ footer {
     #navIzquierda {
         flex: 1;
         padding: 0 0.5rem;
-        background-color: #1a1a1a;
+        background-color: #111;
         overflow-x: auto;
         scrollbar-width: none;
     }

@@ -62,7 +62,7 @@ main{
         a{
             display: inline-block;
             padding: 12px 40px;
-            background: linear-gradient(135deg, #7a0000 0%, #1a1a1a 100%);
+            background: linear-gradient(135deg, #cc0000 0%, #111 100%);
             color: #fff !important;
             border-radius: 50px;
             font-weight: 600;
@@ -76,7 +76,7 @@ main{
             transition: 1s ease;
 
             &:hover{
-                background: linear-gradient(135deg,#1a1a1a  0%, #7a0000 100%);
+                background: linear-gradient(135deg,#111  0%, #cc0000 100%);
             }
         }
     }
