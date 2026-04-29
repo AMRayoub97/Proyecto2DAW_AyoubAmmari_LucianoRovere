@@ -18,6 +18,7 @@
 
 :root{
     --color-head: #7a0000;
+    --nav-col: 15vw;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
@@ -28,8 +29,9 @@ body {
         "hea hea hea"
         "naL mai mai"
         "foo foo foo";
-    grid-template-columns: 15% 1fr 1fr;
+    grid-template-columns: var(--nav-col) 1fr 1fr;
     min-height: 100vh;
+    transition: grid-template-columns 0.35s ease;
 }
 
 
@@ -44,6 +46,7 @@ main{
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
+    transition: width 0.35s ease;
 }
 
 /* Header */
@@ -179,8 +182,7 @@ header .perfilOp ul#perfilLista li a:hover {
     flex-flow: row nowrap;
     justify-content: space-between;
     align-items: stretch;
-    width: 80%;
-    min-width: 150px;
+    width: 100%;
     padding: 0;
     box-sizing: border-box;
 }

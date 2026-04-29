@@ -10,10 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ocultarNav && navIzquierda) {
         navIzquierda.classList.remove('oculto');
         ocultarNav.value = "←";
+        document.documentElement.style.setProperty('--nav-col', '15vw');
 
         ocultarNav.addEventListener("click", () => {
             navIzquierda.classList.toggle('oculto');
-            ocultarNav.value = navIzquierda.classList.contains('oculto') ? "→" : "←";
+            const cerrada = navIzquierda.classList.contains('oculto');
+            ocultarNav.value = cerrada ? "→" : "←";
+            document.documentElement.style.setProperty('--nav-col', cerrada ? '2rem' : '15vw');
         });
     }
 

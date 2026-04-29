@@ -4,79 +4,127 @@ a{
 
 /* Principal Section */
 section#principal {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 1rem 1rem 3rem 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem 3rem 0;
+    overflow: visible;
 }
 
 /* Banner */
-#banner {
-  width: 100%;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  border: 2px solid gray;
-  box-shadow: 5px 5px 5px rgb(36, 16, 16);
+@keyframes bannerIn {
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
-#banner h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  font-size: 2rem;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  padding: 0.5rem 1rem;
-  background-color: rgba(0,0,0,0.5);
-  border-radius: 8px;
-  width: 90%;
-  color: white;
+
+#banner {
+    margin-left: -5rem;
+    width: calc(100vw - var(--nav-col, 15vw));
+    height: calc(100vh - 100px);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    animation: bannerIn 1.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+    transition: width 0.35s ease;
+    flex-shrink: 0;
 }
+
 
 .scroll-wrapper {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .scroll {
-  display: flex;
-  width: 500%;
-  height: 100%;
-  animation: slideRight 25s infinite;
+    display: flex;
+    width: 500%;
+    height: 100%;
+    animation: slideRight 25s infinite;
+    will-change: transform;
 }
 
 .slide {
-  flex: 0 0 20%;
-  height: 100%;
-  position: relative;
+    flex: 0 0 20%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1.5s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    transform: translateZ(0);
 }
 
-.slide:hover img {
-  transform: scale(1.05);
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.25) 50%,
+        transparent 100%
+    );
+    padding: 2rem;
+    gap: 0.6rem;
 }
 
-.slide-text {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1rem;
-  background: rgba(0,0,0,0.4);
-  padding: 0.3rem 0.5rem;
-  border-radius: 5px;
+.slide-sub {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.slide-title {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+    letter-spacing: 4px;
+    line-height: 1.05;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.btn-slide {
+    margin-top: 1.2rem;
+    display: inline-block;
+    padding: 0.85rem 2.4rem;
+    background: white;
+    color: #7a0000;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid white;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-slide:hover {
+    background: transparent;
+    color: white;
+    transform: scale(1.05);
 }
 
 /* Slide animation */
@@ -221,15 +269,6 @@ hr {
   transform: translateY(0); // kaybda normal
 }
 
-.scroll {
-  display: flex;
-  overflow: hidden;
-}
-
-.slide {
-  min-width: 100%;
-  flex-shrink: 0;
-}
 
 #destacados article, #noticias article {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -576,14 +615,19 @@ hr {
 
     section#principal {
         width: 100%;
+        overflow: hidden;
+        padding: 0 0.5rem 2rem;
     }
 
     #banner {
-        height: 350px;
+        margin-left: 0;
+        width: 100%;
+        height: 320px;
     }
 
     #banner h1 {
         font-size: 1.8rem;
+        width: 90%;
     }
 
     .banner .scroll-wrapper .slide-text{

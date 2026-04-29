@@ -14,28 +14,39 @@
 
         <section id="principal" class="fade-in">
             <div id="banner">
-                <h1>Bienvenido al Club Bellreguard<br>LA VICTORIA ES NUESTRA</h1>
                 <div class="scroll-wrapper">
                     <div class="scroll">
                         <div class="slide">
-                            <img src="{{ asset('images/banner2.jpg') }}" alt="imgScroll1">
-                            <div class="slide-text">Pasión y Fuerza en Cada Partido</div>
+                            <img src="{{ asset('images/inicio1.jpg') }}" alt="imgScroll1">
+                            <div class="slide-overlay">
+                                <span class="slide-sub">Club Baloncesto Bellreguard</span>
+                                <h2 class="slide-title">LA VICTORIA<br>ES NUESTRA</h2>
+                            </div>
                         </div>
                         <div class="slide">
-                            <img src="{{ asset('images/scroll1.jpg') }}" alt="imgScroll2">
-                            <div class="slide-text">Entrena, Lucha, Gana</div>
+                            <img src="{{ asset('images/inicio2.jpg') }}" alt="imgScroll2">
+                            <div class="slide-overlay">
+                                <h2 class="slide-title">ENTRENA.<br>LUCHA. GANA.</h2>
+                            </div>
                         </div>
                         <div class="slide">
-                            <img src="{{ asset('images/scroll2.jpg') }}" alt="imgScroll3">
-                            <div class="slide-text">Juntos Somos Invencibles</div>
+                            <img src="{{ asset('images/inicio3.avif') }}" alt="imgScroll3">
+                            <div class="slide-overlay">
+                                <h2 class="slide-title">JUNTOS SOMOS<br>INVENCIBLES</h2>
+                            </div>
                         </div>
                         <div class="slide">
                             <img src="{{ asset('images/scroll3.jpg') }}" alt="imgScroll4">
-                            <div class="slide-text">Espíritu de Equipo</div>
+                            <div class="slide-overlay">
+                                <h2 class="slide-title">EL ESFUERZO<br>DEFINE AL CAMPEÓN</h2>
+                            </div>
                         </div>
                         <div class="slide">
                             <img src="{{ asset('images/scroll4.jfif') }}" alt="imgScroll5">
-                            <div class="slide-text">Únete a Nuestra Familia</div>
+                            <div class="slide-overlay">
+                                <h2 class="slide-title">ÚNETE A<br>NUESTRA FAMILIA</h2>
+                                <a href="{{ route('registrar') }}" class="btn-slide">Registrarse</a>
+                            </div>
                         </div>
                     </div>
                 </div>
