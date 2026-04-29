@@ -1,206 +1,313 @@
-
-
-/* Tarjetas */
- section{
+main > section {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
+    padding: 2rem;
+    background-color: #f0f0f0;
+    min-height: 80vh;
 }
 
- .cab{
-    width: 80%;
-    margin: 1.5rem;
+.cab {
+    width: 100%;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
- .cab h2{
-    color: black;
+
+.cab h2 {
+    color: #111;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 3px;
 }
-hr{
-    margin: 0 auto;
+
+.cab a {
+    padding: 0.6rem 1.5rem;
     background-color: #7a0000;
-    height: 0.1rem;
-    border: none;
-    width: 95%;
-}
- .cab a{
-    padding: 0.5rem 1rem;
-    background-color: black;
-    border-radius: 20px;
+    border-radius: 25px;
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background 0.2s;
 }
 
-
-#barra_busqueda{
-    color: gray;
-    position: relative;
-    width: 260px;
+.cab a:hover {
+    background-color: #a00000;
 }
 
-#busqueda{
-    color: gray;
+hr {
+    margin: 0 auto 2rem auto;
+    background-color: #7a0000;
+    height: 3px;
+    border: none;
     width: 100%;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+#barra_busqueda {
+    position: relative;
+    width: 280px;
+}
+
+#busqueda {
+    color: #333;
+    width: 100%;
+    padding: 0.65rem 1.2rem;
+    border-radius: 25px;
+    border: 2px solid #ddd;
     outline: none;
     font-size: 0.9rem;
-    text-align: left;
+    background-color: white;
+    transition: border-color 0.2s;
 }
 
-#busqueda:focus{
+#busqueda:focus {
     border-color: #7a0000;
 }
 
-/* ===== SUGGESTIONS ===== */
-#sug_busqueda{
+#sug_busqueda {
     position: absolute;
     top: 110%;
     left: 0;
     width: 100%;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     list-style: none;
-    padding: 0;
+    padding: 0.4rem 0;
     margin: 0;
     max-height: 200px;
     overflow-y: auto;
     z-index: 100;
 }
 
-#sug_busqueda li{
-    padding: 0.6rem 1rem;
+#sug_busqueda li {
+    padding: 0.6rem 1.2rem;
     cursor: pointer;
-    transition: background 0.2s;
+    color: #333;
+    font-size: 0.9rem;
+    transition: background 0.15s;
 }
 
-#sug_busqueda li:hover{
-    background-color: #f2f2f2;
+#sug_busqueda li:hover {
+    background-color: #f5f5f5;
 }
 
-/* ===== SUGGESTIONS ===== */
-#sug_busqueda{
-    position: absolute;
-    top: 110%;
-    left: 0;
+.cab {
+    --animate-duration: 0.4s;
+}
+
+.tarjeta {
+    --animate-duration: 0.4s;
+}
+
+.tarjeta:nth-child(1) { animation-delay: 0.05s; }
+.tarjeta:nth-child(2) { animation-delay: 0.1s; }
+.tarjeta:nth-child(3) { animation-delay: 0.15s; }
+.tarjeta:nth-child(4) { animation-delay: 0.2s; }
+.tarjeta:nth-child(5) { animation-delay: 0.25s; }
+.tarjeta:nth-child(6) { animation-delay: 0.3s; }
+
+.tarjetas {
     width: 100%;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 100;
-}
-
-#sug_busqueda li{
-    padding: 0.6rem 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    color: #000;
-}
-
-#sug_busqueda li:hover{
-    background-color: #f2f2f2;
-}
-
- .tarjetas {
-    width: 98%;
     margin-top: 1rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    overflow: auto;
+    gap: 1.5rem;
 }
 
- .tarjeta {
-    min-width: 30%;
-    border: solid 1px black;
-    min-height: 350px;
-    margin: 0.5rem;
-    border-radius: 10px;
+.tarjeta {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.25s, box-shadow 0.25s;
 }
 
-.tarjeta .lista img{
-    max-width: 2rem ;
-    max-height: 2rem;
-    color: #000;
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.tarjeta .lista {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10;
+}
+
+.tarjeta .lista img {
+    width: 2rem;
+    height: 2rem;
     cursor: pointer;
-    border-radius: none !important;
+    border-radius: 50%;
+    padding: 0.3rem;
+    filter: invert(1);
+    background: rgba(0, 0, 0, 0.35);
+    transition: background 0.2s;
 }
 
-.tarjeta .lista ul{
-    display: none ;
-    margin: 0 auto;
+.tarjeta .lista img:hover {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.tarjeta .lista ul {
+    display: none;
+    position: absolute;
+    top: 2.6rem;
+    left: 0;
     list-style: none;
-    background-color: lightgray;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    padding: 0.4rem 0;
+    min-width: 130px;
 }
+
 .tarjeta .lista ul li {
-    margin: 0 auto;
+    margin: 0;
 }
-.tarjeta .lista ul li a{
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-    padding-right: 0.5rem;
+
+.tarjeta .lista ul li a {
+    display: block;
+    padding: 0.6rem 1rem;
+    color: #222;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: background 0.15s;
 }
- .tarjeta .contenido{
-    margin: 0 auto;
+
+.tarjeta .lista ul li a:hover {
+    background-color: #f5f5f5;
+    color: #7a0000;
+}
+
+.tarjeta .lista ul hr {
+    margin: 0;
+    height: 1px;
+    background-color: #eee;
+    width: 100%;
+    border-radius: 0;
+}
+
+.tarjeta .lista ul button {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0.6rem 1rem;
+    color: #7a0000;
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s;
+}
+
+.tarjeta .lista ul button:hover {
+    background-color: #fff0f0;
+}
+
+.tarjeta .contenido {
     background-size: cover;
-    background-repeat: none;
-    height: 70%;
-    width: 95%;
-    padding: 0.5rem;
+    background-position: center top;
+    height: 320px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.tarjeta .contenido::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.88), transparent);
+    pointer-events: none;
+}
+
+.tarjeta .contenido table {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background-color: transparent;
+}
+
+.tarjeta .contenido table th {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.78rem;
+    padding: 0.1rem 0.2rem;
+    border-bottom: none;
+    font-weight: 500;
+}
+
+.tarjeta .contenido table th:last-child {
+    color: white;
+    font-weight: 700;
+    text-align: right;
+}
+
+.tarjeta .contenido table th[colspan="2"] {
+    color: white;
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: block;
+}
+
+.tarjeta .contenido strong {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    padding: 0.3rem 0.75rem;
+    background-color: #7a0000;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.tarjeta .btnsJugador {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: start;
-    margin-top: 0.5rem;
-    border-radius: 10px;
-}
- .tarjeta .contenido table{
-    background-color: rgba(255, 255, 255, 0.8);
-}
- .tarjeta .contenido strong{
-    padding: 0.5rem;
-    background-color: yellow;
-    border-radius: 12px;
-    color: #000;
-}
- .tarjeta .contenido h3 ,  .tarjeta .contenido table th{
-    color: black;
-    margin: 0.5rem;
-    padding: 0.2rem;
-    border-bottom: 1px solid black;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    background-color: #111;
+    width: 100%;
 }
 
 .btnsJugador > a:first-child {
-    padding: 0.5rem;
-    background-color: black;
+    padding: 0.5rem 1.3rem;
+    background-color: #7a0000;
     color: white;
-    border-radius: 10px;
-    margin-top: 0.5rem;
-    font-size: 1.3rem !important;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
     text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+    margin-top: 0;
 }
 
- .tarjeta .btnsJugador{
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-evenly;
-    width: 50%;
+.btnsJugador > a:first-child:hover {
+    background-color: #a00000;
 }
- .tarjeta .btnsJugador a{
-    font-size: 2rem;
+
+.tarjeta .btnsJugador a:last-child {
+    font-size: 1.4rem;
     text-decoration: none;
 }
 
@@ -209,58 +316,38 @@ hr{
 }
 
 .pagination .page-item.active .page-link {
-    background-color: #000;
-    border-color: #000;
+    background-color: #7a0000;
+    border-color: #7a0000;
     color: #fff;
 }
 
-
 @media (max-width: 992px) {
-    section {
-        width: 100%;
-        margin: 0;
+    main > section {
+        padding: 1rem;
     }
 
     .cab {
-        width: 95%;
-        margin: 1rem auto;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
     }
 
     .tarjetas {
         grid-template-columns: 1fr;
         width: 100%;
-        padding: 0 1rem;
     }
 
-    .tarjeta {
-        min-width: 0;
-        width: 100%;
-        margin: 1rem 0;
-        height: 70rem;
-    }
-    .tarjeta .contenido table{
-        height: 45%;
-        width: 45%;
-        font-size: x-large;
+    .tarjeta .contenido {
+        height: 280px;
     }
 
-    .tarjeta .btnsJugador *{
-        height: 4rem;
-        width: 8rem;
-        font-size: x-large
+    .tarjeta .contenido table th {
+        font-size: 1rem;
     }
+}
 
-    .tarjetas #paginas li span, .tarjetas #paginas li a{
-        height: 6rem;
-        width: 6rem;
-        font-size: xx-large;
-    }
-
-    .tarjetas #paginas {
-        font-size: xx-large;
-        width: 100%;
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
+@media (max-width: 480px) {
+    .tarjetas {
+        grid-template-columns: 1fr;
     }
 }

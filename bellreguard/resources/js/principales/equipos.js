@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+import 'animate.css';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -94,6 +95,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const busqueda = document.getElementById("busqueda");
         const sug_busqueda = document.getElementById("sug_busqueda");
 
+        sug_busqueda.style.display = 'none';
+
+        document.addEventListener('click', (e) => {
+            if (!busqueda.contains(e.target) && !sug_busqueda.contains(e.target)) {
+                sug_busqueda.style.display = 'none';
+            }
+        });
+
         busqueda.addEventListener('keyup', async (e) =>{
             e.preventDefault();
 
@@ -101,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (value.length === 0) {
                 sug_busqueda.innerHTML = "";
+                sug_busqueda.style.display = 'none';
                 return;
             }
 
@@ -114,6 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await res.json();
 
                 sug_busqueda.innerHTML = "";
+                sug_busqueda.style.display = data.length ? 'block' : 'none';
 
                 data.forEach(element => {
                     const li = document.createElement("li");

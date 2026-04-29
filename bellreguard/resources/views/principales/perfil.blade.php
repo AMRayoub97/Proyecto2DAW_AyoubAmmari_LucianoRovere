@@ -1,6 +1,6 @@
 @extends('plantilla')
 
-@section('titulo', 'perfile')
+@section('titulo', 'Perfil')
 
 @section('contenido')
 
@@ -13,41 +13,52 @@
     @endif
 
     <div class="contenido">
-        <section id="info">
+        <aside id="infoDerecha" class="animate__animated animate__fadeInLeft">
+            @if(empty(auth()->user()->foto))
+                <img id="fotoPerfil" src="{{ asset('/images/perfil_default.webp') }}" alt="Foto de perfil">
+            @else
+                <img id="fotoPerfil" src="{{ asset('/images/usuarios/' . auth()->user()->foto) }}" alt="Foto de perfil">
+            @endif
+            <strong>{{ auth()->user()->nombre ?? 'Usuario' }}</strong>
+            <span>{{ auth()->user()->correo ?? '' }}</span>
+            <a href="{{ route('perfil.edit', auth()->user()->id) }}" id="cambiarFoto">Editar Perfil</a>
+            <a href="{{ route('logout') }}" id="cerrarSesion">Cerrar sesión</a>
+        </aside>
+
+        <section id="info" class="animate__animated animate__fadeInRight">
             <div class="infoUsuario">
-                <label for="nombre">Nombre:</label><strong>{{auth()->user()->nombre ?? 'guest' }}</strong>
+                <label>Nombre</label>
+                <strong>{{ auth()->user()->nombre ?? '-' }}</strong>
             </div>
             <div class="infoUsuario">
-                <label for="apellido">Apellido:</label><strong>{{ auth()->user()->apellidos ?? 'guest' }}</strong>
+                <label>Apellido</label>
+                <strong>{{ auth()->user()->apellidos ?? '-' }}</strong>
             </div>
             <div class="infoUsuario">
-                <label for="correo">Correo:</label><strong>{{ auth()->user()->correo ?? '****@bllreguard.es' }}</strong>
+                <label>Correo</label>
+                <strong>{{ auth()->user()->correo ?? '-' }}</strong>
             </div>
             <div class="infoUsuario">
-                <label for="contrasena">Contrasena:</label><strong>***********</strong>
+                <label>Contraseña</label>
+                <strong>••••••••••</strong>
             </div>
             <div class="infoUsuario">
-                <label for="nacionalidad">Nacionalidad:</label><strong>{{ auth()->user()->nacionalidad ?? '-' }}</strong>
+                <label>Nacionalidad</label>
+                <strong>{{ auth()->user()->nacionalidad ?? '-' }}</strong>
             </div>
             <div class="infoUsuario">
-                <label for="fecha_nacimiento">Fecha nacimiento:</label><strong>{{ auth()->user()->fecha_nacimiento ?? '00-00-2000' }}</strong>
+                <label>Fecha de nacimiento</label>
+                <strong>{{ auth()->user()->fecha_nacimiento ?? '-' }}</strong>
             </div>
             <div class="infoUsuario">
-                <label for="telefono">telefono:</label><strong>{{ auth()->user()->telefono ?? "-" }}</strong>
+                <label>Teléfono</label>
+                <strong>{{ auth()->user()->telefono ?? '-' }}</strong>
             </div>
             <div class="infoUsuario">
-                <label for="genero">Genero:</label><strong>{{ auth()->user()->genero ?? "-" }}</strong>
+                <label>Género</label>
+                <strong>{{ auth()->user()->genero ?? '-' }}</strong>
             </div>
         </section>
-        <aside id="infoDerecha">
-           @if(empty(auth()->user()->foto))
-                <img id="fotoPerfil" src="{{asset('/images/perfil_default.webp') }}" alt="Default profile picture">
-            @else
-                <img id="fotoPerfil" src="{{ asset('/images/usuarios/'. auth()->user()->foto) }}" alt="Default profile picture">
-            @endif
-            <a href="{{ route('perfil.edit', auth()->user()->id) }}" id="cambiarFoto">Editar Perfil</a>
-            <a href="{{ route('logout') }}">Cerrar session</a>
-        </aside>
     </div>
 
 @endsection

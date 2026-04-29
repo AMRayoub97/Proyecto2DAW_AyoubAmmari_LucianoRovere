@@ -1,4 +1,5 @@
 import Swal from 'sweetalert2';
+import 'animate.css';
 
 document.addEventListener('DOMContentLoaded', () => {
     const botonesEditar = document.querySelectorAll('.listaEditar');
@@ -41,7 +42,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    sug_busqueda.style.display = 'none';
+
     busqueda.addEventListener('keyup', mostrarJugadores);
+
+    document.addEventListener('click', (e) => {
+        if (!busqueda.contains(e.target) && !sug_busqueda.contains(e.target)) {
+            sug_busqueda.style.display = 'none';
+        }
+    });
 
     //fetch base de datos de  jugadores
     async function mostrarJugadores(e){
@@ -62,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await res.json();
 
         sug_busqueda.innerHTML = ``;
+        sug_busqueda.style.display = data.length ? 'block' : 'none';
         tarjetas.innerHTML = ``;
 
         if(!data) return 'no hay datos';

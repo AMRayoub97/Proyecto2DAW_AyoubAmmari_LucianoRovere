@@ -8,7 +8,7 @@
 
     <!-- Main-->
         <section>
-            <div class="cab">
+            <div class="cab animate__animated animate__fadeInDown">
                 <h2>EQUIPOS</h2>
 
                 <div id="barra_busqueda">
@@ -66,7 +66,7 @@
             <h2>Equipos locales:</h2>
             <div class="tarjetas">
                 @foreach($equipos as $equipo)
-                <div class="tarjeta">
+                <div class="tarjeta animate__animated animate__fadeInUp">
                     <div class="cont">
                         <div class="lista">
                             @auth

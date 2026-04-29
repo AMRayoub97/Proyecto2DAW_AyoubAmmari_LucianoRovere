@@ -6,7 +6,7 @@
 
     @vite(['resources/sass/principales/jugadores.scss', 'resources/js/principales/jugadores.js'])
         <section>
-            <div class="cab">
+            <div class="cab animate__animated animate__fadeInDown">
                 <h2>JUGADORES</h2>
                 
                 <div id="barra_busqueda">
@@ -40,7 +40,7 @@
             <div class="tarjetas">
 
                 @foreach($jugadores as $jugador)
-                    <div class="tarjeta">
+                    <div class="tarjeta animate__animated animate__fadeInUp">
                         <div class="lista">
                             @auth
                                 @if(auth()->user()?->role == 'admin'  || auth()->user()->role == 'entrenador')
