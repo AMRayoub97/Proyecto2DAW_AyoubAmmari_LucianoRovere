@@ -50,90 +50,113 @@ main{
 }
 
 /* Header */
-header{
+header {
     grid-area: hea;
-    display:flex;
-    text-align: center;
-    background-color: #7a0000;
-    flex-flow: row nowrap;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    max-height: 100px;
-    padding: 1rem 3rem;
+    background-color: #7a0000;
+    padding: 0 3rem;
+    height: 82px;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
 }
-header img#logo{
-    width: 70px;
-    max-height: 70px;
-    margin: 3px;
-    background-color: aliceblue;
-    border-radius: 100%;
-}
-header img#fotoPerfil{
-    width: 70px;
-    max-height: 70px;
-    margin: 3px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-header #navHeadr{
-    text-align: center;
+
+.header-logo {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content:space-evenly;
     align-items: center;
-    min-width: 50%;
-}
-header #navHeadr ul{
-    letter-spacing: 2px;
-    display: flex;
-    flex-flow: row nowrap;
-    list-style: none;
-    justify-content:space-evenly;
-    align-items: center;
-    gap: 8%;
-    font-size: 1.2rem;
-}
-header #navHeadr ul li a{
+    gap: 0.8rem;
     text-decoration: none;
+    flex-shrink: 0;
+}
+
+.header-logo img#logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: white;
+    object-fit: contain;
+    padding: 4px;
+}
+
+.header-logo span {
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
     color: white;
-    font-weight: bold;
+    text-transform: uppercase;
 }
-header #navHeadr ul li:hover{
-    transform: scale(1.2);
+
+header #navHeadr {
+    display: flex;
+    align-items: center;
 }
+
+header #navHeadr ul {
+    display: flex;
+    list-style: none;
+    gap: 0.3rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+header #navHeadr ul li a {
+    display: block;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+}
+
+header #navHeadr ul li a:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: white;
+}
+
 header .perfilOp {
     position: relative;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.85rem;
+    flex-shrink: 0;
 }
 
 header .perfilOp strong {
     color: rgba(255, 255, 255, 0.85);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1rem;
     letter-spacing: 0.3px;
+    white-space: nowrap;
 }
 
 header img#fotoPerfil {
-    width: 62px;
-    height: 62px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     border: 2px solid rgba(255, 255, 255, 0.4);
     cursor: pointer;
     transition: border-color 0.2s, transform 0.2s;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 header img#fotoPerfil:hover {
     border-color: white;
-    transform: scale(1.05);
+    transform: scale(1.07);
 }
 
 header .perfilOp ul#perfilLista {
     position: absolute;
-    top: calc(100% + 14px);
+    top: calc(100% + 12px);
     right: 0;
-    width: 180px;
+    width: 200px;
     background-color: white;
     border-radius: 12px;
     list-style: none;
@@ -141,7 +164,7 @@ header .perfilOp ul#perfilLista {
     flex-direction: column;
     padding: 0.5rem 0;
     z-index: 1000;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
 
 header .perfilOp ul#perfilLista::before {
@@ -156,15 +179,11 @@ header .perfilOp ul#perfilLista::before {
     border-radius: 2px;
 }
 
-header .perfilOp ul#perfilLista li {
-    width: 100%;
-}
-
 header .perfilOp ul#perfilLista li a {
     display: block;
-    padding: 0.7rem 1.2rem;
+    padding: 0.75rem 1.3rem;
     color: #222;
-    font-size: 0.88rem;
+    font-size: 0.95rem;
     font-weight: 600;
     text-decoration: none;
     transition: background 0.15s, color 0.15s;
@@ -463,118 +482,119 @@ footer {
     background-color: #777;
 }
 
-/*---tablet---*/
+/*---tablet/móvil---*/
 @media (max-width: 992px) {
     body {
-        grid-template-columns: 1fr !important;
-        grid-template-areas:
-            "hea"
-            "naL"
-            "mai"
-            "foo";
-        grid-template-rows: 20% 5% 1fr 20%;
-        height: auto;
-        min-height: 100vh;
         display: flex;
         flex-direction: column;
+        min-height: 100vh;
+        height: auto;
     }
 
     header {
-        grid-area: hea;
-        margin: 0 auto;
         width: 100%;
-        display: grid;
-        grid-template-columns: 25% 50% 25%;
-        align-items: center;
-        gap: 10px;
-        padding: 0.5rem !important;
-        max-height: none;
-        height: 10rem;
+        padding: 0 1rem;
+        height: 62px;
+        position: sticky;
+        top: 0;
+        z-index: 200;
     }
 
-    header img#logo, header img#fotoPerfil {
-        width: 80px;
-        height: 80px;
+    .header-logo img#logo {
+        width: 40px;
+        height: 40px;
     }
 
-
-    header #navHeadr {
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        margin-right: 1rem !important;
+    .header-logo span {
+        font-size: 1rem;
+        letter-spacing: 1.5px;
     }
 
     header #navHeadr ul {
         display: flex;
-        flex-flow: row nowrap;
-        width: 100%;
-        padding: 0;
-        list-style: none;
-        margin: 0 5rem;
+        overflow-x: auto;
+        scrollbar-width: none;
+        gap: 0;
+        flex-wrap: nowrap;
     }
 
-    header #navHeadr ul li {
-        text-align: center;
+    header #navHeadr ul::-webkit-scrollbar {
+        display: none;
     }
 
     header #navHeadr ul li a {
-        font-size: 1.5rem;
+        font-size: 0.82rem;
+        padding: 0.4rem 0.75rem;
         white-space: nowrap;
+        letter-spacing: 0;
     }
 
-    header .perfilOp strong{
+    header .perfilOp strong {
         display: none;
+    }
+
+    header img#fotoPerfil {
+        width: 38px;
+        height: 38px;
     }
 
     /*-----nav izquierda---*/
     #navLeft {
-        grid-area: naL;
-        width: 100% !important;
-        min-width: 100%;
+        width: 100%;
         height: auto;
-        display: block;
-        margin-bottom: 1rem !important;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
     }
 
     #navIzquierda {
-        width: 100%;
-        padding: 1rem;
-        min-height: 4rem;
-        background-color: rgb(172, 168, 168);
+        flex: 1;
+        padding: 0 0.5rem;
+        background-color: #1a1a1a;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    #navIzquierda::-webkit-scrollbar {
+        display: none;
     }
 
     #navIzquierda ul {
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    #navIzquierda ul li a{
-        font-size: 1.5rem;
-    }
-
-    #navLeft #ocultarNavBtn {
-        width: 100% !important;
-        height: 3rem !important;
-        background-color: #333;
-        color: white;
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 0;
+        height: 48px;
         align-items: center;
     }
 
+    #navIzquierda ul li a {
+        font-size: 0.85rem;
+        padding: 0.55rem 1rem;
+        border-radius: 0;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.65);
+    }
+
+    #navIzquierda ul li a:hover {
+        background: transparent;
+        border-bottom-color: var(--color-head);
+        color: white;
+    }
+
+    #navLeft input#ocultarNavBtn {
+        display: none;
+    }
+
     main {
-        grid-area: mai;
         margin-left: 0 !important;
         width: 100% !important;
-        padding: 1.5rem;
+        padding: 0;
         display: block;
-        height: 80%;
+        height: auto;
+        overflow-x: hidden;
     }
 
     /*---footer--*/
@@ -594,26 +614,18 @@ footer {
     }
 }
 
-/* Ajuste para móviles muy pequeños */
+/* Móvil pequeño */
 @media (max-width: 480px) {
 
-    header{
-        padding: 0.5rem 1rem !important;
-    }
-    header #navHeadr ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+    .header-logo span {
+        display: none;
     }
 
-    header #navHeadr ul li a{
-        font-size: 1rem;
+    header #navHeadr ul li a {
+        font-size: 0.78rem;
+        padding: 0.35rem 0.6rem;
     }
 
-    #navIzquierda ul {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
     .footer-top {
         grid-template-columns: 1fr;
         gap: 1.5rem;

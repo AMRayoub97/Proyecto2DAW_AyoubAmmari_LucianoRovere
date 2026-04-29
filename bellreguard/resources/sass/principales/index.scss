@@ -28,7 +28,7 @@ section#principal {
 #banner {
     margin-left: -5rem;
     width: calc(100vw - var(--nav-col, 15vw));
-    height: calc(100vh - 100px);
+    height: calc(100vh - 82px);
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -615,23 +615,40 @@ hr {
 
     section#principal {
         width: 100%;
-        overflow: hidden;
-        padding: 0 0.5rem 2rem;
+        overflow-x: hidden;
+        padding: 0 1rem 2rem 1rem;
     }
 
     #banner {
-        margin-left: 0;
-        width: 100%;
-        height: 320px;
+        margin-left: -1rem;
+        width: 100vw;
+        height: 100vh;
+        animation: none;
     }
 
-    #banner h1 {
-        font-size: 1.8rem;
-        width: 90%;
+    .slide-overlay {
+        background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.8) 0%,
+            rgba(0, 0, 0, 0.3) 45%,
+            transparent 100%
+        );
     }
 
-    .banner .scroll-wrapper .slide-text{
-        font-size: 2rem !important;
+    .slide-title {
+        font-size: 2.6rem;
+        letter-spacing: 3px;
+        text-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    }
+
+    .slide-sub {
+        font-size: 0.72rem;
+        letter-spacing: 4px;
+    }
+
+    .btn-slide {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
     }
 
     #destacados, #noticias {
