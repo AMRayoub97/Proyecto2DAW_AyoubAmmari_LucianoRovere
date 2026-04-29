@@ -52,7 +52,7 @@
         <ul>
             <li><a href="#">Aviso legal</a></li>
             <li><a href="#">Política de Privacidad</a></li>
-            <li><a href="#">Política de Cookies</a></li>
+            <li><a href="{{ route('cookies') }}">Política de Cookies</a></li>
             <li><a href="{{ route('contacto') }}">Contacto</a></li>
         </ul>
     </div>

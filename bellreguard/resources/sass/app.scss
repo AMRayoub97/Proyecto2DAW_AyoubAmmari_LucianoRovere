@@ -223,6 +223,7 @@ header .perfilOp ul#perfilLista li a:hover {
     margin: 0;
     padding: 0;
     display: flex;
+    position: fixed;
     flex-direction: column;
     gap: 0.3rem;
 }
