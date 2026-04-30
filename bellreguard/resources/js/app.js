@@ -9,32 +9,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (ocultarNav && navIzquierda) {
         navIzquierda.classList.remove('oculto');
-        ocultarNav.value = "←";
+        ocultarNav.value = "\u2190";
         document.documentElement.style.setProperty('--nav-col', '15vw');
 
         ocultarNav.addEventListener("click", () => {
             navIzquierda.classList.toggle('oculto');
             const cerrada = navIzquierda.classList.contains('oculto');
-            ocultarNav.value = cerrada ? "→" : "←";
+            ocultarNav.value = cerrada ? "\u2192" : "\u2190";
             document.documentElement.style.setProperty('--nav-col', cerrada ? '2rem' : '15vw');
         });
     }
 
     if (fotoPerfil && perfilLista) {
         fotoPerfil.addEventListener('click', (event) => {
-        event.stopPropagation();
+            event.stopPropagation();
 
-        if (perfilLista.style.display === 'flex') {
+            if (perfilLista.style.display === 'flex') {
+                perfilLista.style.display = 'none';
+            } else {
+                perfilLista.style.display = 'flex';
+            }
+        });
+
+        document.addEventListener('click', () => {
             perfilLista.style.display = 'none';
-        } else {
-            perfilLista.style.display = 'flex';
-        }
-    });
-
-    // Cerrar el menú si haces clic fuera de él
-    document.addEventListener('click', () => {
-        perfilLista.style.display = 'none';
-    });
+        });
     }
 });
 

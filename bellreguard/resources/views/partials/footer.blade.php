@@ -22,15 +22,15 @@
             <span>Síguenos</span>
             <ul>
                 <li>
-                    <img src="{{ asset('images/instaLogo.png') }}" alt="Instagram">
+                    <i class="bi bi-instagram"></i>
                     <a href="https://www.instagram.com/">Instagram</a>
                 </li>
                 <li>
-                    <img src="{{ asset('images/facebookLogo.png') }}" alt="Facebook">
+                    <i class="bi bi-facebook"></i>
                     <a href="https://www.facebook.com/">Facebook</a>
                 </li>
                 <li>
-                    <img src="{{ asset('images/gmailLogo.png') }}" alt="Correo">
+                    <i class="bi bi-envelope-fill"></i>
                     <a href="mailto:contacto@bellreguard.es">Correo</a>
                 </li>
             </ul>

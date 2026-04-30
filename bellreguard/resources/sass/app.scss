@@ -230,7 +230,7 @@ header .perfilOp ul#perfilLista li a:hover {
 
 #navIzquierda ul li a {
     display: block;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.65) !important;
     font-weight: 600;
     font-size: 0.92rem;
     letter-spacing: 0.5px;
@@ -239,6 +239,16 @@ header .perfilOp ul#perfilLista li a:hover {
     border-radius: 8px;
     border-left: 3px solid transparent;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+#navIzquierda ul li a i {
+    font-size: 1.05rem;
+    color: inherit !important;
+}
+
+#navIzquierda ul li a span {
+    margin-left: 0.65rem;
+    color: inherit !important;
 }
 
 #navIzquierda ul li a:hover {
@@ -341,12 +351,14 @@ footer {
     gap: 0.6rem;
 }
 
-.footer-redes ul li img {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.6;
+.footer-redes ul li i {
+    font-size: 1.1rem;
+    opacity: 0.65;
+    flex-shrink: 0;
+}
+
+.footer-redes ul li {
+    transition: opacity 0.2s;
 }
 
 .footer-redes ul li a {
@@ -356,8 +368,24 @@ footer {
     transition: color 0.2s;
 }
 
-.footer-redes ul li a:hover {
-    color: white;
+.footer-redes ul li:hover i,
+.footer-redes ul li:hover a {
+    opacity: 1;
+}
+
+.footer-redes ul li:nth-child(1):hover i,
+.footer-redes ul li:nth-child(1):hover a {
+    color: #E1306C;
+}
+
+.footer-redes ul li:nth-child(2):hover i,
+.footer-redes ul li:nth-child(2):hover a {
+    color: #1877F2;
+}
+
+.footer-redes ul li:nth-child(3):hover i,
+.footer-redes ul li:nth-child(3):hover a {
+    color: #EA4335;
 }
 
 .footer-contacto ul li {
@@ -546,14 +574,23 @@ footer {
         display: flex;
         flex-direction: row;
         margin: 0;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.55rem 0.7rem calc(0.55rem + env(safe-area-inset-bottom));
+        background: linear-gradient(180deg, rgba(17, 17, 17, 0.96), rgba(8, 8, 8, 0.98));
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.28);
     }
 
     #navIzquierda {
         flex: 1;
-        padding: 0 0.5rem;
-        background-color: #111;
+        padding: 0;
+        background: transparent;
         overflow-x: auto;
         scrollbar-width: none;
+        border-radius: 1.25rem;
     }
 
     #navIzquierda::-webkit-scrollbar {
@@ -563,26 +600,48 @@ footer {
     #navIzquierda ul {
         flex-direction: row;
         flex-wrap: nowrap;
-        justify-content: flex-start;
-        gap: 0;
-        height: 48px;
-        align-items: center;
+        justify-content: space-between;
+        gap: 0.45rem;
+        height: auto;
+        align-items: stretch;
+        position: static;
     }
 
     #navIzquierda ul li a {
-        font-size: 0.85rem;
-        padding: 0.55rem 1rem;
-        border-radius: 0;
+        min-width: 3.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.3rem;
+        padding: 0.65rem 0.55rem;
+        border-radius: 1rem;
         border-left: none;
-        border-bottom: 2px solid transparent;
+        border-bottom: none;
         white-space: nowrap;
-        color: rgba(255, 255, 255, 0.65);
+        color: #fff !important;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    }
+
+    #navIzquierda ul li a span {
+        display: block;
+        margin-left: 0;
+        font-size: 0.68rem;
+        line-height: 1;
+        color: #fff !important;
+    }
+
+    #navIzquierda ul li a i {
+        margin: 0;
+        font-size: 1.2rem;
+        color: #fff !important;
     }
 
     #navIzquierda ul li a:hover {
-        background: transparent;
-        border-bottom-color: var(--color-head);
+        background: rgba(204, 0, 0, 0.18);
         color: white;
+        transform: translateY(-1px);
     }
 
     #navLeft input#ocultarNavBtn {
@@ -592,7 +651,7 @@ footer {
     main {
         margin-left: 0 !important;
         width: 100% !important;
-        padding: 0;
+        padding: 0 0 calc(5.5rem + env(safe-area-inset-bottom));
         display: block;
         height: auto;
         overflow-x: hidden;
